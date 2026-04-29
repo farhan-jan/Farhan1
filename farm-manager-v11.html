@@ -1,0 +1,4161 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>پرو فارم مینیجر — پریمیم</title>
+
+<!-- ═══ PWA META TAGS ═══ -->
+<meta name="application-name" content="فارم مینیجر">
+<meta name="description" content="پرو فارم مینیجر — ادھار، ٹیوب ویل، فصل مینیجمنٹ">
+<meta name="theme-color" content="#064e3b">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="فارم مینیجر">
+<meta name="msapplication-TileColor" content="#064e3b">
+<meta name="msapplication-tap-highlight" content="no">
+
+<!-- PWA Manifest (inline blob) -->
+<script>
+(function(){
+  const manifest = {
+    name: "پرو فارم مینیجر — پریمیم",
+    short_name: "فارم مینیجر",
+    description: "ادھار کھاتہ، ٹیوب ویل، فصل مینیجمنٹ",
+    start_url: ".",
+    display: "standalone",
+    background_color: "#050f0a",
+    theme_color: "#064e3b",
+    orientation: "portrait",
+    lang: "ur",
+    dir: "rtl",
+    icons: [
+      { src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='80' fill='%23064e3b'/%3E%3Ctext x='256' y='320' font-size='280' text-anchor='middle'%3E🌾%3C/text%3E%3C/svg%3E", sizes: "512x512", type: "image/svg+xml", purpose: "any maskable" },
+      { src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='30' fill='%23064e3b'/%3E%3Ctext x='96' y='130' font-size='110' text-anchor='middle'%3E🌾%3C/text%3E%3C/svg%3E", sizes: "192x192", type: "image/svg+xml" }
+    ],
+    categories: ["productivity", "finance"],
+    shortcuts: [
+      { name: "ادھار کھاتہ", short_name: "ادھار", description: "ادھار ریکارڈ کریں", url: "./#udhar", icons: [{ src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Ctext y='.9em' font-size='90'%3E🧾%3C/text%3E%3C/svg%3E", sizes: "96x96" }] },
+      { name: "فصلیں", short_name: "فصل", description: "فصل مینیج کریں", url: "./#crops", icons: [{ src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Ctext y='.9em' font-size='90'%3E🌾%3C/text%3E%3C/svg%3E", sizes: "96x96" }] }
+    ]
+  };
+  const blob = new Blob([JSON.stringify(manifest)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('link');
+  link.rel = 'manifest'; link.href = url;
+  document.currentScript.insertAdjacentElement('afterend', link);
+})();
+</script>
+
+<!-- Apple Touch Icons -->
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%23064e3b'/%3E%3Ctext x='90' y='125' font-size='110' text-anchor='middle'%3E🌾%3C/text%3E%3C/svg%3E">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Noto+Sans+Arabic:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════
+   PREMIUM 4K FARM MANAGER — LUXURY DARK GOLD THEME
+   ═══════════════════════════════════════════════ */
+:root {
+  /* Brand Palette */
+  --emerald-950: #022c22;
+  --emerald-900: #064e3b;
+  --emerald-800: #065f46;
+  --emerald-700: #047857;
+  --emerald-600: #059669;
+  --emerald-500: #10b981;
+  --emerald-400: #34d399;
+  --emerald-300: #6ee7b7;
+  --emerald-100: #d1fae5;
+
+  --gold-600:  #b45309;
+  --gold-500:  #d97706;
+  --gold-400:  #f59e0b;
+  --gold-300:  #fbbf24;
+  --gold-200:  #fde68a;
+  --gold-100:  #fef3c7;
+
+  /* Surfaces */
+  --surface-0: #050f0a;
+  --surface-1: #091a10;
+  --surface-2: #0d2418;
+  --surface-3: #112e1e;
+  --surface-glass: rgba(16, 185, 129, 0.06);
+  --surface-glass-hover: rgba(16, 185, 129, 0.12);
+  --border-glass: rgba(16, 185, 129, 0.18);
+  --border-gold: rgba(245, 158, 11, 0.3);
+
+  /* Typography */
+  --text-primary: #e8f5ef;
+  --text-secondary: #9bbfac;
+  --text-muted: #567a64;
+
+  /* Effects */
+  --glow-emerald: 0 0 40px rgba(16,185,129,0.25);
+  --glow-gold: 0 0 40px rgba(245,158,11,0.25);
+  --shadow-card: 0 8px 40px rgba(0,0,0,0.5), 0 2px 8px rgba(16,185,129,0.06);
+  --shadow-premium: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(16,185,129,0.1);
+  --radius-sm: 14px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --nav-h: 84px;
+}
+
+/* ── RESET & BASE ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+html { background: var(--surface-0); }
+
+body {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  background: var(--surface-0);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding-bottom: calc(var(--nav-h) + 20px);
+  position: relative;
+}
+
+/* ── GLOBAL ANIMATED BACKGROUND ── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(16,185,129,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(245,158,11,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 50% 50%, rgba(6,78,59,0.15) 0%, transparent 70%);
+  animation: bgPulse 8s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+@keyframes bgPulse {
+  0%   { opacity: 0.7; transform: scale(1); }
+  100% { opacity: 1;   transform: scale(1.05); }
+}
+
+/* ── PARTICLE CANVAS ── */
+#particles { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.4; }
+
+/* ── CONTENT LAYER ── */
+#app-root { position: relative; z-index: 1; }
+
+/* ══════════════════════════════════
+   HEADER
+══════════════════════════════════ */
+#header {
+  position: sticky; top: 0; z-index: 100;
+  background: linear-gradient(160deg, rgba(6,78,59,0.98) 0%, rgba(5,15,10,0.96) 100%);
+  border-bottom: 1px solid var(--border-glass);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px);
+  padding: 10px 16px 14px;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(16,185,129,0.1), inset 0 1px 0 rgba(255,255,255,0.05);
+  overflow: hidden;
+}
+#header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(16,185,129,0.04) 50%, transparent 100%);
+  animation: headerShimmer 4s ease-in-out infinite;
+}
+@keyframes headerShimmer {
+  0%,100% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+}
+
+.header-top { display: flex; justify-content: space-between; align-items: center; position: relative; }
+
+.header-farm-name {
+  font-size: 15px; font-weight: 800; color: var(--emerald-300);
+  letter-spacing: -0.3px;
+  text-shadow: 0 0 20px rgba(16,185,129,0.5);
+  background: linear-gradient(135deg, var(--emerald-300), var(--gold-300));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.header-sub { font-size: 9px; color: var(--text-muted); margin-top: 1px; letter-spacing: 0.5px; text-transform: uppercase; }
+
+.header-avatar {
+  width: 36px; height: 36px; border-radius: 11px;
+  border: 1.5px solid var(--border-gold);
+  overflow: hidden; cursor: pointer;
+  background: linear-gradient(135deg, var(--emerald-800), var(--emerald-900));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 0 16px rgba(245,158,11,0.2), inset 0 1px 0 rgba(255,255,255,0.05);
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  position: relative;
+}
+.header-avatar::after {
+  content: '';
+  position: absolute; inset: -1px;
+  border-radius: 15px;
+  background: conic-gradient(from 0deg, var(--gold-400), var(--emerald-400), var(--gold-400));
+  z-index: -1;
+  animation: avatarSpin 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.header-avatar:hover::after { opacity: 1; }
+.header-avatar:active { transform: scale(0.9); }
+@keyframes avatarSpin { to { transform: rotate(360deg); } }
+
+/* weather strip */
+#weather-strip {
+  margin-top: 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  display: flex; align-items: center; justify-content: space-between;
+  backdrop-filter: blur(8px);
+  position: relative; overflow: hidden;
+}
+#weather-strip::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: linear-gradient(to bottom, var(--gold-400), var(--emerald-400));
+  border-radius: 3px;
+}
+.weather-main { display: flex; align-items: center; gap: 10px; }
+.weather-icon { font-size: 26px; animation: weatherFloat 3s ease-in-out infinite; }
+@keyframes weatherFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+.weather-temp { font-size: 20px; font-weight: 800; color: var(--text-primary); }
+.weather-desc { font-size: 10px; color: var(--text-secondary); }
+.weather-extra { font-size: 10px; color: var(--text-muted); text-align: left; line-height: 1.6; }
+
+/* back btn */
+#back-btn {
+  background: rgba(16,185,129,0.12);
+  border: 1px solid var(--border-glass);
+  border-radius: 12px;
+  padding: 7px 13px; color: var(--emerald-300); font-size: 12px;
+  cursor: pointer; display: none; align-items: center; gap: 6px;
+  font-family: inherit; transition: all 0.2s;
+}
+#back-btn:hover { background: rgba(16,185,129,0.2); }
+#back-btn.visible { display: flex; }
+
+/* ══════════════════════════════════
+   BOTTOM NAV
+══════════════════════════════════ */
+#bottom-nav {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  height: var(--nav-h); z-index: 200;
+  background: linear-gradient(180deg, rgba(5,10,7,0.95) 0%, rgba(2,8,5,0.99) 100%);
+  backdrop-filter: blur(32px) saturate(180%);
+  -webkit-backdrop-filter: blur(32px);
+  border-top: 1px solid var(--border-glass);
+  border-radius: 28px 28px 0 0;
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(16,185,129,0.08);
+  display: flex; align-items: center; justify-content: space-around;
+  padding: 0 8px;
+}
+.nav-btn {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  background: none; border: none; cursor: pointer;
+  padding: 8px 6px; border-radius: 18px;
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  font-family: inherit; min-width: 50px; position: relative;
+}
+.nav-btn .nav-icon { font-size: 22px; transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1); }
+.nav-btn .nav-label { font-size: 9px; font-weight: 700; color: var(--text-muted); transition: color 0.3s; letter-spacing: 0.3px; }
+.nav-btn::before {
+  content: '';
+  position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+  width: 0; height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--emerald-400), transparent);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.nav-btn.active {
+  background: linear-gradient(160deg, rgba(16,185,129,0.12), rgba(16,185,129,0.04));
+  border: 1px solid rgba(16,185,129,0.15);
+}
+.nav-btn.active::before { width: 32px; height: 32px; top: 4px; opacity: 0.15; }
+.nav-btn.active .nav-label { color: var(--emerald-400); }
+.nav-btn.active .nav-icon { transform: scale(1.25) translateY(-2px); filter: drop-shadow(0 0 8px var(--emerald-400)); }
+
+/* ══════════════════════════════════
+   APP CONTENT
+══════════════════════════════════ */
+#app-content { padding: 20px 16px; max-width: 520px; margin: 0 auto; }
+
+/* ══════════════════════════════════
+   CARDS
+══════════════════════════════════ */
+.card {
+  background: linear-gradient(160deg, rgba(13,36,24,0.95), rgba(9,26,16,0.98));
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  margin-bottom: 16px;
+  overflow: hidden;
+  animation: cardIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(16,185,129,0.4) 50%, transparent 100%);
+}
+.card:hover { transform: translateY(-2px); box-shadow: var(--shadow-premium); }
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.card:nth-child(2) { animation-delay: 0.06s; }
+.card:nth-child(3) { animation-delay: 0.12s; }
+.card:nth-child(4) { animation-delay: 0.18s; }
+
+.card-header {
+  padding: 16px 18px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,0.02);
+}
+.card-header-icon { font-size: 20px; }
+.card-header-title {
+  font-size: 14px; font-weight: 700; color: var(--text-primary);
+  background: linear-gradient(90deg, var(--text-primary), var(--emerald-300));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.card-body { padding: 16px 18px; }
+
+/* ══════════════════════════════════
+   STAT CARDS
+══════════════════════════════════ */
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+
+.stat-card {
+  background: linear-gradient(160deg, rgba(13,36,24,0.95), rgba(9,26,16,0.98));
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  box-shadow: var(--shadow-card);
+  animation: cardIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+  position: relative; overflow: hidden;
+  cursor: default;
+  transition: all 0.3s;
+}
+.stat-card::after {
+  content: '';
+  position: absolute; bottom: -20px; right: -20px;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16,185,129,0.1), transparent);
+  transition: all 0.4s;
+}
+.stat-card:hover { transform: translateY(-3px) scale(1.02); box-shadow: var(--glow-emerald), var(--shadow-card); }
+.stat-card:hover::after { width: 120px; height: 120px; }
+
+.stat-icon {
+  font-size: 26px; margin-bottom: 10px;
+  display: block;
+  animation: iconPop 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.2s both;
+  filter: drop-shadow(0 0 6px rgba(16,185,129,0.3));
+}
+@keyframes iconPop {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.stat-value {
+  font-size: 22px; font-weight: 800; color: var(--emerald-300);
+  text-shadow: 0 0 12px rgba(16,185,129,0.3);
+  background: linear-gradient(135deg, var(--emerald-300), var(--emerald-400));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.stat-label { font-size: 10px; color: var(--text-muted); font-weight: 600; margin-top: 4px; letter-spacing: 0.3px; }
+
+/* ══════════════════════════════════
+   INPUTS
+══════════════════════════════════ */
+.input-wrap { margin-bottom: 14px; }
+.input-label {
+  font-size: 11px; color: var(--emerald-400); margin-bottom: 7px;
+  display: block; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+}
+.input-field {
+  width: 100%; padding: 13px 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-sm);
+  font-family: inherit; font-size: 14px;
+  color: var(--text-primary);
+  transition: all 0.3s;
+  outline: none;
+}
+.input-field::placeholder { color: var(--text-muted); }
+.input-field:focus {
+  border-color: var(--emerald-500);
+  background: rgba(16,185,129,0.06);
+  box-shadow: 0 0 0 3px rgba(16,185,129,0.1), 0 0 20px rgba(16,185,129,0.1);
+}
+
+/* ══════════════════════════════════
+   BUTTONS
+══════════════════════════════════ */
+.btn-primary {
+  width: 100%; padding: 15px;
+  background: linear-gradient(135deg, var(--emerald-700) 0%, var(--emerald-500) 50%, var(--emerald-400) 100%);
+  color: #fff; border: none; border-radius: var(--radius-md);
+  font-family: inherit; font-size: 15px; font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(16,185,129,0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  position: relative; overflow: hidden;
+  letter-spacing: 0.3px;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.5s;
+}
+.btn-primary:hover::before { left: 100%; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(16,185,129,0.4); }
+.btn-primary:active { transform: scale(0.97); }
+
+.btn-secondary {
+  width: 100%; padding: 13px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary); border-radius: var(--radius-md);
+  font-family: inherit; font-size: 14px; font-weight: 600;
+  cursor: pointer; transition: all 0.2s;
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.08); color: var(--text-primary); }
+.btn-secondary:active { background: rgba(255,255,255,0.04); }
+
+.btn-sm {
+  padding: 7px 14px; border-radius: 11px;
+  font-family: inherit; font-size: 12px; font-weight: 700;
+  cursor: pointer; border: none; transition: all 0.2s;
+  letter-spacing: 0.2px;
+}
+.btn-green { background: rgba(16,185,129,0.15); color: var(--emerald-300); border: 1px solid rgba(16,185,129,0.2); }
+.btn-green:hover { background: rgba(16,185,129,0.25); }
+.btn-red { background: rgba(239,68,68,0.15); color: #fca5a5; border: 1px solid rgba(239,68,68,0.2); }
+.btn-red:hover { background: rgba(239,68,68,0.25); }
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-500), var(--gold-300));
+  color: #1a0a00; border: none;
+  box-shadow: 0 4px 12px rgba(245,158,11,0.3);
+}
+.btn-gold:hover { box-shadow: 0 6px 20px rgba(245,158,11,0.4); transform: translateY(-1px); }
+
+/* ══════════════════════════════════
+   LANG TOGGLE
+══════════════════════════════════ */
+#lang-toggle {
+  display: flex;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border-glass);
+  border-radius: 20px; padding: 3px; gap: 3px;
+}
+.lang-btn {
+  padding: 5px 11px; border-radius: 16px;
+  border: none; font-family: inherit; font-size: 11px;
+  font-weight: 800; cursor: pointer; transition: all 0.25s;
+  color: var(--text-muted); background: transparent; letter-spacing: 0.3px;
+}
+.lang-btn.active {
+  background: linear-gradient(135deg, var(--emerald-700), var(--emerald-600));
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(16,185,129,0.3);
+}
+
+/* ══════════════════════════════════
+   CROP ROW
+══════════════════════════════════ */
+.crop-item {
+  display: flex; align-items: center; gap: 7px;
+  padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.04);
+  cursor: pointer; transition: all 0.25s; position: relative;
+}
+.crop-item::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0; width: 0;
+  background: linear-gradient(to right, rgba(16,185,129,0.08), transparent);
+  transition: width 0.3s;
+  border-radius: 4px;
+}
+.crop-item:hover::before { width: 100%; }
+.crop-item:last-child { border-bottom: none; }
+.crop-item:active { background: rgba(16,185,129,0.05); }
+
+.crop-thumb {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(6,78,59,0.3));
+  border: 1px solid rgba(16,185,129,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; flex-shrink: 0;
+}
+.crop-thumb img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.crop-info { flex: 1; }
+.crop-name { font-size: 13px; font-weight: 700; color: var(--text-primary); }
+.crop-date { font-size: 9px; color: var(--text-muted); margin-top: 1px; }
+
+.crop-status {
+  padding: 4px 10px; border-radius: 10px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.3px;
+}
+.status-active {
+  background: rgba(16,185,129,0.15);
+  color: var(--emerald-300);
+  border: 1px solid rgba(16,185,129,0.2);
+}
+.status-done {
+  background: rgba(255,255,255,0.06);
+  color: var(--text-muted);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ══════════════════════════════════
+   TUBEWELL
+══════════════════════════════════ */
+.tw-session {
+  padding: 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md); margin-bottom: 10px;
+  transition: all 0.2s;
+}
+.tw-session:hover { background: rgba(16,185,129,0.05); border-color: rgba(16,185,129,0.2); }
+.tw-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.tw-label { font-size: 11px; color: var(--text-muted); }
+.tw-val { font-size: 13px; font-weight: 700; color: var(--text-primary); }
+.tw-total {
+  background: linear-gradient(135deg, rgba(16,185,129,0.12), rgba(16,185,129,0.05));
+  border: 1px solid rgba(16,185,129,0.2);
+  border-radius: var(--radius-sm); padding: 10px 14px;
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 8px;
+}
+
+/* ══════════════════════════════════
+   CALENDAR
+══════════════════════════════════ */
+.cal-header { text-align: center; padding: 16px; }
+.cal-month { font-size: 18px; font-weight: 800; color: var(--emerald-300); }
+.cal-desi { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+.cal-grid {
+  display: grid; grid-template-columns: repeat(7, 1fr);
+  gap: 4px; padding: 0 12px 16px;
+}
+.cal-day-label { text-align: center; font-size: 9px; color: var(--text-muted); font-weight: 700; padding: 6px 0; }
+.cal-day {
+  text-align: center; padding: 8px 4px;
+  border-radius: var(--radius-sm); font-size: 12px; font-weight: 600;
+  cursor: pointer; transition: all 0.2s; min-height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-secondary);
+}
+.cal-day:empty { cursor: default; }
+.cal-day.today {
+  background: linear-gradient(135deg, var(--emerald-700), var(--emerald-500));
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(16,185,129,0.4), 0 0 0 1px rgba(16,185,129,0.3);
+}
+.cal-day.has-event::after { content: '•'; display: block; font-size: 8px; color: var(--gold-400); }
+.cal-day:not(.today):hover { background: rgba(16,185,129,0.1); color: var(--text-primary); }
+.cal-nav { display: flex; justify-content: space-between; align-items: center; padding: 0 16px 8px; }
+.cal-nav-btn {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border-glass);
+  border-radius: 12px; padding: 8px 14px;
+  cursor: pointer; font-size: 14px; color: var(--text-secondary);
+  transition: all 0.2s;
+}
+.cal-nav-btn:hover { background: rgba(16,185,129,0.1); color: var(--emerald-300); }
+
+/* ══════════════════════════════════
+   MARKET
+══════════════════════════════════ */
+.market-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+  transition: all 0.2s;
+}
+.market-item:last-child { border-bottom: none; }
+.market-item:hover { padding-right: 4px; }
+.market-crop { font-size: 14px; font-weight: 700; color: var(--text-primary); }
+.market-unit { font-size: 10px; color: var(--text-muted); }
+.market-price { font-size: 16px; font-weight: 800; color: var(--emerald-300); text-shadow: 0 0 8px rgba(16,185,129,0.3); }
+.market-change { font-size: 10px; font-weight: 700; }
+.up { color: var(--emerald-400); }
+.down { color: #f87171; }
+
+/* ══════════════════════════════════
+   ALERTS
+══════════════════════════════════ */
+.alert-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 12px 14px;
+  background: rgba(245,158,11,0.06);
+  border: 1px solid rgba(245,158,11,0.15);
+  border-radius: var(--radius-md); margin-bottom: 10px;
+  transition: all 0.2s;
+  position: relative; overflow: hidden;
+}
+.alert-item::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: linear-gradient(to bottom, var(--gold-400), var(--gold-300));
+  border-radius: 3px;
+}
+.alert-item:hover { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.25); }
+.alert-icon { font-size: 18px; flex-shrink: 0; animation: alertPulse 2s ease-in-out infinite; }
+@keyframes alertPulse {
+  0%,100% { filter: brightness(1); }
+  50% { filter: brightness(1.4) drop-shadow(0 0 6px var(--gold-400)); }
+}
+.alert-text { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+.alert-time { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+
+/* ══════════════════════════════════
+   PROFILE
+══════════════════════════════════ */
+.profile-hero {
+  text-align: center; padding: 28px 16px 20px;
+  background: linear-gradient(160deg, rgba(6,78,59,0.3), transparent);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.profile-pic-wrap {
+  width: 96px; height: 96px; border-radius: 28px;
+  margin: 0 auto 14px;
+  border: 2px solid var(--border-gold);
+  overflow: hidden; cursor: pointer;
+  background: linear-gradient(135deg, var(--emerald-800), var(--emerald-900));
+  display: flex; align-items: center; justify-content: center; font-size: 46px;
+  position: relative;
+  box-shadow: 0 0 30px rgba(245,158,11,0.2), 0 0 0 4px rgba(245,158,11,0.05);
+  transition: all 0.3s;
+}
+.profile-pic-wrap:hover { box-shadow: 0 0 40px rgba(245,158,11,0.35), 0 0 0 6px rgba(245,158,11,0.08); transform: scale(1.03); }
+.profile-pic-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.profile-pic-edit {
+  position: absolute; bottom: 0; right: 0;
+  background: linear-gradient(135deg, var(--gold-500), var(--gold-300));
+  border-radius: 8px; width: 26px; height: 26px;
+  display: flex; align-items: center; justify-content: center; font-size: 11px;
+  box-shadow: 0 2px 8px rgba(245,158,11,0.3);
+}
+.profile-name { font-size: 20px; font-weight: 800; color: var(--text-primary); }
+.profile-farm { font-size: 13px; color: var(--emerald-400); font-weight: 600; margin-top: 4px; }
+.profile-phone { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+
+.whatsapp-btn {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: linear-gradient(135deg, #128C7E, #25D366);
+  color: #fff; border: none; border-radius: var(--radius-md); padding: 14px;
+  font-family: inherit; font-size: 14px; font-weight: 700;
+  cursor: pointer; width: 100%; margin-top: 8px;
+  box-shadow: 0 8px 24px rgba(37,211,102,0.25);
+  transition: all 0.3s;
+}
+.whatsapp-btn:hover { box-shadow: 0 12px 32px rgba(37,211,102,0.4); transform: translateY(-2px); }
+
+/* ══════════════════════════════════
+   MODAL
+══════════════════════════════════ */
+#modal-overlay {
+  position: fixed; inset: 0; z-index: 500;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: none; align-items: flex-end;
+}
+#modal-overlay.open { display: flex; animation: overlayIn 0.25s ease; }
+@keyframes overlayIn { from { opacity: 0; } to { opacity: 1; } }
+
+#modal-box {
+  background: linear-gradient(180deg, rgba(13,36,24,0.99), rgba(5,15,10,0.99));
+  border: 1px solid var(--border-glass);
+  border-radius: 32px 32px 0 0;
+  border-bottom: none;
+  width: 100%; max-height: 90vh; overflow-y: auto;
+  padding: 24px 20px 36px;
+  animation: slideUp 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow: 0 -20px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(16,185,129,0.1);
+  position: relative;
+}
+#modal-box::before {
+  content: '';
+  position: absolute; top: 0; left: 20%; right: 20%; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--emerald-500), transparent);
+}
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.modal-handle {
+  width: 40px; height: 4px;
+  background: linear-gradient(90deg, var(--emerald-700), var(--emerald-500));
+  border-radius: 4px; margin: 0 auto 22px; cursor: pointer;
+}
+.modal-title {
+  font-size: 17px; font-weight: 800; margin-bottom: 22px; text-align: center;
+  background: linear-gradient(135deg, var(--text-primary), var(--emerald-300));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ══════════════════════════════════
+   EXPENSE LIST
+══════════════════════════════════ */
+.expense-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: var(--radius-sm); margin-bottom: 8px;
+  transition: all 0.2s;
+}
+.expense-item:hover { background: rgba(255,255,255,0.05); }
+.expense-desc { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+.expense-type { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+.expense-amt { font-size: 15px; font-weight: 800; }
+.expense-in { color: var(--emerald-400); text-shadow: 0 0 8px rgba(16,185,129,0.3); }
+.expense-out { color: #f87171; text-shadow: 0 0 8px rgba(239,68,68,0.3); }
+
+/* ══════════════════════════════════
+   TOAST
+══════════════════════════════════ */
+#toast {
+  position: fixed; bottom: 108px; left: 50%; transform: translateX(-50%) translateY(20px);
+  background: linear-gradient(135deg, var(--emerald-800), var(--emerald-700));
+  border: 1px solid var(--border-glass);
+  color: #fff; padding: 12px 24px; border-radius: 20px;
+  font-size: 13px; font-weight: 700;
+  z-index: 1000; opacity: 0; transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 20px rgba(16,185,129,0.2);
+  backdrop-filter: blur(16px);
+  white-space: nowrap;
+}
+#toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ══════════════════════════════════
+   SECTION TITLE
+══════════════════════════════════ */
+.section-title {
+  font-size: 16px; font-weight: 800; margin-bottom: 14px;
+  display: flex; align-items: center; gap: 8px;
+  color: var(--text-primary);
+  background: linear-gradient(90deg, var(--text-primary), var(--emerald-400));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ══════════════════════════════════
+   FAB
+══════════════════════════════════ */
+.fab {
+  position: fixed; bottom: 100px; left: 20px;
+  width: 56px; height: 56px; border-radius: 18px;
+  background: linear-gradient(135deg, var(--gold-500), var(--gold-300));
+  border: none;
+  box-shadow: 0 8px 28px rgba(245,158,11,0.45), 0 0 0 0 rgba(245,158,11,0.4);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; cursor: pointer; z-index: 150;
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  display: none;
+  animation: fabPulse 2.5s ease-in-out infinite;
+}
+@keyframes fabPulse {
+  0%,100% { box-shadow: 0 8px 28px rgba(245,158,11,0.45), 0 0 0 0 rgba(245,158,11,0.4); }
+  50% { box-shadow: 0 8px 28px rgba(245,158,11,0.45), 0 0 0 12px rgba(245,158,11,0); }
+}
+.fab:active { transform: scale(0.9) rotate(45deg); }
+.fab.visible { display: flex; }
+
+/* ══════════════════════════════════
+   PREMIUM BADGE
+══════════════════════════════════ */
+.premium-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(245,158,11,0.05));
+  border: 1px solid rgba(245,158,11,0.25);
+  border-radius: 20px; padding: 3px 10px;
+  font-size: 10px; font-weight: 700; color: var(--gold-300);
+  letter-spacing: 0.5px;
+}
+
+/* ══════════════════════════════════
+   SCROLLBAR
+══════════════════════════════════ */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--emerald-800); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--emerald-600); }
+
+/* ══════════════════════════════════
+   GLOW DIVIDER
+══════════════════════════════════ */
+.glow-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--emerald-700), transparent);
+  margin: 4px 0;
+}
+
+/* ══════════════════════════════════
+   LOADING SKELETON
+══════════════════════════════════ */
+@keyframes skeleton {
+  0%,100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+/* ══════════════════════════════════
+   NUMBER COUNTER ANIMATION
+══════════════════════════════════ */
+.count-up { display: inline-block; }
+
+/* ══════════════════════════════════
+   THEME PICKER PANEL
+══════════════════════════════════ */
+#theme-panel {
+  position: fixed; top: 0; right: -300px; bottom: 0;
+  width: 280px; z-index: 600;
+  background: linear-gradient(180deg, rgba(5,15,10,0.99), rgba(2,8,5,0.99));
+  border-left: 1px solid var(--border-glass);
+  backdrop-filter: blur(24px);
+  padding: 24px 20px;
+  transition: right 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  overflow-y: auto;
+  box-shadow: -20px 0 60px rgba(0,0,0,0.5);
+}
+#theme-panel.open { right: 0; }
+#theme-panel-overlay {
+  position: fixed; inset: 0; z-index: 590;
+  background: rgba(0,0,0,0.5); backdrop-filter: blur(4px);
+  display: none;
+}
+#theme-panel-overlay.open { display: block; }
+.theme-panel-title {
+  font-size: 16px; font-weight: 800; margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--text-primary), var(--emerald-300));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex; align-items: center; gap: 8px;
+}
+.theme-section-label {
+  font-size: 10px; font-weight: 700; color: var(--text-muted);
+  letter-spacing: 0.8px; text-transform: uppercase;
+  margin: 16px 0 10px;
+}
+.theme-presets {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  margin-bottom: 4px;
+}
+.theme-preset-btn {
+  padding: 10px 8px; border-radius: 14px; border: 1.5px solid transparent;
+  cursor: pointer; font-family: inherit; font-size: 11px; font-weight: 700;
+  transition: all 0.25s; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 5px;
+}
+.theme-preset-btn.active { border-color: var(--gold-400) !important; box-shadow: 0 0 12px rgba(245,158,11,0.3); }
+.theme-preset-swatch {
+  width: 28px; height: 28px; border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.15);
+}
+.color-row {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 12px;
+}
+.color-label { font-size: 12px; color: var(--text-secondary); font-weight: 600; }
+.color-input-wrap {
+  display: flex; align-items: center; gap: 8px;
+}
+.color-picker {
+  width: 36px; height: 36px; border-radius: 10px; border: 1.5px solid var(--border-glass);
+  cursor: pointer; background: none; padding: 2px;
+  transition: all 0.2s;
+}
+.color-picker:hover { transform: scale(1.1); }
+.color-hex {
+  font-size: 11px; color: var(--text-muted); font-family: monospace;
+  background: rgba(255,255,255,0.05); padding: 4px 8px;
+  border-radius: 8px; border: 1px solid var(--border-glass);
+  width: 72px; outline: none; color: var(--text-secondary);
+}
+.btn-theme-reset {
+  width: 100%; padding: 11px; border-radius: 14px;
+  background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2);
+  color: #f87171; font-family: inherit; font-size: 13px; font-weight: 700;
+  cursor: pointer; transition: all 0.2s; margin-top: 8px;
+}
+.btn-theme-reset:hover { background: rgba(239,68,68,0.2); }
+
+/* Theme toggle button in header */
+#theme-toggle-btn {
+  width: 34px; height: 34px; border-radius: 11px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid var(--border-glass);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+#theme-toggle-btn:hover { background: rgba(255,255,255,0.12); transform: rotate(30deg); }
+
+/* ══════════════════════════════════
+   BIKRAMI CALENDAR BANNER
+══════════════════════════════════ */
+.bk-today-banner {
+  background: linear-gradient(135deg, rgba(180,83,9,0.25) 0%, rgba(245,158,11,0.12) 50%, rgba(16,185,129,0.1) 100%);
+  border: 1px solid rgba(245,158,11,0.3);
+  border-radius: var(--radius-lg);
+  padding: 18px 18px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+  animation: cardIn 0.5s ease both;
+}
+.bk-today-banner::before {
+  content: '🌾';
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  font-size: 80px;
+  opacity: 0.08;
+}
+.bk-banner-left { flex: 1; }
+.bk-banner-season { font-size: 11px; color: var(--gold-300); font-weight: 700; letter-spacing: 0.5px; margin-bottom: 4px; }
+.bk-banner-title { font-size: 20px; font-weight: 800; color: #fff; }
+.bk-banner-year { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+.bk-banner-right { text-align: left; }
+.bk-banner-crop { font-size: 12px; color: var(--emerald-300); font-weight: 700; margin-bottom: 4px; }
+.bk-banner-desc { font-size: 11px; color: var(--text-secondary); max-width: 140px; line-height: 1.4; }
+
+/* Calendar day cells with dual date */
+.cal-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  min-height: 48px;
+}
+.cal-greg {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+.cal-bk {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--gold-300);
+  opacity: 0.8;
+  line-height: 1;
+}
+.cal-day.today .cal-greg { color: #fff; }
+.cal-day.today .cal-bk { color: rgba(255,255,255,0.8); }
+
+/* ══════════════════════════════════
+   WHATSAPP-STYLE CONTACT CARDS
+══════════════════════════════════ */
+.wa-contact-card {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 8px;
+  background: linear-gradient(160deg, rgba(13,36,24,0.95), rgba(9,26,16,0.98));
+  border: 1px solid var(--border-glass);
+  border-radius: 10px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.wa-contact-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; bottom: 0; width: 3px;
+  border-radius: 3px 0 0 3px;
+}
+.wa-contact-card.has-balance::before { background: linear-gradient(to bottom, #f59e0b, #ef4444); }
+.wa-contact-card.clear::before { background: linear-gradient(to bottom, var(--emerald-400), var(--emerald-600)); }
+.wa-contact-card:hover { transform: translateX(-2px); background: rgba(16,185,129,0.05); }
+
+.wa-avatar {
+  width: 30px; height: 30px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; flex-shrink: 0;
+  border: 1px solid var(--border-glass);
+}
+.wa-info { flex: 1; min-width: 0; }
+.wa-name { font-size: 12px; font-weight: 700; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wa-sub  { font-size: 9px; color: var(--text-muted); margin-top: 1px; line-height: 1.3; }
+.wa-amounts { text-align: left; flex-shrink: 0; }
+.wa-baki  { font-size: 13px; font-weight: 800; }
+.wa-baki.red   { color: #f87171; }
+.wa-baki.green { color: var(--emerald-400); }
+.wa-paid  { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+
+/* ══════════════════════════════════
+   UDHAR KHATA STYLES
+══════════════════════════════════ */
+.udhar-customer-card {
+  background: linear-gradient(160deg, rgba(13,36,24,0.95), rgba(9,26,16,0.98));
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.udhar-customer-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; bottom: 0; width: 4px;
+  border-radius: 4px 0 0 4px;
+}
+.udhar-customer-card.has-balance::before { background: linear-gradient(to bottom, #f59e0b, #ef4444); }
+.udhar-customer-card.clear::before { background: linear-gradient(to bottom, var(--emerald-400), var(--emerald-600)); }
+.udhar-customer-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-premium); }
+
+.udhar-item-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 14px;
+  background: rgba(255,100,0,0.05);
+  border: 1px solid rgba(255,100,0,0.12);
+  border-radius: var(--radius-sm);
+  margin-bottom: 7px;
+}
+.udhar-payment-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 14px;
+  background: rgba(16,185,129,0.06);
+  border: 1px solid rgba(16,185,129,0.15);
+  border-radius: var(--radius-sm);
+  margin-bottom: 7px;
+}
+
+/* ══════════════════════════════════
+   AI ASSISTANT STYLES
+══════════════════════════════════ */
+#ai-assistant-panel {
+  position: fixed; bottom: calc(var(--nav-h) + 16px); right: 16px;
+  z-index: 300;
+}
+#ai-fab {
+  width: 60px; height: 60px; border-radius: 20px;
+  background: linear-gradient(135deg, #1a73e8, #4285f4, #34a853);
+  border: none; cursor: pointer;
+  box-shadow: 0 8px 28px rgba(66,133,244,0.5), 0 0 0 0 rgba(66,133,244,0.4);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px;
+  animation: aiFabPulse 2.5s ease-in-out infinite;
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+@keyframes aiFabPulse {
+  0%,100% { box-shadow: 0 8px 28px rgba(66,133,244,0.5), 0 0 0 0 rgba(66,133,244,0.4); }
+  50% { box-shadow: 0 8px 28px rgba(66,133,244,0.5), 0 0 0 12px rgba(66,133,244,0); }
+}
+#ai-fab:active { transform: scale(0.9); }
+
+#ai-chat-panel {
+  position: fixed; bottom: calc(var(--nav-h) + 86px); right: 16px; left: 16px;
+  max-height: 70vh;
+  background: linear-gradient(180deg, rgba(10,5,20,0.99), rgba(5,2,15,0.99));
+  border: 1px solid rgba(66,133,244,0.3);
+  border-radius: 24px;
+  box-shadow: 0 -8px 40px rgba(66,133,244,0.2), 0 20px 60px rgba(0,0,0,0.6);
+  z-index: 299;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+}
+#ai-chat-panel.open { display: flex; animation: slideUp 0.4s cubic-bezier(0.34,1.56,0.64,1); }
+
+.ai-panel-header {
+  padding: 16px 18px 14px;
+  background: linear-gradient(135deg, rgba(66,133,244,0.2), rgba(52,168,83,0.1));
+  border-bottom: 1px solid rgba(66,133,244,0.2);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.ai-panel-title {
+  font-size: 15px; font-weight: 800;
+  background: linear-gradient(135deg, #4285f4, #34a853, #fbbc05);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ai-messages {
+  flex: 1; overflow-y: auto; padding: 14px;
+  display: flex; flex-direction: column; gap: 10px;
+  max-height: 45vh;
+}
+.ai-msg-user {
+  align-self: flex-end; max-width: 80%;
+  background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(79,70,229,0.2));
+  border: 1px solid rgba(124,58,237,0.3);
+  border-radius: 18px 18px 4px 18px;
+  padding: 10px 14px; font-size: 13px; color: var(--text-primary);
+  animation: cardIn 0.3s ease;
+}
+.ai-msg-bot {
+  align-self: flex-start; max-width: 88%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px 18px 18px 4px;
+  padding: 10px 14px; font-size: 13px; color: var(--text-primary);
+  animation: cardIn 0.3s ease; line-height: 1.5;
+}
+.ai-msg-bot.loading { display: flex; gap: 4px; align-items: center; }
+.ai-dot { width: 7px; height: 7px; border-radius: 50%; background: #818cf8; animation: aiDot 1.2s ease-in-out infinite; }
+.ai-dot:nth-child(2) { animation-delay: 0.2s; }
+.ai-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes aiDot { 0%,80%,100% { transform: scale(0.6); opacity: 0.4; } 40% { transform: scale(1); opacity: 1; } }
+
+.ai-input-row {
+  padding: 12px 14px;
+  border-top: 1px solid rgba(66,133,244,0.15);
+  display: flex; gap: 8px; align-items: center;
+  background: rgba(0,0,0,0.3);
+}
+.ai-text-input {
+  flex: 1; background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(66,133,244,0.25);
+  border-radius: 14px; padding: 10px 14px;
+  font-family: inherit; font-size: 13px; color: var(--text-primary);
+  outline: none; transition: all 0.2s;
+}
+.ai-text-input:focus { border-color: rgba(66,133,244,0.5); background: rgba(66,133,244,0.08); }
+.ai-send-btn {
+  width: 40px; height: 40px; border-radius: 12px;
+  background: linear-gradient(135deg, #1a73e8, #4285f4);
+  border: none; cursor: pointer; font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all 0.2s;
+}
+.ai-send-btn:active { transform: scale(0.9); }
+.ai-voice-btn {
+  width: 40px; height: 40px; border-radius: 12px;
+  background: rgba(66,133,244,0.15);
+  border: 1px solid rgba(66,133,244,0.3); cursor: pointer; font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all 0.2s;
+}
+.ai-voice-btn.recording {
+  background: rgba(239,68,68,0.2);
+  border-color: rgba(239,68,68,0.5);
+  animation: recordPulse 1s ease-in-out infinite;
+}
+@keyframes recordPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(239,68,68,0); }
+}
+
+/* ══════════════════════════════════
+   SMS REMINDER BUTTON
+══════════════════════════════════ */
+.sms-reminder-btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  background: linear-gradient(135deg, #065f46, #10b981);
+  color: #fff; border: none; border-radius: 12px; padding: 9px 14px;
+  font-family: inherit; font-size: 12px; font-weight: 700;
+  cursor: pointer; transition: all 0.2s; white-space: nowrap;
+}
+.sms-reminder-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(16,185,129,0.35); }
+
+.whatsapp-send-btn {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: linear-gradient(135deg, #128C7E, #25D366);
+  color: #fff; border: none; border-radius: var(--radius-md); padding: 14px;
+  font-family: inherit; font-size: 14px; font-weight: 700;
+  cursor: pointer; width: 100%; margin-top: 10px;
+  box-shadow: 0 8px 24px rgba(37,211,102,0.25);
+  transition: all 0.3s;
+}
+.whatsapp-send-btn:hover { box-shadow: 0 12px 32px rgba(37,211,102,0.4); transform: translateY(-2px); }
+
+/* ══════════════════════════════════
+   RESPONSIVE 4K MEDIA
+══════════════════════════════════ */
+@media (min-width: 2560px) {
+  :root { --nav-h: 100px; }
+  body { font-size: 18px; }
+  .header-farm-name { font-size: 32px; }
+  .stat-value { font-size: 32px; }
+  .card { border-radius: 40px; }
+  #app-content { max-width: 800px; padding: 32px 28px; }
+  .stats-grid { gap: 20px; }
+  .stat-card { padding: 28px 24px; }
+  .stat-icon { font-size: 40px; }
+  .btn-primary { font-size: 20px; padding: 20px; border-radius: 26px; }
+  .input-field { font-size: 18px; padding: 18px 22px; }
+  #bottom-nav { height: 100px; }
+  .nav-btn .nav-icon { font-size: 32px; }
+  .nav-btn .nav-label { font-size: 13px; }
+}
+</style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+
+<div id="app-root">
+<!-- HEADER -->
+<div id="header">
+  <div class="header-top">
+    <div style="display:flex;align-items:center;gap:12px">
+      <button id="back-btn" onclick="goBack()">◀ واپس</button>
+      <div>
+        <div class="header-farm-name" id="header-farm-name">پرو فارم مینیجر</div>
+        <div class="header-sub" id="header-sub">PREMIUM SMART MANAGEMENT</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <div id="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('ur')">اردو</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <div id="theme-toggle-btn" onclick="openThemePanel()" title="تھیم بدلیں">🎨</div>
+      <div class="header-avatar" id="header-avatar" onclick="navigate('profile')">
+        <span id="avatar-emoji">👤</span>
+        <img id="avatar-img" style="display:none;width:100%;height:100%;object-fit:cover;border-radius:12px">
+      </div>
+    </div>
+  </div>
+  <div id="weather-strip" style="flex-direction:column;gap:10px;padding:12px 16px">
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <div class="weather-main">
+        <div class="weather-icon" id="w-icon">🌤️</div>
+        <div>
+          <div class="weather-temp" id="w-temp">--°</div>
+          <div class="weather-desc" id="w-desc">شہر لکھ کر موسم دیکھیں</div>
+          <div style="font-size:9px;color:var(--emerald-400);margin-top:2px;font-weight:600" id="w-city"></div>
+        </div>
+      </div>
+      <div style="text-align:left">
+        <div id="w-extra" style="font-size:11px;color:var(--text-muted);line-height:1.8"></div>
+        <div id="bk-header-date" style="font-size:11px;color:var(--gold-300);font-weight:700;margin-top:3px"></div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <input id="w-city-input"
+        placeholder="🏙️ شہر کا نام لکھیں — Lahore, Karachi..."
+        onkeydown="if(event.key==='Enter')loadWeatherByCity()"
+        style="flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:9px 14px;font-size:12px;color:var(--text-primary);font-family:inherit;outline:none;min-width:0">
+      <button onclick="loadWeatherByCity()"
+        style="background:linear-gradient(135deg,var(--emerald-700),var(--emerald-500));border:none;border-radius:12px;padding:9px 16px;color:#fff;font-size:12px;cursor:pointer;white-space:nowrap;font-family:inherit;font-weight:700;flex-shrink:0">
+        🔍 دیکھیں
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav id="bottom-nav">
+  <button class="nav-btn active" id="nav-home" onclick="navigate('home')">
+    <span class="nav-icon">🏡</span>
+    <span class="nav-label" data-ur="ہوم" data-en="Home">ہوم</span>
+  </button>
+  <button class="nav-btn" id="nav-crops" onclick="navigate('crops')">
+    <span class="nav-icon">🌾</span>
+    <span class="nav-label" data-ur="فصلیں" data-en="Crops">فصلیں</span>
+  </button>
+  <button class="nav-btn" id="nav-tubewell" onclick="navigate('tubewell')">
+    <span class="nav-icon">💧</span>
+    <span class="nav-label" data-ur="ٹیوب ویل" data-en="Tubewell">ٹیوب ویل</span>
+  </button>
+  <button class="nav-btn" id="nav-udhar" onclick="navigate('udhar')">
+    <span class="nav-icon">🧾</span>
+    <span class="nav-label" data-ur="ادھار" data-en="Credit">ادھار</span>
+  </button>
+  <button class="nav-btn" id="nav-calendar" onclick="navigate('calendar')">
+    <span class="nav-icon">📅</span>
+    <span class="nav-label" data-ur="کیلنڈر" data-en="Calendar">کیلنڈر</span>
+  </button>
+  <button class="nav-btn" id="nav-profile" onclick="navigate('profile')">
+    <span class="nav-icon">👤</span>
+    <span class="nav-label" data-ur="پروفائل" data-en="Profile">پروفائل</span>
+  </button>
+</nav>
+
+<!-- FAB -->
+<button class="fab" id="fab-btn" onclick="handleFab()">＋</button>
+
+<!-- AI ASSISTANT -->
+<div id="ai-assistant-panel">
+  <button id="ai-fab" onclick="toggleAIPanel()" title="AI اسسٹنٹ">🤖</button>
+</div>
+<div id="ai-chat-panel">
+  <div class="ai-panel-header">
+    <div>
+      <div class="ai-panel-title">🤖 AI فارم اسسٹنٹ</div>
+      <div style="font-size:10px;color:rgba(196,181,253,0.6);margin-top:2px">آواز یا ٹائپ سے ڈیٹا ایڈ کریں</div>
+    </div>
+    <button onclick="toggleAIPanel()" style="background:rgba(255,255,255,0.08);border:none;border-radius:10px;padding:6px 10px;color:var(--text-muted);cursor:pointer;font-size:14px">✕</button>
+  </div>
+  <div class="ai-messages" id="ai-messages">
+    <div class="ai-msg-bot">السلام علیکم! میں آپ کا <b>AI فارم اسسٹنٹ</b> ہوں 🌾<br><br>مجھے بتائیں:<br>• <b>ادھار:</b> "احمد نے 5 کلو ٹماٹر لیے 500 روپے کے"<br>• <b>پیمنٹ:</b> "احمد نے 200 روپے جمع کرائے"<br>• <b>ٹیوب ویل:</b> "رحیم نے 3 گھنٹے پانی لگایا"<br>• <b>فصل خرچ:</b> "گندم میں 2000 کی کھاد ڈالی"<br><br>🎤 مائیک بٹن سے بول کر بھی بتا سکتے ہیں!</div>
+  </div>
+  <div class="ai-input-row">
+    <button class="ai-voice-btn" id="ai-voice-btn" onclick="startVoiceInput()" title="آواز سے بتائیں">🎤</button>
+    <input class="ai-text-input" id="ai-text-input" placeholder="یہاں لکھیں یا بولیں..." onkeydown="if(event.key==='Enter')sendAIMessage()">
+    <button class="ai-send-btn" onclick="sendAIMessage()">➤</button>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div id="app-content"></div>
+
+<!-- MODAL -->
+<div id="modal-overlay" onclick="closeModal(event)">
+  <div id="modal-box">
+    <div class="modal-handle" onclick="closeModalDirect()"></div>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<!-- THEME PANEL -->
+<div id="theme-panel-overlay" onclick="closeThemePanel()"></div>
+<div id="theme-panel">
+  <div class="theme-panel-title">🎨 تھیم سیٹنگ</div>
+  <div class="theme-section-label">ریڈی میڈ تھیم</div>
+  <div class="theme-presets">
+    <button class="theme-preset-btn active" id="preset-emerald" onclick="applyPreset('emerald')"
+      style="background:rgba(16,185,129,0.1);color:#6ee7b7;border-color:rgba(16,185,129,0.2)">
+      <div class="theme-preset-swatch" style="background:linear-gradient(135deg,#064e3b,#10b981)"></div>🌿 ایمرالڈ
+    </button>
+    <button class="theme-preset-btn" id="preset-royal" onclick="applyPreset('royal')"
+      style="background:rgba(99,102,241,0.1);color:#a5b4fc;border-color:rgba(99,102,241,0.2)">
+      <div class="theme-preset-swatch" style="background:linear-gradient(135deg,#312e81,#6366f1)"></div>💜 رائل
+    </button>
+    <button class="theme-preset-btn" id="preset-sunset" onclick="applyPreset('sunset')"
+      style="background:rgba(239,68,68,0.1);color:#fca5a5;border-color:rgba(239,68,68,0.2)">
+      <div class="theme-preset-swatch" style="background:linear-gradient(135deg,#7f1d1d,#ef4444)"></div>🔴 سن سیٹ
+    </button>
+    <button class="theme-preset-btn" id="preset-ocean" onclick="applyPreset('ocean')"
+      style="background:rgba(6,182,212,0.1);color:#67e8f9;border-color:rgba(6,182,212,0.2)">
+      <div class="theme-preset-swatch" style="background:linear-gradient(135deg,#164e63,#06b6d4)"></div>🌊 اوشن
+    </button>
+    <button class="theme-preset-btn" id="preset-gold" onclick="applyPreset('gold')"
+      style="background:rgba(245,158,11,0.1);color:#fbbf24;border-color:rgba(245,158,11,0.2)">
+      <div class="theme-preset-swatch" style="background:linear-gradient(135deg,#78350f,#f59e0b)"></div>✨ گولڈ
+    </button>
+    <button class="theme-preset-btn" id="preset-rose" onclick="applyPreset('rose')"
+      style="background:rgba(236,72,153,0.1);color:#f9a8d4;border-color:rgba(236,72,153,0.2)">
+      <div class="theme-preset-swatch" style="background:linear-gradient(135deg,#831843,#ec4899)"></div>🌸 روز
+    </button>
+  </div>
+  <div class="theme-section-label">اپنا کلر چنیں</div>
+  <div class="color-row">
+    <span class="color-label">🎨 مین کلر</span>
+    <div class="color-input-wrap">
+      <input type="color" class="color-picker" id="cp-main" value="#10b981" oninput="applyCustomColor()">
+      <input type="text" class="color-hex" id="cp-main-hex" value="#10b981" onchange="syncColorFromHex('cp-main','cp-main-hex')" maxlength="7">
+    </div>
+  </div>
+  <div class="color-row">
+    <span class="color-label">✨ ہائی لائٹ</span>
+    <div class="color-input-wrap">
+      <input type="color" class="color-picker" id="cp-accent" value="#f59e0b" oninput="applyCustomColor()">
+      <input type="text" class="color-hex" id="cp-accent-hex" value="#f59e0b" onchange="syncColorFromHex('cp-accent','cp-accent-hex')" maxlength="7">
+    </div>
+  </div>
+  <div class="color-row">
+    <span class="color-label">🖤 بیک گراؤنڈ</span>
+    <div class="color-input-wrap">
+      <input type="color" class="color-picker" id="cp-bg" value="#050f0a" oninput="applyCustomColor()">
+      <input type="text" class="color-hex" id="cp-bg-hex" value="#050f0a" onchange="syncColorFromHex('cp-bg','cp-bg-hex')" maxlength="7">
+    </div>
+  </div>
+  <button class="btn-theme-reset" onclick="applyPreset('emerald')">↺ ڈیفالٹ تھیم</button>
+  <button class="btn-primary" style="margin-top:10px" onclick="closeThemePanel()">✓ ٹھیک ہے</button>
+</div>
+</div>
+
+<!-- PARTICLE SYSTEM -->
+<script>
+(function() {
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [];
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  class Particle {
+    constructor() { this.reset(); }
+    reset() {
+      this.x = Math.random() * W;
+      this.y = Math.random() * H;
+      this.size = Math.random() * 2 + 0.5;
+      this.speedX = (Math.random() - 0.5) * 0.4;
+      this.speedY = -Math.random() * 0.5 - 0.2;
+      this.opacity = Math.random() * 0.6 + 0.1;
+      this.color = Math.random() > 0.6 ? '#f59e0b' : '#10b981';
+      this.life = 0; this.maxLife = 200 + Math.random() * 200;
+    }
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      this.life++;
+      if (this.life > this.maxLife || this.y < -10) this.reset();
+      this.opacity = Math.sin((this.life / this.maxLife) * Math.PI) * 0.5;
+    }
+    draw() {
+      ctx.save();
+      ctx.globalAlpha = this.opacity;
+      ctx.fillStyle = this.color;
+      ctx.shadowColor = this.color;
+      ctx.shadowBlur = 4;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  for (let i = 0; i < 60; i++) particles.push(new Particle());
+
+  function loop() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => { p.update(); p.draw(); });
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+</script>
+
+<script>
+// ===================== APP STATE =====================
+const APP = {
+  page: 'home',
+  pageStack: [],
+  lang: 'ur',
+  currentCropId: null,
+  currentUdharIdx: 0,
+  currentTWIdx: 0,
+  data: {
+    crops: [],
+    twSessions: [],
+    twCustomers: [],
+    udharCustomers: [],
+    alerts: [],
+    calEvents: {},
+    profile: { name: '', farmName: '', phone: '', photo: '' }
+  }
+};
+
+// ===================== TRANSLATIONS =====================
+const T = {
+  ur: {
+    home:'ہوم', crops:'فصلیں', tubewell:'ٹیوب ویل',
+    calendar:'کیلنڈر', profile:'پروفائل',
+    addCrop:'فصل شامل کریں', cropName:'فصل کا نام',
+    cropPhoto:'فصل کی فوٹو', plantDate:'لگانے کی تاریخ',
+    expenses:'اخراجات', income:'آمدن',
+    spray:'سپرے / بیماری', addExpense:'خرچ شامل کریں',
+    addIncome:'آمدن شامل کریں', amount:'رقم (روپے)',
+    desc:'تفصیل', save:'محفوظ کریں',
+    totalExp:'کل اخراجات', totalInc:'کل آمدن',
+    profit:'منافع', loss:'نقصان',
+    twName:'آپریٹر کا نام', twPhone:'فون نمبر',
+    twStart:'شروع وقت', twEnd:'ختم وقت',
+    twRate:'فی گھنٹہ قیمت', twTotal:'کل رقم',
+    twAdd:'سیشن شامل کریں', twHours:'گھنٹے',
+    today:'آج', noData:'کوئی ڈیٹا نہیں',
+    farmName:'فارم کا نام', yourName:'آپ کا نام',
+    yourPhone:'آپ کا نمبر', editProfile:'پروفائل ترمیم',
+    shareWA:'واٹس ایپ پر شیئر', market:'مارکیٹ بھاؤ',
+    alerts:'یاد دہانیاں', weather:'موسم',
+    cropActive:'فعال', cropDone:'مکمل',
+    perMaund:'فی من', addAlert:'الرٹ شامل کریں',
+    alertMsg:'پیغام', alertTime:'وقت',
+    sprayName:'سپرے کا نام', disease:'بیماری کا نام',
+    addSpray:'سپرے ریکارڈ کریں', noAlerts:'کوئی الرٹ نہیں'
+  },
+  en: {
+    home:'Home', crops:'Crops', tubewell:'Tubewell',
+    calendar:'Calendar', profile:'Profile',
+    addCrop:'Add Crop', cropName:'Crop Name',
+    cropPhoto:'Crop Photo', plantDate:'Plant Date',
+    expenses:'Expenses', income:'Income',
+    spray:'Spray / Disease', addExpense:'Add Expense',
+    addIncome:'Add Income', amount:'Amount (PKR)',
+    desc:'Description', save:'Save',
+    totalExp:'Total Expenses', totalInc:'Total Income',
+    profit:'Profit', loss:'Loss',
+    twName:'Operator Name', twPhone:'Phone',
+    twStart:'Start Time', twEnd:'End Time',
+    twRate:'Rate/Hour', twTotal:'Total Amount',
+    twAdd:'Add Session', twHours:'Hours',
+    today:'Today', noData:'No Data',
+    farmName:'Farm Name', yourName:'Your Name',
+    yourPhone:'Your Phone', editProfile:'Edit Profile',
+    shareWA:'Share on WhatsApp', market:'Market Rates',
+    alerts:'Reminders', weather:'Weather',
+    cropActive:'Active', cropDone:'Done',
+    perMaund:'Per Maund', addAlert:'Add Alert',
+    alertMsg:'Message', alertTime:'Time',
+    sprayName:'Spray Name', disease:'Disease Name',
+    addSpray:'Record Spray', noAlerts:'No Alerts'
+  }
+};
+function t(k) { return T[APP.lang][k] || k; }
+
+// ===================== STORAGE =====================
+function saveData() {
+  try { localStorage.setItem('farmapp_premium_data', JSON.stringify(APP.data)); } catch(e){}
+  // ہر save پر Firebase پر بھی بھیجیں (debounced)
+  if(typeof FIREBASE !== 'undefined') FIREBASE.scheduleUpload();
+}
+function loadData() {
+  try {
+    const d = localStorage.getItem('farmapp_premium_data');
+    if(d) APP.data = JSON.parse(d);
+    // migrate — ensure all required fields exist
+    if(!APP.data.crops) APP.data.crops = [];
+    if(!APP.data.twSessions) APP.data.twSessions = [];
+    if(!APP.data.twCustomers) APP.data.twCustomers = [];
+    if(!APP.data.udharCustomers) APP.data.udharCustomers = [];
+    if(!APP.data.alerts) APP.data.alerts = [];
+    if(!APP.data.calEvents) APP.data.calEvents = {};
+    if(!APP.data.profile) APP.data.profile = {};
+    if(!APP.data.profile.name) APP.data.profile.name = '';
+    if(!APP.data.profile.farmName) APP.data.profile.farmName = '';
+    if(!APP.data.profile.phone) APP.data.profile.phone = '';
+    if(!APP.data.profile.photo) APP.data.profile.photo = '';
+    if(!APP.data.profile.apiKey) APP.data.profile.apiKey = '';
+    if(!APP.data.profile.apiUrl) APP.data.profile.apiUrl = '';
+    if(!APP.data.profile.apiUid) APP.data.profile.apiUid = '';
+  } catch(e){
+    // اگر ڈیٹا خراب ہو تو ڈیفالٹ پر واپس جائیں
+    APP.data = {
+      crops: [], twSessions: [], twCustomers: [],
+      udharCustomers: [], alerts: [], calEvents: {},
+      profile: { name:'', farmName:'', phone:'', photo:'', apiKey:'', apiUrl:'', apiUid:'' }
+    };
+  }
+}
+
+// ===================== NAVIGATION =====================
+function navigate(page, pushHistory=true) {
+  if(pushHistory && APP.page !== page) APP.pageStack.push(APP.page);
+  APP.page = page;
+  updateNav();
+  updateHeader();
+  render();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function goBack() {
+  if(APP.pageStack.length) navigate(APP.pageStack.pop(), false);
+  else navigate('home', false);
+}
+
+function updateNav() {
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  const active = document.getElementById('nav-'+APP.page);
+  if(active) active.classList.add('active');
+  const fab = document.getElementById('fab-btn');
+  fab.classList.toggle('visible', ['crops','tubewell','alerts','udhar'].includes(APP.page));
+  const backBtn = document.getElementById('back-btn');
+  backBtn.classList.toggle('visible', APP.pageStack.length > 0 && !['home','crops','tubewell','calendar','profile','udhar'].includes(APP.page));
+}
+
+function updateHeader() {
+  const fn = APP.data.profile.farmName;
+  document.getElementById('header-farm-name').textContent = fn || (APP.lang==='ur'?'پرو فارم مینیجر':'Pro Farm Manager');
+  document.getElementById('header-sub').textContent = APP.lang==='ur'?'PREMIUM SMART MANAGEMENT':'PREMIUM SMART MANAGEMENT';
+}
+
+function handleFab() {
+  if(APP.page==='crops') openModal(renderAddCropForm());
+  else if(APP.page==='tubewell') openModal(renderAddTWForm());
+  else if(APP.page==='alerts') openModal(renderAddAlertForm());
+  else if(APP.page==='udhar') openModal(renderAddUdharCustomerForm());
+}
+
+// ===================== RENDER =====================
+function render() {
+  const c = document.getElementById('app-content');
+  c.innerHTML = '';
+  const fns = {home:renderHome,crops:renderCrops,tubewell:renderTubewell,calendar:renderCalendar,profile:renderProfile,cropDetail:renderCropDetail,udhar:renderUdhar,udharDetail:renderUdharDetail,twCustDetail:renderTWCustDetail};
+  if(fns[APP.page]) c.innerHTML = fns[APP.page]();
+  attachEvents();
+  animateNumbers();
+}
+
+function animateNumbers() {
+  document.querySelectorAll('.count-up').forEach(el => {
+    const target = parseInt(el.getAttribute('data-target') || el.textContent.replace(/[^0-9]/g,''));
+    let current = 0; const duration = 800; const step = target / (duration / 16);
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = Math.round(current).toLocaleString();
+      if (current >= target) clearInterval(timer);
+    }, 16);
+  });
+}
+
+// ══════════════ HOME ══════════════
+function renderHome() {
+  const crops = APP.data.crops;
+  const totalExp = crops.reduce((s,c)=>(c.expenses||[]).reduce((a,e)=>a+e.amt,0)+s,0);
+  const totalInc = crops.reduce((s,c)=>(c.income||[]).reduce((a,e)=>a+e.amt,0)+s,0);
+  const net = totalInc - totalExp;
+  const alerts = APP.data.alerts.slice(0,3);
+  const todayBK = getBikramiDate(new Date());
+  const udharCustomers = APP.data.udharCustomers||[];
+  const totalUdharBaki = udharCustomers.reduce((s,c)=>s+udharBalance(c),0);
+
+  return `
+  <div style="animation:cardIn 0.4s ease">
+    <!-- BIKRAMI DATE QUICK CARD -->
+    <div onclick="navigate('calendar')" style="cursor:pointer;background:linear-gradient(135deg,rgba(180,83,9,0.2),rgba(245,158,11,0.08));border:1px solid rgba(245,158,11,0.25);border-radius:var(--radius-md);padding:10px 14px;margin-bottom:10px;display:flex;align-items:center;justify-content:space-between;animation:cardIn 0.4s ease">
+      <div>
+        <div style="font-size:9px;color:var(--gold-300);font-weight:700;letter-spacing:0.5px">${todayBK.season}</div>
+        <div style="font-size:14px;font-weight:800;color:#fff;margin-top:1px">🌾 ${todayBK.day} ${todayBK.month} ${todayBK.year}</div>
+      </div>
+      <div style="text-align:left">
+        <div style="font-size:10px;color:var(--emerald-300);font-weight:700">${todayBK.crops}</div>
+        <div style="font-size:9px;color:var(--text-muted);margin-top:1px">▶ کیلنڈر</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-bottom:12px">
+      <div style="background:linear-gradient(160deg,rgba(13,36,24,0.95),rgba(9,26,16,0.98));border:1px solid var(--border-glass);border-radius:12px;padding:8px 3px;text-align:center">
+        <div style="font-size:15px;margin-bottom:2px">🌾</div>
+        <div style="font-size:14px;font-weight:800;color:var(--emerald-300)">${crops.length}</div>
+        <div style="font-size:8px;color:var(--text-muted);margin-top:1px">فصلیں</div>
+      </div>
+      <div style="background:linear-gradient(160deg,rgba(13,36,24,0.95),rgba(9,26,16,0.98));border:1px solid var(--border-glass);border-radius:12px;padding:8px 3px;text-align:center">
+        <div style="font-size:15px;margin-bottom:2px">${net>=0?'📈':'📉'}</div>
+        <div style="font-size:9px;font-weight:800;color:${net>=0?'var(--emerald-400)':'#f87171'}">${net>=0?'+':''}${Math.round(Math.abs(net)/1000)}k</div>
+        <div style="font-size:8px;color:var(--text-muted);margin-top:1px">${net>=0?'منافع':'نقصان'}</div>
+      </div>
+      <div style="background:linear-gradient(160deg,rgba(13,36,24,0.95),rgba(9,26,16,0.98));border:1px solid var(--border-glass);border-radius:12px;padding:8px 3px;text-align:center">
+        <div style="font-size:15px;margin-bottom:2px">💸</div>
+        <div style="font-size:9px;font-weight:800;color:#f87171">${Math.round(totalExp/1000)}k</div>
+        <div style="font-size:8px;color:var(--text-muted);margin-top:1px">خرچ</div>
+      </div>
+      <div onclick="navigate('udhar')" style="background:linear-gradient(160deg,rgba(13,36,24,0.95),rgba(9,26,16,0.98));border:1px solid var(--border-glass);border-radius:12px;padding:8px 3px;text-align:center;cursor:pointer">
+        <div style="font-size:15px;margin-bottom:2px">🧾</div>
+        <div style="font-size:9px;font-weight:800;color:${totalUdharBaki>0?'#fbbf24':'var(--emerald-400)'}">${totalUdharBaki>0?Math.round(totalUdharBaki/1000)+'k':'✅'}</div>
+        <div style="font-size:8px;color:var(--text-muted);margin-top:1px">ادھار</div>
+      </div>
+      <div style="background:linear-gradient(160deg,rgba(13,36,24,0.95),rgba(9,26,16,0.98));border:1px solid var(--border-glass);border-radius:12px;padding:8px 3px;text-align:center">
+        <div style="font-size:15px;margin-bottom:2px">💰</div>
+        <div style="font-size:9px;font-weight:800;color:var(--emerald-400)">${Math.round(totalInc/1000)}k</div>
+        <div style="font-size:8px;color:var(--text-muted);margin-top:1px">آمدن</div>
+      </div>
+    </div>
+
+    ${renderMarketSection()}
+
+    ${alerts.length ? `
+    <div class="section-title">🔔 ${t('alerts')}</div>
+    ${alerts.map(a=>`
+    <div class="alert-item">
+      <div class="alert-icon">🔔</div>
+      <div>
+        <div class="alert-text">${a.msg}</div>
+        <div class="alert-time">${a.time}</div>
+      </div>
+    </div>`).join('')}` : ''}
+
+    <div class="section-title">🌾 ${t('crops')}</div>
+    ${crops.length ? crops.slice(0,3).map(renderCropRow).join('') :
+      `<div class="card"><div class="card-body" style="text-align:center;color:var(--text-muted);padding:32px">
+        <div style="font-size:48px;margin-bottom:8px;animation:weatherFloat 3s ease-in-out infinite">🌱</div>
+        <div>${t('noData')}</div>
+        <div style="font-size:12px;margin-top:4px">فصلیں ٹیب سے فصل شامل کریں</div>
+      </div></div>`}
+    ${crops.length>3?`<button class="btn-secondary" onclick="navigate('crops')" style="margin-top:8px">سب فصلیں دیکھیں (${crops.length})</button>`:''}
+  </div>`;
+}
+
+function renderMarketSection() {
+  const market = [
+    {name:'🌾 گندم',price:3400,change:+50,unit:'من'},
+    {name:'🍚 چاول',price:4200,change:-100,unit:'من'},
+    {name:'🌽 مکئی',price:2800,change:+80,unit:'من'},
+    {name:'🪴 کپاس',price:8500,change:+200,unit:'من'},
+    {name:'🎋 گنا',price:450,change:0,unit:'من'},
+  ];
+  return `
+  <div class="card" style="margin-bottom:16px">
+    <div class="card-header">
+      <div class="card-header-icon">📊</div>
+      <div class="card-header-title">${t('market')}</div>
+      <span class="premium-badge" style="margin-right:auto">LIVE</span>
+    </div>
+    <div class="card-body" style="padding-top:8px">
+      ${market.map(m=>`
+      <div class="market-item">
+        <div>
+          <div class="market-crop">${m.name}</div>
+          <div class="market-unit">${t('perMaund')}</div>
+        </div>
+        <div style="text-align:left">
+          <div class="market-price">₨${m.price.toLocaleString()}</div>
+          <div class="market-change ${m.change>0?'up':m.change<0?'down':''}">${m.change>0?'▲':m.change<0?'▼':'—'} ${Math.abs(m.change)||'مستحکم'}</div>
+        </div>
+      </div>`).join('')}
+    </div>
+  </div>`;
+}
+
+// ══════════════ CROPS ══════════════
+function renderCrops() {
+  const crops = APP.data.crops;
+  return `
+  <div class="section-title">🌾 ${t('crops')}</div>
+  <div class="card">
+    ${crops.length ? crops.map(renderCropRow).join('') :
+    `<div class="card-body" style="text-align:center;padding:36px;color:var(--text-muted)">
+      <div style="font-size:52px;margin-bottom:10px;animation:weatherFloat 3s ease-in-out infinite">🌱</div>
+      <div>${t('noData')}</div>
+      <div style="font-size:12px;margin-top:6px">اوپر + بٹن سے فصل شامل کریں</div>
+    </div>`}
+  </div>`;
+}
+
+function renderCropRow(crop) {
+  const totalExp = (crop.expenses||[]).reduce((s,e)=>s+e.amt,0);
+  const totalInc = (crop.income||[]).reduce((s,e)=>s+e.amt,0);
+  const net = totalInc - totalExp;
+  return `
+  <div class="crop-item" onclick="openCropDetail('${crop.id}')">
+    <div class="crop-thumb">
+      ${crop.photo ? `<img src="${crop.photo}">` : crop.emoji||'🌾'}
+    </div>
+    <div class="crop-info">
+      <div class="crop-name">${crop.name}</div>
+      <div class="crop-date">📅 ${crop.date} • <span class="crop-status ${crop.done?'status-done':'status-active'}" style="font-size:9px;padding:2px 7px">${crop.done?'مکمل':'فعال'}</span></div>
+    </div>
+    <div style="text-align:left;flex-shrink:0">
+      <div style="font-size:13px;font-weight:800;color:${net>=0?'var(--emerald-400)':'#f87171'}">${net>=0?'+':''}${net.toLocaleString()} ₨</div>
+      <div style="font-size:9px;color:var(--text-muted);margin-top:2px">▶</div>
+    </div>
+  </div>`;
+}
+
+function openCropDetail(id) {
+  APP.currentCropId = id;
+  navigate('cropDetail');
+}
+
+function renderCropDetail() {
+  const crop = APP.data.crops.find(c=>c.id===APP.currentCropId);
+  if(!crop) return '<div class="card"><div class="card-body">فصل نہیں ملی</div></div>';
+  const expenses = crop.expenses||[];
+  const income = crop.income||[];
+  const sprays = crop.sprays||[];
+  const totalExp = expenses.reduce((s,e)=>s+e.amt,0);
+  const totalInc = income.reduce((s,e)=>s+e.amt,0);
+  const net = totalInc - totalExp;
+
+  return `
+  <div class="card">
+    <div style="padding:24px;text-align:center;background:linear-gradient(160deg,rgba(6,78,59,0.4),rgba(6,78,59,0.1));border-radius:28px 28px 0 0;position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at top,rgba(16,185,129,0.1),transparent);pointer-events:none"></div>
+      <div style="font-size:70px;margin-bottom:10px;filter:drop-shadow(0 0 16px rgba(16,185,129,0.3))">
+        ${crop.photo?`<img src="${crop.photo}" style="width:84px;height:84px;border-radius:22px;object-fit:cover;border:2px solid rgba(16,185,129,0.3);box-shadow:0 0 24px rgba(16,185,129,0.2)">`:crop.emoji||'🌾'}
+      </div>
+      <div style="font-size:22px;font-weight:800;background:linear-gradient(135deg,var(--text-primary),var(--emerald-300));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">${crop.name}</div>
+      <div style="font-size:11px;color:var(--text-muted);margin-top:5px">📅 ${crop.date}</div>
+      <div style="margin-top:16px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap">
+        <button class="btn-sm btn-red" onclick="openModal(renderAddExpenseForm('${crop.id}'))">+ ${t('addExpense')}</button>
+        <button class="btn-sm btn-gold" onclick="openModal(renderAddIncomeForm('${crop.id}'))">+ ${t('addIncome')}</button>
+        <button class="btn-sm" style="background:rgba(14,165,233,0.15);color:#7dd3fc;border:1px solid rgba(14,165,233,0.2)" onclick="openModal(renderAddSprayForm('${crop.id}'))">🧪 ${t('addSpray')}</button>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:18px">
+        <div style="text-align:center;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.15);border-radius:14px;padding:12px">
+          <div style="font-size:13px;color:#f87171;font-weight:800">₨${totalExp.toLocaleString()}</div>
+          <div style="font-size:10px;color:var(--text-muted);margin-top:3px">${t('totalExp')}</div>
+        </div>
+        <div style="text-align:center;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.15);border-radius:14px;padding:12px">
+          <div style="font-size:13px;color:var(--emerald-400);font-weight:800">₨${totalInc.toLocaleString()}</div>
+          <div style="font-size:10px;color:var(--text-muted);margin-top:3px">${t('totalInc')}</div>
+        </div>
+        <div style="text-align:center;background:${net>=0?'rgba(16,185,129,0.1)':'rgba(239,68,68,0.1)'};border:1px solid ${net>=0?'rgba(16,185,129,0.15)':'rgba(239,68,68,0.15)'};border-radius:14px;padding:12px">
+          <div style="font-size:13px;color:${net>=0?'var(--emerald-400)':'#f87171'};font-weight:800">₨${net.toLocaleString()}</div>
+          <div style="font-size:10px;color:var(--text-muted);margin-top:3px">${net>=0?t('profit'):t('loss')}</div>
+        </div>
+      </div>
+
+      ${expenses.length||income.length?`<div style="font-size:12px;font-weight:700;margin-bottom:10px;color:var(--text-secondary);letter-spacing:0.5px;text-transform:uppercase">📋 لین دین</div>
+      ${[...expenses.map(e=>({...e,type:'exp'})),...income.map(e=>({...e,type:'inc'}))].sort((a,b)=>b.ts-a.ts).map(e=>`
+      <div class="expense-item">
+        <div>
+          <div class="expense-desc">${e.desc}</div>
+          <div class="expense-type">${e.type==='exp'?'💸 اخراجات':'💰 آمدن'} • ${e.date}</div>
+        </div>
+        <div class="expense-amt ${e.type==='exp'?'expense-out':'expense-in'}">${e.type==='exp'?'-':'+'}₨${e.amt.toLocaleString()}</div>
+      </div>`).join('')}`:''}
+
+      ${sprays.length?`<div style="font-size:12px;font-weight:700;margin:14px 0 10px;color:var(--text-secondary);letter-spacing:0.5px;text-transform:uppercase">🧪 سپرے / بیماری</div>
+      ${sprays.map(s=>`
+      <div class="expense-item">
+        <div>
+          <div class="expense-desc">🧪 ${s.spray}</div>
+          <div class="expense-type">🦠 ${s.disease} • ${s.date}</div>
+        </div>
+      </div>`).join('')}`:''}
+    </div>
+  </div>`;
+}
+
+// ══════════════════════════════════════════════════
+//  SOLAR TUBEWELL — CUSTOMER MANAGEMENT SYSTEM
+//  ہر کسٹمر کا الگ کھاتہ، ڈیلی پانی لاگ، پیمنٹ
+// ══════════════════════════════════════════════════
+
+function twGetCustomers() { return APP.data.twCustomers || []; }
+
+function twCustTotalBill(c) {
+  return (c.waterLogs||[]).reduce((s,l)=>s+l.amount,0);
+}
+function twCustTotalPaid(c) {
+  return (c.payments||[]).filter(p=>p.type==='payment').reduce((s,p)=>s+p.amt,0);
+}
+function twCustTotalAdv(c) {
+  return (c.payments||[]).filter(p=>p.type==='advance').reduce((s,p)=>s+p.amt,0);
+}
+function twCustBalance(c) {
+  return twCustTotalBill(c) - twCustTotalPaid(c) - twCustTotalAdv(c);
+}
+function twCustTotalHours(c) {
+  return (c.waterLogs||[]).reduce((s,l)=>s+l.hours,0);
+}
+
+function renderTubewell() {
+  const customers = twGetCustomers();
+  // Summary totals
+  const grandBill  = customers.reduce((s,c)=>s+twCustTotalBill(c),0);
+  const grandPaid  = customers.reduce((s,c)=>s+twCustTotalPaid(c)+twCustTotalAdv(c),0);
+  const grandBaki  = grandBill - grandPaid;
+  const grandHrs   = customers.reduce((s,c)=>s+twCustTotalHours(c),0);
+
+  return `
+  <!-- SOLAR TUBEWELL HEADER BANNER -->
+  <div style="background:linear-gradient(135deg,rgba(6,78,59,0.5),rgba(14,165,233,0.1));border:1px solid rgba(14,165,233,0.2);border-radius:var(--radius-lg);padding:16px 18px;margin-bottom:14px;display:flex;align-items:center;gap:14px">
+    <div style="font-size:40px;filter:drop-shadow(0 0 12px rgba(14,165,233,0.4))">☀️💧</div>
+    <div>
+      <div style="font-size:16px;font-weight:800;color:var(--text-primary)">سولر ٹیوب ویل</div>
+      <div style="font-size:11px;color:var(--text-muted);margin-top:2px">کسٹمر کھاتہ — ڈیلی پانی لاگ</div>
+    </div>
+    <div style="margin-right:auto;text-align:left">
+      <div style="font-size:10px;color:var(--text-muted)">کل بقایا</div>
+      <div style="font-size:18px;font-weight:800;color:${grandBaki>0?'#fbbf24':'var(--emerald-400)'}">${grandBaki>0?'₨'+grandBaki.toLocaleString():'✅ صاف'}</div>
+    </div>
+  </div>
+
+  ${customers.length?`
+  <!-- SUMMARY STATS -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:14px">
+    <div style="background:rgba(13,36,24,0.95);border:1px solid var(--border-glass);border-radius:14px;padding:10px 6px;text-align:center">
+      <div style="font-size:18px;margin-bottom:4px">👥</div>
+      <div style="font-size:16px;font-weight:800;color:var(--emerald-300)">${customers.length}</div>
+      <div style="font-size:9px;color:var(--text-muted);margin-top:2px">گاہک</div>
+    </div>
+    <div style="background:rgba(13,36,24,0.95);border:1px solid var(--border-glass);border-radius:14px;padding:10px 6px;text-align:center">
+      <div style="font-size:18px;margin-bottom:4px">⏱️</div>
+      <div style="font-size:14px;font-weight:800;color:var(--emerald-300)">${grandHrs.toFixed(1)}</div>
+      <div style="font-size:9px;color:var(--text-muted);margin-top:2px">گھنٹے</div>
+    </div>
+    <div style="background:rgba(13,36,24,0.95);border:1px solid var(--border-glass);border-radius:14px;padding:10px 6px;text-align:center">
+      <div style="font-size:18px;margin-bottom:4px">💸</div>
+      <div style="font-size:12px;font-weight:800;color:#f87171">₨${grandBill.toLocaleString()}</div>
+      <div style="font-size:9px;color:var(--text-muted);margin-top:2px">کل بل</div>
+    </div>
+    <div style="background:rgba(13,36,24,0.95);border:1px solid var(--border-glass);border-radius:14px;padding:10px 6px;text-align:center">
+      <div style="font-size:18px;margin-bottom:4px">${grandBaki>0?'⏳':'✅'}</div>
+      <div style="font-size:12px;font-weight:800;color:${grandBaki>0?'#fbbf24':'var(--emerald-400)'}">₨${Math.abs(grandBaki).toLocaleString()}</div>
+      <div style="font-size:9px;color:var(--text-muted);margin-top:2px">${grandBaki>0?'باقی':'صاف'}</div>
+    </div>
+  </div>`:''}
+
+  <!-- CUSTOMER LIST -->
+  <div class="section-title">👥 کسٹمر فہرست</div>
+  ${customers.length ? customers.map((c,ci)=>{
+    const bill    = twCustTotalBill(c);
+    const paid    = twCustTotalPaid(c);
+    const adv     = twCustTotalAdv(c);
+    const balance = bill - paid - adv;
+    const hrs     = twCustTotalHours(c);
+    const pct     = bill>0 ? Math.min(100,Math.round((paid+adv)/bill*100)) : 0;
+    const lastLog = (c.waterLogs||[]).slice(-1)[0];
+    const isPinned = c.pinned||false;
+    return `
+  <div class="wa-contact-card ${balance>0?'has-balance':'clear'}" onclick="openTWCustDetail(${ci})" style="cursor:pointer;position:relative">
+    ${isPinned?`<div style="position:absolute;top:3px;right:3px;font-size:9px;background:rgba(245,158,11,0.2);border:1px solid rgba(245,158,11,0.3);border-radius:5px;padding:1px 4px;color:var(--gold-300)">📌</div>`:''}
+    <div class="wa-avatar" style="background:linear-gradient(135deg,rgba(6,78,59,0.6),rgba(14,165,233,0.2));border-color:rgba(14,165,233,0.3)">${c.photo?`<img src="${c.photo}" style="width:100%;height:100%;object-fit:cover;border-radius:50%">`:'👤'}</div>
+    <div class="wa-info">
+      <div class="wa-name">${c.name}</div>
+      <div class="wa-sub">₨${(c.rate||0).toLocaleString()}/گھنٹہ | ⏱️${hrs.toFixed(1)}h${lastLog?' | '+lastLog.date:''}</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;flex-shrink:0">
+      <div class="wa-baki ${balance>0?'red':'green'}" style="font-size:12px;font-weight:800">${balance>0?'₨'+balance.toLocaleString():'✅'}</div>
+      <div style="display:flex;gap:3px;margin-top:1px">
+        <button onclick="event.stopPropagation();openAddWaterLog(${ci})" style="background:rgba(14,165,233,0.15);border:1px solid rgba(14,165,233,0.3);border-radius:6px;padding:3px 5px;color:#7dd3fc;cursor:pointer;font-size:11px" title="پانی">💧</button>
+        ${balance>0?`<button onclick="event.stopPropagation();openCustPayModal(${ci},'payment')" style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);border-radius:6px;padding:3px 5px;color:var(--emerald-400);cursor:pointer;font-size:11px" title="پیمنٹ">✅</button>`:''}
+        <button onclick="event.stopPropagation();openTWCustMenu(${ci},this)" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:3px 6px;color:var(--text-muted);cursor:pointer;font-size:13px;font-weight:800">⋮</button>
+      </div>
+    </div>
+  </div>
+  `;
+  }).join('') :
+  `<div class="card">
+    <div class="card-body" style="text-align:center;padding:36px;color:var(--text-muted)">
+      <div style="font-size:52px;animation:weatherFloat 3s ease-in-out infinite">💧</div>
+      <div style="margin-top:12px;font-size:14px">ابھی کوئی کسٹمر نہیں</div>
+      <div style="font-size:12px;margin-top:6px">+ بٹن سے کسٹمر شامل کریں</div>
+    </div>
+  </div>`}`;
+}
+
+// ── پانی لگاؤ modal ──
+function openAddWaterLog(ci) {
+  const c = twGetCustomers()[ci];
+  const today = new Date().toISOString().split('T')[0];
+  openModal(`
+    <div class="modal-title">💧 پانی لگاؤ — ${c.name}</div>
+    <div style="background:rgba(14,165,233,0.08);border:1px solid rgba(14,165,233,0.2);border-radius:14px;padding:12px;margin-bottom:16px;display:flex;justify-content:space-between">
+      <div><div style="font-size:11px;color:var(--text-muted)">ریٹ</div><div style="font-size:16px;font-weight:800;color:#7dd3fc">₨${(c.rate||0).toLocaleString()}/گھنٹہ</div></div>
+      <div style="text-align:left"><div style="font-size:11px;color:var(--text-muted)">کل بقایا</div><div style="font-size:16px;font-weight:800;color:${twCustBalance(c)>0?'#fbbf24':'var(--emerald-400)'}">₨${twCustBalance(c).toLocaleString()}</div></div>
+    </div>
+    <div class="input-wrap">
+      <label class="input-label">📅 تاریخ</label>
+      <input class="input-field" id="wl-date" type="date" value="${today}">
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div class="input-wrap">
+        <label class="input-label">🕐 شروع وقت</label>
+        <input class="input-field" id="wl-start" type="time" onchange="calcWaterLog(${ci})" oninput="calcWaterLog(${ci})">
+      </div>
+      <div class="input-wrap">
+        <label class="input-label">🕑 بند وقت</label>
+        <input class="input-field" id="wl-end" type="time" onchange="calcWaterLog(${ci})" oninput="calcWaterLog(${ci})">
+      </div>
+    </div>
+    <!-- حساب کتاب -->
+    <div id="wl-calc" style="display:none;background:linear-gradient(135deg,rgba(14,165,233,0.1),rgba(14,165,233,0.05));border:1px solid rgba(14,165,233,0.2);border-radius:16px;padding:14px;margin-bottom:14px">
+      <div style="display:flex;justify-content:space-between;margin-bottom:8px">
+        <span style="font-size:13px;color:var(--text-secondary)">⏱️ کل وقت:</span>
+        <span style="font-weight:800;color:#7dd3fc" id="wl-hrs-disp">--</span>
+      </div>
+      <div style="display:flex;justify-content:space-between">
+        <span style="font-size:13px;color:var(--text-secondary)">💰 بنا بل:</span>
+        <span style="font-size:20px;font-weight:800;color:var(--emerald-300)" id="wl-amt-disp">--</span>
+      </div>
+    </div>
+    <div class="input-wrap">
+      <label class="input-label">📝 نوٹ (اختیاری)</label>
+      <input class="input-field" id="wl-note" placeholder="مثلاً: گندم، کپاس کا کھیت نمبر ۲">
+    </div>
+    <button class="btn-primary" style="background:linear-gradient(135deg,#0c4a6e,#0ea5e9)" onclick="saveWaterLog(${ci})">💾 پانی لاگ محفوظ کریں</button>
+  `);
+}
+
+function calcWaterLog(ci) {
+  const c = twGetCustomers()[ci];
+  const s = document.getElementById('wl-start')?.value;
+  const e = document.getElementById('wl-end')?.value;
+  if(!s||!e) return;
+  const [sh,sm]=s.split(':').map(Number),[eh,em]=e.split(':').map(Number);
+  let hrs=(eh*60+em-sh*60-sm)/60; if(hrs<0) hrs+=24;
+  const amt = hrs * (c.rate||0);
+  document.getElementById('wl-calc').style.display='block';
+  document.getElementById('wl-hrs-disp').textContent = hrs.toFixed(2)+' گھنٹے';
+  document.getElementById('wl-amt-disp').textContent = '₨'+amt.toLocaleString(undefined,{maximumFractionDigits:0});
+}
+
+function saveWaterLog(ci) {
+  const s = document.getElementById('wl-start')?.value;
+  const e = document.getElementById('wl-end')?.value;
+  const d = document.getElementById('wl-date')?.value;
+  const note = document.getElementById('wl-note')?.value?.trim()||'';
+  if(!s||!e||!d){ showToast('❌ تاریخ اور وقت لکھیں'); return; }
+  const [sh,sm]=s.split(':').map(Number),[eh,em]=e.split(':').map(Number);
+  let hrs=(eh*60+em-sh*60-sm)/60; if(hrs<0) hrs+=24;
+  if(hrs<=0){ showToast('❌ صحیح وقت لکھیں'); return; }
+  const c = APP.data.twCustomers[ci];
+  if(!c.waterLogs) c.waterLogs=[];
+  const amount = hrs*(c.rate||0);
+  c.waterLogs.push({
+    date: new Date(d).toLocaleDateString('ur-PK',{day:'numeric',month:'long',year:'numeric'}),
+    dateRaw: d,
+    startTime: s, endTime: e,
+    hours: hrs, amount,
+    note, ts: Date.now()
+  });
+  saveData(); closeModalDirect();
+  showToast(`✅ ${hrs.toFixed(1)} گھنٹے ریکارڈ — ₨${amount.toLocaleString(undefined,{maximumFractionDigits:0})}`);
+  render();
+}
+
+// ── ادائیگی modal ──
+function openCustPayModal(ci, type) {
+  const c = twGetCustomers()[ci];
+  const bill = twCustTotalBill(c);
+  const paid = twCustTotalPaid(c)+twCustTotalAdv(c);
+  const bal  = bill - paid;
+  const label = type==='advance'?'⬆️ ایڈوانس شامل کریں':'✅ ادائیگی شامل کریں';
+  openModal(`
+    <div class="modal-title">${label} — ${c.name}</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px">
+      <div style="text-align:center;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.15);border-radius:12px;padding:10px">
+        <div style="font-size:13px;color:#f87171;font-weight:800">₨${bill.toLocaleString()}</div>
+        <div style="font-size:10px;color:var(--text-muted);margin-top:2px">کل بل</div>
+      </div>
+      <div style="text-align:center;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.15);border-radius:12px;padding:10px">
+        <div style="font-size:13px;color:var(--emerald-400);font-weight:800">₨${paid.toLocaleString()}</div>
+        <div style="font-size:10px;color:var(--text-muted);margin-top:2px">ادا شدہ</div>
+      </div>
+      <div style="text-align:center;background:${bal>0?'rgba(251,191,36,0.08)':'rgba(16,185,129,0.08)'};border:1px solid ${bal>0?'rgba(251,191,36,0.2)':'rgba(16,185,129,0.2)'};border-radius:12px;padding:10px">
+        <div style="font-size:13px;color:${bal>0?'#fbbf24':'var(--emerald-400)'};font-weight:800">₨${Math.abs(bal).toLocaleString()}</div>
+        <div style="font-size:10px;color:var(--text-muted);margin-top:2px">${bal>0?'باقی':'صاف'}</div>
+      </div>
+    </div>
+    <div class="input-wrap">
+      <label class="input-label" style="color:${type==='advance'?'#fbbf24':'var(--emerald-400)'}">💰 رقم (₨)</label>
+      <input class="input-field" id="cp-amt" type="number" placeholder="0" min="1">
+    </div>
+    <div class="input-wrap">
+      <label class="input-label">📝 نوٹ (اختیاری)</label>
+      <input class="input-field" id="cp-note" placeholder="${type==='advance'?'مثلاً: پیشگی رقم':'مثلاً: نقد، آن لائن'}">
+    </div>
+    <button class="btn-primary" style="background:linear-gradient(135deg,${type==='advance'?'#92400e,#f59e0b':'var(--emerald-700),var(--emerald-400)'})" onclick="saveCustPayment(${ci},'${type}')">💾 محفوظ کریں</button>
+  `);
+}
+
+function saveCustPayment(ci, type) {
+  const amt  = parseFloat(document.getElementById('cp-amt')?.value);
+  const note = document.getElementById('cp-note')?.value?.trim()||'';
+  if(!amt||amt<=0){ showToast('❌ رقم لکھیں'); return; }
+  const c = APP.data.twCustomers[ci];
+  if(!c.payments) c.payments=[];
+  c.payments.push({ type, amt, note: note||(type==='advance'?'ایڈوانس':'ادائیگی'), date: new Date().toLocaleDateString('ur-PK'), ts: Date.now() });
+  saveData(); closeModalDirect();
+  showToast(type==='advance'?'✅ ایڈوانس محفوظ ہو گیا':'✅ ادائیگی محفوظ ہو گئی');
+  render();
+}
+
+function deleteCustPayment(ci, pi) {
+  if(!confirm('کیا یہ ادائیگی حذف کرنی ہے؟')) return;
+  APP.data.twCustomers[ci].payments.splice(pi,1);
+  saveData(); showToast('🗑️ حذف ہو گیا'); render();
+}
+
+function deleteWaterLog(ci, li) {
+  if(!confirm('کیا یہ پانی لاگ حذف کرنا ہے؟')) return;
+  APP.data.twCustomers[ci].waterLogs.splice(li,1);
+  saveData(); showToast('🗑️ لاگ حذف ہو گیا'); render();
+}
+
+function deleteTWCustomer(ci) {
+  if(!confirm('کیا آپ یہ کسٹمر حذف کرنا چاہتے ہیں؟')) return;
+  APP.data.twCustomers.splice(ci,1);
+  saveData(); showToast('🗑️ کسٹمر حذف ہو گیا'); render();
+}
+
+// Legacy helpers (kept for backward compat)
+function getTWPaid(s)    { return (s.transactions||s.payments||[]).filter(t=>t.type==='payment'||!t.type).reduce((a,p)=>a+p.amt,0); }
+function getTWAdvance(s) { return (s.transactions||[]).filter(t=>t.type==='advance').reduce((a,p)=>a+p.amt,0); }
+function getTWSortedLedger(s) {
+  const old = (s.payments||[]).map(p=>({...p,type:'payment'}));
+  return [...old,...(s.transactions||[])].sort((a,b)=>a.ts-b.ts);
+}
+function twTxLabel(type) { return type==='advance'?'ایڈوانس':type==='refund'?'واپسی':'ادائیگی'; }
+function deleteTWSession(idx) {
+  if(!confirm('کیا آپ یہ سیشن حذف کرنا چاہتے ہیں؟')) return;
+  APP.data.twSessions.splice(idx,1);
+  saveData(); showToast('🗑️ سیشن حذف ہو گیا'); render();
+}
+
+// ══════════════ CALENDAR ══════════════
+const months_ur = ['جنوری','فروری','مارچ','اپریل','مئی','جون','جولائی','اگست','ستمبر','اکتوبر','نومبر','دسمبر'];
+const months_en = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+let calView = { month: new Date().getMonth(), year: new Date().getFullYear() };
+
+function renderCalendar() {
+  const today = new Date();
+  const { month, year } = calView;
+  const desi = getDesiDate(new Date(year, month, 15));
+  const bk15 = getBikramiDate(new Date(year, month, 15));
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month+1, 0).getDate();
+  const mName = APP.lang==='ur' ? months_ur[month] : months_en[month];
+
+  // Today's Bikrami info
+  const todayBK = getBikramiDate(today);
+  const monthBK = getBikramiDate(new Date(year, month, 1));
+
+  let days = '';
+  for(let i=0;i<firstDay;i++) days += `<div class="cal-day"></div>`;
+  for(let d=1;d<=daysInMonth;d++) {
+    const isToday = d===today.getDate()&&month===today.getMonth()&&year===today.getFullYear();
+    const key = `${year}-${month+1}-${d}`;
+    const hasEv = APP.data.calEvents[key];
+    const bkd = getBikramiDate(new Date(year, month, d));
+    // Show Bikrami day number inside each cell
+    days += `<div class="cal-day ${isToday?'today':''} ${hasEv?'has-event':''}" onclick="calDayClick(${d},${month+1},${year})">
+      <span class="cal-greg">${d}</span>
+      <span class="cal-bk">${bkd.day}</span>
+    </div>`;
+  }
+  const dayLabels = (APP.lang==='ur'?['اتو','پیر','من','بدھ','جمع','جمع','ہفتہ']:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'])
+    .map(d=>`<div class="cal-day-label">${d}</div>`).join('');
+
+  // Bikrami months present in this Gregorian month
+  const bkStart = getBikramiDate(new Date(year, month, 1));
+  const bkEnd   = getBikramiDate(new Date(year, month, daysInMonth));
+  const bikramiRange = bkStart.month === bkEnd.month
+    ? `📅 ${bkStart.month} ${bkStart.year}`
+    : `📅 ${bkStart.month} — ${bkEnd.month} ${bkEnd.year}`;
+
+  return `
+  <!-- BIKRAMI TODAY BANNER -->
+  <div style="background:linear-gradient(135deg,rgba(180,83,9,0.2),rgba(245,158,11,0.08));border:1px solid rgba(245,158,11,0.25);border-radius:var(--radius-md);padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between">
+    <div>
+      <div style="font-size:9px;color:var(--gold-300);font-weight:700;letter-spacing:0.5px">${todayBK.season}</div>
+      <div style="font-size:15px;font-weight:800;color:#fff;margin-top:1px">🌾 ${todayBK.day} ${todayBK.month} ${todayBK.year}</div>
+    </div>
+    <div style="text-align:left">
+      <div style="font-size:10px;color:var(--emerald-300);font-weight:700">🌾 ${todayBK.crops}</div>
+      <div style="font-size:9px;color:var(--text-muted);margin-top:2px">${todayBK.desc}</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="cal-nav">
+      <button class="cal-nav-btn" onclick="calPrev()">◀</button>
+      <div style="text-align:center">
+        <div class="cal-month">${mName} ${year}</div>
+        <div class="cal-desi" style="color:var(--gold-300);font-size:12px;font-weight:700">🌾 ${bikramiRange}</div>
+        <div class="cal-desi" style="font-size:10px;margin-top:2px">🌙 ${desi.month} ${desi.year}ھ</div>
+      </div>
+      <button class="cal-nav-btn" onclick="calNext()">▶</button>
+    </div>
+    <div class="glow-divider"></div>
+    <!-- Legend -->
+    <div style="display:flex;align-items:center;gap:12px;padding:6px 14px 4px;font-size:10px;color:var(--text-muted)">
+      <span>بڑا نمبر = عیسوی تاریخ</span>
+      <span style="color:var(--gold-300)">چھوٹا نمبر = بکرمی تاریخ</span>
+    </div>
+    <div class="cal-grid">${dayLabels}${days}</div>
+  </div>
+
+  <!-- BIKRAMI MONTHS GUIDE -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-header-icon">🌾</div>
+      <div class="card-header-title">پنجابی دیسی کیلنڈر — بکرمی مہینے</div>
+    </div>
+    <div class="card-body" style="padding:12px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        ${BIKRAMI_MONTHS.map((bm, i)=>{
+          const isCurrentMonth = bkStart.monthIndex===i || bkEnd.monthIndex===i;
+          return `<div onclick="showBikramiMonth(${i})" style="padding:10px 12px;background:${isCurrentMonth?'rgba(245,158,11,0.12)':'rgba(255,255,255,0.03)'};border:1px solid ${isCurrentMonth?'rgba(245,158,11,0.35)':'var(--border-glass)'};border-radius:14px;cursor:pointer;transition:all 0.2s">
+            <div style="font-size:15px;font-weight:800;color:${isCurrentMonth?'var(--gold-300)':'var(--text-primary)'};">${bm.name}</div>
+            <div style="font-size:10px;color:var(--text-muted);margin-top:2px">${bm.season}</div>
+            <div style="font-size:10px;color:var(--emerald-400);margin-top:1px">🌾 ${bm.crops}</div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>
+  </div>
+
+  <div class="card"><div class="card-body">
+    <div style="font-size:12px;font-weight:700;margin-bottom:8px;color:var(--emerald-400);text-transform:uppercase;letter-spacing:0.5px">📅 آج کی مکمل تاریخ</div>
+    <div style="font-size:14px;color:var(--text-primary)">${today.toLocaleDateString('ur-PK',{weekday:'long',year:'numeric',month:'long',day:'numeric'})}</div>
+    <div style="font-size:13px;color:var(--gold-300);margin-top:8px;font-weight:700">🌾 ${getTodayDesiStr()}</div>
+    <div style="font-size:12px;color:var(--emerald-500);margin-top:4px">🌙 ${getDesiDate(today).day} ${getDesiDate(today).month} ${getDesiDate(today).year}ھ</div>
+    <div style="font-size:11px;color:var(--text-muted);margin-top:4px">${todayBK.season} — ${todayBK.desc}</div>
+  </div></div>`;
+}
+
+function showBikramiMonth(idx) {
+  const bm = BIKRAMI_MONTHS[idx];
+  openModal(`
+    <div class="modal-title">🌾 ${bm.name} — بکرمی مہینہ</div>
+    <div style="text-align:center;font-size:48px;margin:16px 0">${bm.season.split(' ')[0]}</div>
+    <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:16px;padding:16px;margin-bottom:16px">
+      <div style="font-size:20px;font-weight:800;color:var(--gold-300);text-align:center">${bm.name}</div>
+      <div style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:4px">${bm.season}</div>
+    </div>
+    <div class="input-wrap" style="background:rgba(255,255,255,0.03);border-radius:14px;padding:14px;margin-bottom:8px">
+      <div style="font-size:11px;color:var(--text-muted);font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px">تفصیل</div>
+      <div style="font-size:14px;color:var(--text-primary)">${bm.desc}</div>
+    </div>
+    <div class="input-wrap" style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.15);border-radius:14px;padding:14px;margin-bottom:8px">
+      <div style="font-size:11px;color:var(--text-muted);font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px">🌾 موسمی فصلیں</div>
+      <div style="font-size:14px;color:var(--emerald-300)">${bm.crops}</div>
+    </div>
+    <div style="font-size:11px;color:var(--text-muted);text-align:center;margin-top:8px">${bm.days} دن • بکرمی سنبت</div>
+  `);
+}
+
+function calPrev() { calView.month--; if(calView.month<0){calView.month=11;calView.year--;} render(); }
+function calNext() { calView.month++; if(calView.month>11){calView.month=0;calView.year++;} render(); }
+function calDayClick(d,m,y) {
+  const key = `${y}-${m}-${d}`;
+  const bk = getBikramiDate(new Date(y, m-1, d));
+  openModal(`
+  <div class="modal-title">📅 ${d} ${months_ur[m-1]} ${y}</div>
+  <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:14px;padding:12px;margin-bottom:16px;text-align:center">
+    <div style="font-size:18px;font-weight:800;color:var(--gold-300)">🌾 ${bk.day} ${bk.month} ${bk.year}</div>
+    <div style="font-size:11px;color:var(--text-muted);margin-top:4px">${bk.season} — ${bk.desc}</div>
+    <div style="font-size:11px;color:var(--emerald-400);margin-top:3px">فصلیں: ${bk.crops}</div>
+  </div>
+  <div class="input-wrap">
+    <label class="input-label">نوٹ / یاد دہانی</label>
+    <input class="input-field" id="cal-note" placeholder="یہاں لکھیں..." value="${APP.data.calEvents[key]||''}">
+  </div>
+  <button class="btn-primary" onclick="saveCalNote('${key}')">💾 ${t('save')}</button>`);
+}
+function saveCalNote(key) {
+  const v = document.getElementById('cal-note').value;
+  if(v) APP.data.calEvents[key] = v; else delete APP.data.calEvents[key];
+  saveData(); closeModalDirect(); showToast('✅ محفوظ ہو گیا'); render();
+}
+
+// ══════════════ PROFILE ══════════════
+function renderProfile() {
+  const p = APP.data.profile;
+  return `
+  <div class="card">
+    <div class="profile-hero">
+      <div class="profile-pic-wrap" onclick="changeProfilePic()">
+        ${p.photo?`<img src="${p.photo}">`:`<span>👨‍🌾</span>`}
+        <div class="profile-pic-edit">✏️</div>
+      </div>
+      <div class="profile-name">${p.name||'آپ کا نام'}</div>
+      <div class="profile-farm">🌾 ${p.farmName||'فارم کا نام'}</div>
+      <div class="profile-phone">📞 ${p.phone||'نمبر'}</div>
+      <div style="margin-top:10px"><span class="premium-badge">✦ PREMIUM MEMBER</span></div>
+    </div>
+    <div class="card-body">
+      <div class="input-wrap">
+        <label class="input-label">👤 ${t('yourName')}</label>
+        <input class="input-field" id="p-name" value="${p.name}" placeholder="${t('yourName')}">
+      </div>
+      <div class="input-wrap">
+        <label class="input-label">🌾 ${t('farmName')}</label>
+        <input class="input-field" id="p-farm" value="${p.farmName}" placeholder="${t('farmName')}">
+      </div>
+      <div class="input-wrap">
+        <label class="input-label">📞 ${t('yourPhone')}</label>
+        <input class="input-field" id="p-phone" value="${p.phone}" placeholder="03XX-XXXXXXX" type="tel">
+      </div>
+      <button class="btn-primary" onclick="saveProfile()" style="margin-bottom:10px">💾 ${t('save')}</button>
+      <button class="whatsapp-btn" onclick="shareWhatsApp()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        ${t('shareWA')}
+      </button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <div class="card-header-icon">🔔</div>
+      <div class="card-header-title">${t('alerts')}</div>
+      <button class="btn-sm btn-green" style="margin-right:auto" onclick="navigate('alerts')">سب دیکھیں</button>
+    </div>
+    <div class="card-body">
+      ${APP.data.alerts.length?APP.data.alerts.slice(0,2).map(a=>`
+      <div class="alert-item">
+        <div class="alert-icon">🔔</div>
+        <div>
+          <div class="alert-text">${a.msg}</div>
+          <div class="alert-time">${a.time}</div>
+        </div>
+      </div>`).join(''):`<div style="text-align:center;color:var(--text-muted);font-size:13px;padding:12px">${t('noAlerts')}</div>`}
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <div class="card-header-icon">⚙️</div>
+      <div class="card-header-title">API / آن لائن سٹوریج سیٹنگ</div>
+    </div>
+    <div class="card-body">
+      <div style="font-size:12px;color:var(--text-secondary);margin-bottom:14px;line-height:1.6">اپنا ڈیٹا آن لائن محفوظ کرنے کے لیے API کی سیٹنگ کریں۔ آپ کا ڈیٹا انکرپٹ ہو کر محفوظ رہے گا۔</div>
+      <div class="input-wrap">
+        <label class="input-label">🔑 API Key</label>
+        <input class="input-field" id="api-key" type="password" value="${APP.data.profile.apiKey||''}" placeholder="اپنی API Key یہاں لکھیں">
+      </div>
+      <div class="input-wrap">
+        <label class="input-label">🌐 API Endpoint URL</label>
+        <input class="input-field" id="api-url" value="${APP.data.profile.apiUrl||''}" placeholder="https://your-api.example.com/data">
+      </div>
+      <div class="input-wrap">
+        <label class="input-label">🔖 پروجیکٹ / یوزر ID</label>
+        <input class="input-field" id="api-uid" value="${APP.data.profile.apiUid||''}" placeholder="آپ کی یونیک ID">
+      </div>
+      <div style="display:flex;gap:8px;margin-bottom:12px">
+        <button class="btn-primary" style="flex:1" onclick="saveApiSettings()">💾 API سیٹنگ محفوظ کریں</button>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="btn-sm btn-green" style="flex:1;padding:10px;border-radius:13px" onclick="syncDataOnline()">☁️ ڈیٹا اپلوڈ کریں</button>
+        <button class="btn-sm" style="flex:1;padding:10px;border-radius:13px;background:rgba(14,165,233,0.15);color:#7dd3fc;border:1px solid rgba(14,165,233,0.2)" onclick="fetchDataOnline()">📥 ڈیٹا ڈاؤن لوڈ کریں</button>
+      </div>
+      <div id="api-status" style="margin-top:12px;font-size:12px;color:var(--text-muted);text-align:center"></div>
+    </div>
+  </div>`;
+}
+
+// ══════════════ ALERTS ══════════════
+function renderAlerts() {
+  return `
+  <div class="section-title">🔔 ${t('alerts')}</div>
+  ${APP.data.alerts.length ? APP.data.alerts.map((a,i)=>`
+  <div class="alert-item" style="position:relative">
+    <div class="alert-icon">🔔</div>
+    <div style="flex:1">
+      <div class="alert-text">${a.msg}</div>
+      <div class="alert-time">⏰ ${a.time}</div>
+    </div>
+    <button class="btn-sm btn-red" onclick="deleteAlert(${i})">🗑️</button>
+  </div>`).join('') :
+  `<div class="card"><div class="card-body" style="text-align:center;padding:36px;color:var(--text-muted)">
+    <div style="font-size:48px;animation:weatherFloat 3s ease-in-out infinite">🔔</div>
+    <div style="margin-top:10px">${t('noAlerts')}</div>
+  </div></div>`}`;
+}
+
+// ══════════════ FORMS ══════════════
+function renderAddCropForm() {
+  const emojis = ['🌾','🌽','🍅','🥕','🧅','🫘','🌿','🌱'];
+  return `
+  <div class="modal-title">🌱 ${t('addCrop')}</div>
+  <div style="display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap;justify-content:center">
+    ${emojis.map(e=>`<button class="btn-sm" id="emoji-${e}" onclick="selectEmoji('${e}')" style="font-size:22px;background:rgba(255,255,255,0.05);border:1px solid var(--border-glass);border-radius:12px;padding:10px 12px;transition:all 0.2s">${e}</button>`).join('')}
+  </div>
+  <div class="input-wrap">
+    <label class="input-label">📷 فصل کی فوٹو (اختیاری)</label>
+    <input type="file" accept="image/*" id="crop-photo-file" onchange="previewCropPhoto()" class="input-field" style="padding:10px">
+  </div>
+  <div id="crop-photo-preview" style="display:none;text-align:center;margin-bottom:14px">
+    <img id="crop-photo-img" style="width:80px;height:80px;border-radius:18px;object-fit:cover;border:2px solid var(--border-glass)">
+  </div>
+  <div class="input-wrap">
+    <label class="input-label">${t('cropName')}</label>
+    <input class="input-field" id="crop-name" placeholder="مثلاً: گندم، چاول">
+  </div>
+  <div class="input-wrap">
+    <label class="input-label">${t('plantDate')}</label>
+    <input class="input-field" id="crop-date" type="date" value="${new Date().toISOString().split('T')[0]}">
+  </div>
+  <button class="btn-primary" onclick="saveCrop()">💾 ${t('save')}</button>`;
+}
+
+function renderAddExpenseForm(cropId) {
+  return `
+  <div class="modal-title">💸 ${t('addExpense')}</div>
+  <div class="input-wrap"><label class="input-label">${t('desc')}</label>
+  <input class="input-field" id="exp-desc" placeholder="مثلاً: کھاد، بیج، مزدوری"></div>
+  <div class="input-wrap"><label class="input-label">${t('amount')}</label>
+  <input class="input-field" id="exp-amt" type="number" placeholder="0"></div>
+  <button class="btn-primary" onclick="saveExpense('${cropId}')">💾 ${t('save')}</button>`;
+}
+
+function renderAddIncomeForm(cropId) {
+  return `
+  <div class="modal-title">💰 ${t('addIncome')}</div>
+  <div class="input-wrap"><label class="input-label">${t('desc')}</label>
+  <input class="input-field" id="inc-desc" placeholder="مثلاً: فروخت"></div>
+  <div class="input-wrap"><label class="input-label">${t('amount')}</label>
+  <input class="input-field" id="inc-amt" type="number" placeholder="0"></div>
+  <button class="btn-primary" onclick="saveIncome('${cropId}')">💾 ${t('save')}</button>`;
+}
+
+function renderAddSprayForm(cropId) {
+  return `
+  <div class="modal-title">🧪 ${t('addSpray')}</div>
+  <div class="input-wrap"><label class="input-label">${t('disease')}</label>
+  <input class="input-field" id="sp-disease" placeholder="مثلاً: جھلسا، ٹڈی دل"></div>
+  <div class="input-wrap"><label class="input-label">${t('sprayName')}</label>
+  <input class="input-field" id="sp-spray" placeholder="مثلاً: ریڈار 550، فیوری"></div>
+  <button class="btn-primary" onclick="saveSpray('${cropId}')">💾 ${t('save')}</button>`;
+}
+
+function renderAddTWForm() {
+  return `
+  <div class="modal-title">👤 نیا کسٹمر شامل کریں</div>
+  <div style="background:rgba(14,165,233,0.08);border:1px solid rgba(14,165,233,0.2);border-radius:14px;padding:12px;margin-bottom:16px">
+    <div style="font-size:12px;color:#7dd3fc;font-weight:700">☀️ سولر ٹیوب ویل کسٹمر کھاتہ</div>
+    <div style="font-size:11px;color:var(--text-muted);margin-top:4px">کسٹمر ایڈ کریں، پھر ڈیلی پانی لگنے کا وقت ریکارڈ کریں</div>
+  </div>
+  <div class="input-wrap">
+    <label class="input-label">👤 کسٹمر کا نام</label>
+    <input class="input-field" id="tw-name" placeholder="مثلاً: چوہدری عمر">
+  </div>
+  <div class="input-wrap">
+    <label class="input-label">📞 فون نمبر</label>
+    <input class="input-field" id="tw-phone" type="tel" placeholder="03XX-XXXXXXX">
+  </div>
+  <div class="input-wrap">
+    <label class="input-label">🌾 کھیت / زمین کا نام (اختیاری)</label>
+    <input class="input-field" id="tw-field" placeholder="مثلاً: شمالی کھیت، نمبر ۳">
+  </div>
+  <div class="input-wrap">
+    <label class="input-label">💰 ریٹ فی گھنٹہ (₨)</label>
+    <input class="input-field" id="tw-rate" type="number" placeholder="مثلاً: 200">
+  </div>
+  <div class="input-wrap">
+    <label class="input-label">📝 نوٹ (اختیاری)</label>
+    <input class="input-field" id="tw-note" placeholder="مثلاً: پرانے بقایا ₨500">
+  </div>
+  <button class="btn-primary" style="background:linear-gradient(135deg,#0c4a6e,#0ea5e9)" onclick="saveTWCustomer()">💾 کسٹمر شامل کریں</button>`;
+}
+
+function renderAddAlertForm() {
+  return `
+  <div class="modal-title">🔔 ${t('addAlert')}</div>
+  <div class="input-wrap"><label class="input-label">${t('alertMsg')}</label>
+  <input class="input-field" id="al-msg" placeholder="مثلاً: کھاد ڈالنے کا وقت"></div>
+  <div class="input-wrap"><label class="input-label">${t('alertTime')}</label>
+  <input class="input-field" id="al-time" type="datetime-local"></div>
+  <button class="btn-primary" onclick="saveAlert()">💾 ${t('save')}</button>`;
+}
+
+// ===================== ACTIONS =====================
+let selectedEmoji = '🌾', cropPhotoData = '';
+
+function selectEmoji(e) {
+  selectedEmoji = e;
+  document.querySelectorAll('[id^="emoji-"]').forEach(btn => {
+    btn.style.background = 'rgba(255,255,255,0.05)';
+    btn.style.borderColor = 'var(--border-glass)';
+  });
+  const el = document.getElementById('emoji-'+e);
+  if(el) { el.style.background = 'rgba(16,185,129,0.15)'; el.style.borderColor = 'rgba(16,185,129,0.3)'; }
+}
+
+function previewCropPhoto() {
+  const file = document.getElementById('crop-photo-file').files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    cropPhotoData = e.target.result;
+    document.getElementById('crop-photo-preview').style.display = 'block';
+    document.getElementById('crop-photo-img').src = cropPhotoData;
+  };
+  reader.readAsDataURL(file);
+}
+
+function saveCrop() {
+  const name = document.getElementById('crop-name').value.trim();
+  const date = document.getElementById('crop-date').value;
+  if(!name) { showToast('❌ فصل کا نام لکھیں'); return; }
+  APP.data.crops.push({ id: Date.now()+'', name, date, emoji: selectedEmoji, photo: cropPhotoData, expenses:[], income:[], sprays:[], done:false, ts:Date.now() });
+  cropPhotoData = ''; selectedEmoji = '🌾';
+  saveData(); closeModalDirect(); showToast('✅ فصل شامل ہو گئی'); render();
+}
+
+function saveExpense(cropId) {
+  const desc = document.getElementById('exp-desc').value.trim();
+  const amt = parseFloat(document.getElementById('exp-amt').value);
+  if(!desc||!amt) { showToast('❌ تفصیل اور رقم لکھیں'); return; }
+  const crop = APP.data.crops.find(c=>c.id===cropId);
+  if(!crop.expenses) crop.expenses=[];
+  crop.expenses.push({desc, amt, date: new Date().toLocaleDateString('ur-PK'), ts:Date.now()});
+  saveData(); closeModalDirect(); showToast('✅ خرچ شامل ہو گیا'); render();
+}
+
+function saveIncome(cropId) {
+  const desc = document.getElementById('inc-desc').value.trim();
+  const amt = parseFloat(document.getElementById('inc-amt').value);
+  if(!desc||!amt) { showToast('❌ تفصیل اور رقم لکھیں'); return; }
+  const crop = APP.data.crops.find(c=>c.id===cropId);
+  if(!crop.income) crop.income=[];
+  crop.income.push({desc, amt, date: new Date().toLocaleDateString('ur-PK'), ts:Date.now()});
+  saveData(); closeModalDirect(); showToast('✅ آمدن شامل ہو گئی'); render();
+}
+
+function saveSpray(cropId) {
+  const disease = document.getElementById('sp-disease').value.trim();
+  const spray = document.getElementById('sp-spray').value.trim();
+  if(!disease||!spray) { showToast('❌ بیماری اور سپرے کا نام لکھیں'); return; }
+  const crop = APP.data.crops.find(c=>c.id===cropId);
+  if(!crop.sprays) crop.sprays=[];
+  crop.sprays.push({disease, spray, date: new Date().toLocaleDateString('ur-PK')});
+  saveData(); closeModalDirect(); showToast('✅ سپرے ریکارڈ ہو گیا'); render();
+}
+
+function calcTW() {
+  const s = document.getElementById('tw-start')?.value;
+  const e = document.getElementById('tw-end')?.value;
+  const r = parseFloat(document.getElementById('tw-rate')?.value||0);
+  if(!s||!e) return;
+  const [sh,sm]=s.split(':').map(Number), [eh,em]=e.split(':').map(Number);
+  let hours = (eh*60+em - sh*60-sm)/60;
+  if(hours<0) hours+=24;
+  document.getElementById('tw-calc').style.display='block';
+  document.getElementById('tw-hours-disp').textContent=hours.toFixed(1)+' گھنٹے';
+  document.getElementById('tw-total-disp').textContent='₨'+(hours*r).toLocaleString();
+}
+
+function saveTWCustomer() {
+  const name  = document.getElementById('tw-name')?.value?.trim();
+  const phone = document.getElementById('tw-phone')?.value?.trim()||'';
+  const field = document.getElementById('tw-field')?.value?.trim()||'';
+  const rate  = parseFloat(document.getElementById('tw-rate')?.value||0);
+  const note  = document.getElementById('tw-note')?.value?.trim()||'';
+  if(!name){ showToast('❌ کسٹمر کا نام لکھیں'); return; }
+  if(!APP.data.twCustomers) APP.data.twCustomers=[];
+  APP.data.twCustomers.push({
+    id: Date.now()+'', name, phone, field, rate, note,
+    waterLogs:[], payments:[],
+    createdDate: new Date().toLocaleDateString('ur-PK'), ts: Date.now()
+  });
+  saveData(); closeModalDirect();
+  showToast('✅ کسٹمر شامل ہو گیا');
+  render();
+}
+
+function saveTWSession() {
+  // Legacy — redirect to new customer system
+  showToast('⚠️ نیا کسٹمر سسٹم استعمال کریں');
+}
+
+function saveAlert() {
+  const msg=document.getElementById('al-msg').value.trim();
+  const time=document.getElementById('al-time').value;
+  if(!msg||!time) { showToast('❌ پیغام اور وقت لکھیں'); return; }
+  APP.data.alerts.unshift({msg, time: new Date(time).toLocaleString('ur-PK'), ts:Date.now()});
+  saveData(); closeModalDirect(); showToast('✅ الرٹ شامل ہو گیا'); render();
+}
+
+function deleteAlert(i) {
+  APP.data.alerts.splice(i,1);
+  saveData(); showToast('🗑️ الرٹ حذف ہو گیا'); render();
+}
+
+function saveProfile() {
+  APP.data.profile.name = document.getElementById('p-name').value.trim();
+  APP.data.profile.farmName = document.getElementById('p-farm').value.trim();
+  APP.data.profile.phone = document.getElementById('p-phone').value.trim();
+  saveData(); updateHeader(); showToast('✅ پروفائل محفوظ ہو گئی'); render();
+}
+
+function changeProfilePic() {
+  const inp = document.createElement('input');
+  inp.type='file'; inp.accept='image/*';
+  inp.onchange = e => {
+    const file = e.target.files[0]; if(!file) return;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      APP.data.profile.photo = ev.target.result;
+      saveData();
+      // update header avatar
+      const ae = document.getElementById('avatar-emoji');
+      const ai = document.getElementById('avatar-img');
+      if(ae) ae.style.display='none';
+      if(ai) { ai.src=ev.target.result; ai.style.display='block'; }
+      // update profile pic in current view without full re-render
+      const pw = document.querySelector('.profile-pic-wrap');
+      if(pw) pw.innerHTML = `<img src="${ev.target.result}" style="width:100%;height:100%;object-fit:cover"><div class="profile-pic-edit">✏️</div>`;
+      showToast('✅ تصویر محفوظ ہو گئی');
+    };
+    reader.readAsDataURL(file);
+  };
+  inp.click();
+}
+
+function shareWhatsApp() {
+  const p = APP.data.profile, crops = APP.data.crops;
+  const totalExp = crops.reduce((s,c)=>(c.expenses||[]).reduce((a,e)=>a+e.amt,0)+s,0);
+  const totalInc = crops.reduce((s,c)=>(c.income||[]).reduce((a,e)=>a+e.amt,0)+s,0);
+  const msg = `✨ *${p.farmName||'فارم'}* — پریمیم رپورٹ\n👤 ${p.name}\n📞 ${p.phone}\n\n🌾 فصلیں: ${crops.length}\n💸 اخراجات: ₨${totalExp.toLocaleString()}\n💰 آمدن: ₨${totalInc.toLocaleString()}\n📈 منافع: ₨${(totalInc-totalExp).toLocaleString()}\n\n_پرو فارم مینیجر — پریمیم_`;
+  window.open('https://wa.me/?text='+encodeURIComponent(msg));
+}
+
+// ===================== MODAL =====================
+function openModal(content) {
+  document.getElementById('modal-content').innerHTML = content;
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(e) { if(e.target===document.getElementById('modal-overlay')) closeModalDirect(); }
+function closeModalDirect() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+// ===================== TOAST =====================
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 2600);
+}
+
+// ===================== LANG =====================
+function setLang(lang) {
+  APP.lang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+  document.querySelectorAll('[data-ur]').forEach(el=>{
+    el.textContent = el.getAttribute('data-'+lang)||el.getAttribute('data-ur');
+  });
+  localStorage.setItem('farmapp_lang', lang);
+  updateHeader(); render();
+}
+
+// ===================== WEATHER =====================
+function displayWeather(data, cityName) {
+  const w = data.current_weather;
+  const icons = {0:'☀️',1:'🌤️',2:'⛅',3:'☁️',45:'🌫️',51:'🌦️',61:'🌧️',71:'🌨️',80:'🌦️',95:'⛈️'};
+  const descs = {0:'صاف آسمان',1:'قدرے ابر آلود',2:'جزوی بادل',3:'ابر آلود',45:'دھند',51:'بوندا باندی',61:'بارش',71:'برف باری',80:'بارش',95:'طوفان'};
+  document.getElementById('w-icon').textContent = icons[w.weathercode]||'🌤️';
+  document.getElementById('w-temp').textContent = Math.round(w.temperature)+'°C';
+  document.getElementById('w-desc').textContent = descs[w.weathercode]||'موسم';
+  const wind = data.hourly?.windspeed_10m?.[0]||'--';
+  const hum = data.hourly?.relativehumidity_2m?.[0]||'--';
+  document.getElementById('w-extra').innerHTML = `💧 ${hum}% &nbsp; 💨 ${wind} km/h`;
+  const cityEl = document.getElementById('w-city');
+  if(cityEl && cityName) cityEl.textContent = '📍 '+cityName;
+}
+
+function loadWeather() {
+  const savedCity = localStorage.getItem('farmapp_weather_city');
+  if(savedCity) {
+    const inp = document.getElementById('w-city-input');
+    if(inp) inp.value = savedCity;
+    loadWeatherByCity(savedCity);
+    return;
+  }
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(pos=>{
+      const {latitude:lat, longitude:lon} = pos.coords;
+      fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=relativehumidity_2m,windspeed_10m&timezone=auto`)
+      .then(r=>r.json()).then(data=>{ displayWeather(data, 'آپ کی لوکیشن'); }).catch(()=>{});
+    }, ()=>{ document.getElementById('w-desc').textContent = 'شہر کا نام لکھیں'; });
+  } else {
+    document.getElementById('w-desc').textContent = 'شہر کا نام لکھیں';
+  }
+}
+
+function loadWeatherByCity(cityOverride) {
+  const cityName = cityOverride || (document.getElementById('w-city-input')?.value?.trim());
+  if(!cityName) { showToast('❌ شہر کا نام لکھیں'); return; }
+  document.getElementById('w-desc').textContent = 'لوڈ ہو رہا ہے...';
+  fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cityName)}&count=1&language=ur&format=json`)
+  .then(r=>r.json()).then(geo=>{
+    if(!geo.results||!geo.results.length) { showToast('❌ شہر نہیں ملا، انگریزی میں لکھیں'); document.getElementById('w-desc').textContent = 'شہر نہیں ملا'; return; }
+    const {latitude:lat, longitude:lon, name} = geo.results[0];
+    localStorage.setItem('farmapp_weather_city', cityName);
+    return fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=relativehumidity_2m,windspeed_10m&timezone=auto`)
+    .then(r=>r.json()).then(data=>{ displayWeather(data, name); });
+  }).catch(()=>{ showToast('❌ نیٹ ورک خرابی'); document.getElementById('w-desc').textContent = 'خرابی'; });
+}
+
+// ===================== BIKRAMI (PUNJABI DESI) CALENDAR =====================
+// Bikrami Samvat - Punjabi months (Nanakshahi system aligned)
+const BIKRAMI_MONTHS = [
+  { name: 'چیت',    namePA: 'ਚੇਤ',    days: 31, desc: 'بہار، گندم پکنے کا وقت', season: '🌸 بہار', crops: 'گندم، چنا' },
+  { name: 'وساکھ',  namePA: 'ਵੈਸਾਖ',  days: 31, desc: 'گندم کی کٹائی، کپاس کی بوائی', season: '🌾 گرمی آغاز', crops: 'گندم کٹائی' },
+  { name: 'جیٹھ',   namePA: 'ਜੇਠ',    days: 31, desc: 'تیز گرمی، نہر آب پاشی', season: '☀️ گرمی', crops: 'مکئی، کپاس' },
+  { name: 'ہاڑ',    namePA: 'ਹਾੜ',    days: 31, desc: 'بارشوں کا آغاز، دھان کی بوائی', season: '🌦️ برسات آغاز', crops: 'دھان، مکئی' },
+  { name: 'ساون',   namePA: 'ਸਾਵਣ',   days: 31, desc: 'زور دار بارشیں، فصلیں لہلہاتی ہیں', season: '🌧️ مون سون', crops: 'دھان، گنا' },
+  { name: 'بھادوں', namePA: 'ਭਾਦੋਂ',  days: 30, desc: 'بارشوں کا زور، دھان پکنے لگے', season: '🌿 مون سون', crops: 'دھان، چاول' },
+  { name: 'اسو',    namePA: 'ਅੱਸੂ',   days: 30, desc: 'موسم خوشگوار، گندم کی تیاری', season: '🍂 خریف', crops: 'دھان کٹائی' },
+  { name: 'کتک',   namePA: 'ਕੱਤਕ',   days: 30, desc: 'سردی شروع، گندم کی بوائی', season: '🌬️ خزاں', crops: 'گندم، سرسوں' },
+  { name: 'مگھر',  namePA: 'ਮੱਘਰ',   days: 30, desc: 'سرد موسم، سرسوں پھول', season: '❄️ سردی', crops: 'سرسوں، آلو' },
+  { name: 'پوہ',   namePA: 'ਪੋਹ',    days: 30, desc: 'سخت سردی، کوہرہ', season: '🥶 سخت سردی', crops: 'سبزیاں، آلو' },
+  { name: 'ماگھ',  namePA: 'ਮਾਘ',    days: 30, desc: 'سردی کم ہونے لگے، سرسوں پکے', season: '🌥️ بہار آغاز', crops: 'سرسوں، چنا' },
+  { name: 'پھگن', namePA: 'ਫੱਗਣ',   days: 30, desc: 'بہار، پھول کھلتے ہیں', season: '🌺 بہار', crops: 'گندم، پھول' },
+];
+
+// Bikrami Samvat starts 57 years before Gregorian (approx)
+// More accurate: Bikrami Samvat solar calendar
+// Bikrami month start dates (approx Gregorian, non-leap year):
+// چیت: ~March 14, وساکھ: ~April 14, جیٹھ: ~May 15, ہاڑ: ~June 15
+// ساون: ~July 16, بھادوں: ~August 16, اسو: ~Sep 15, کتک: ~Oct 15
+// مگھر: ~Nov 14, پوہ: ~Dec 14, ماگھ: ~Jan 13, پھگن: ~Feb 12
+
+function getBikramiDate(date) {
+  const y = date.getFullYear();
+  const m = date.getMonth(); // 0-based
+  const d = date.getDate();
+
+  // Approximate Bikrami month start day-of-year (0-indexed)
+  // Based on Nanakshahi calendar approximation
+  const bikramiStarts = [
+    { doy: 73,  bikM: 0  }, // چیت starts Mar 14
+    { doy: 104, bikM: 1  }, // وساکھ starts Apr 14
+    { doy: 135, bikM: 2  }, // جیٹھ starts May 15
+    { doy: 166, bikM: 3  }, // ہاڑ starts Jun 15
+    { doy: 197, bikM: 4  }, // ساون starts Jul 16
+    { doy: 228, bikM: 5  }, // بھادوں starts Aug 16
+    { doy: 258, bikM: 6  }, // اسو starts Sep 15
+    { doy: 288, bikM: 7  }, // کتک starts Oct 15
+    { doy: 318, bikM: 8  }, // مگھر starts Nov 14
+    { doy: 348, bikM: 9  }, // پوہ starts Dec 14
+    { doy: 13,  bikM: 10 }, // ماگھ starts Jan 13
+    { doy: 43,  bikM: 11 }, // پھگن starts Feb 12
+  ];
+
+  // Day of year (1-based)
+  const isLeap = (y%4===0&&y%100!==0)||(y%400===0);
+  const mDays = [31,isLeap?29:28,31,30,31,30,31,31,30,31,30,31];
+  let doy = d;
+  for(let i=0;i<m;i++) doy += mDays[i];
+
+  // Find which Bikrami month we're in
+  let bikramiMonth = 11; // default پھگن
+  let startDoy = 43;
+  for(let i=0; i<bikramiStarts.length; i++){
+    const cur = bikramiStarts[i].doy;
+    const next = i<bikramiStarts.length-1 ? bikramiStarts[i+1].doy : bikramiStarts[0].doy+365;
+    let inRange = false;
+    if(cur <= next) { inRange = doy>=cur && doy<next; }
+    else { inRange = doy>=cur || doy<(bikramiStarts[0].doy); }
+    if(inRange){ bikramiMonth=bikramiStarts[i].bikM; startDoy=cur; break; }
+  }
+
+  // Calculate day within Bikrami month
+  let bikramiDay;
+  if(startDoy <= doy) { bikramiDay = doy - startDoy + 1; }
+  else { 
+    const prevYear = isLeap ? 366 : 365;
+    bikramiDay = prevYear - startDoy + doy + 1;
+  }
+  if(bikramiDay <= 0) bikramiDay = 1;
+  if(bikramiDay > 31) bikramiDay = 31;
+
+  // Bikrami Samvat year: Gregorian + 57, adjusted by month
+  // For months Jan-Mar (Bikrami ماگھ-پھگن-چیت start), year = current+57
+  // For rest, same rule but note Bikrami new year is in وساکھ (April)
+  let bikramiYear = y + 57;
+  if(m < 3 || (m===3 && d<14)) bikramiYear = y + 56; // before Bikrami new year
+
+  const monthInfo = BIKRAMI_MONTHS[bikramiMonth];
+  return {
+    day: bikramiDay,
+    month: monthInfo.name,
+    monthPA: monthInfo.namePA,
+    monthIndex: bikramiMonth,
+    year: bikramiYear,
+    season: monthInfo.season,
+    desc: monthInfo.desc,
+    crops: monthInfo.crops,
+    monthInfo
+  };
+}
+
+function getDesiDate(date) {
+  // Keep Islamic date for header display (existing functionality)
+  const hijriMonths=['محرم','صفر','ربیع الاول','ربیع الثانی','جمادی الاولی','جمادی الثانی','رجب','شعبان','رمضان','شوال','ذیقعد','ذیحج'];
+  const jd = Math.floor((date.getTime()/86400000)+2440587.5);
+  let l=jd-1948440+10632,n=Math.floor((l-1)/10631),l2=l-10631*n+354,j=Math.floor((10985-l2)/5316)*Math.floor(50*l2/17719)+Math.floor(l2/5670)*Math.floor(43*l2/15238),l3=l2-Math.floor((30-j)/15)*Math.floor(17719*j/50)-Math.floor(j/16)*Math.floor(15238*j/43)+29,m=Math.floor(24*l3/709),d=l3-Math.floor(709*m/24),y=30*n+j-30;
+  return {month:hijriMonths[m-1]||'', year:y, day:d};
+}
+
+function getTodayDesiStr() {
+  const bk = getBikramiDate(new Date());
+  return `${bk.day} ${bk.month} ${bk.year} (بکرمی)`;
+}
+
+function getBikramiDayStr(date) {
+  const bk = getBikramiDate(date);
+  return `${bk.day} ${bk.month}`;
+}
+
+// ===================== EVENTS =====================
+function attachEvents() {
+  if(APP.page==='alerts') document.getElementById('fab-btn').classList.add('visible');
+}
+
+// ===================== NAVIGATE OVERRIDE =====================
+window.navigate = function(page, push=true) {
+  if(page==='alerts') {
+    APP.pageStack.push(APP.page);
+    APP.page='alerts';
+    updateNav();
+    document.getElementById('app-content').innerHTML = renderAlerts();
+    document.getElementById('fab-btn').classList.add('visible');
+    return;
+  }
+  if(push && APP.page !== page) APP.pageStack.push(APP.page);
+  APP.page = page;
+  updateNav();
+  updateHeader();
+  render();
+  window.scrollTo({top:0,behavior:'smooth'});
+};
+
+// ===================== UDHAR KHATA (ادھار کھاتہ) =====================
+
+function udharGetCustomers() { return APP.data.udharCustomers || []; }
+function udharTotalItems(c) { return (c.items||[]).reduce((s,i)=>s+i.amount,0); }
+function udharTotalPaid(c)  { return (c.payments||[]).reduce((s,p)=>s+p.amt,0); }
+function udharBalance(c)    { return udharTotalItems(c) - udharTotalPaid(c); }
+
+function renderUdhar() {
+  const customers = udharGetCustomers();
+  const grandTotal = customers.reduce((s,c)=>s+udharTotalItems(c),0);
+  const grandPaid  = customers.reduce((s,c)=>s+udharTotalPaid(c),0);
+  const grandBaki  = grandTotal - grandPaid;
+
+  return `
+  <!-- UDHAR HEADER BANNER -->
+  <div style="background:linear-gradient(135deg,rgba(180,83,9,0.35),rgba(245,158,11,0.1));border:1px solid rgba(245,158,11,0.3);border-radius:var(--radius-lg);padding:16px 18px;margin-bottom:14px;display:flex;align-items:center;gap:14px">
+    <div style="font-size:40px;filter:drop-shadow(0 0 12px rgba(245,158,11,0.4))">🧾</div>
+    <div style="flex:1">
+      <div style="font-size:16px;font-weight:800;color:var(--text-primary)">ادھار کھاتہ</div>
+      <div style="font-size:11px;color:var(--text-muted);margin-top:2px">سبزی و اشیاء کا ادھار حساب</div>
+    </div>
+    <div style="text-align:left">
+      <div style="font-size:10px;color:var(--text-muted)">کل باقی</div>
+      <div style="font-size:18px;font-weight:800;color:${grandBaki>0?'#fbbf24':'var(--emerald-400)'}">${grandBaki>0?'₨'+grandBaki.toLocaleString():'✅ صاف'}</div>
+    </div>
+  </div>
+
+  ${customers.length?`
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:14px">
+    <div style="background:rgba(13,36,24,0.95);border:1px solid var(--border-glass);border-radius:14px;padding:10px 6px;text-align:center">
+      <div style="font-size:18px;margin-bottom:4px">👥</div>
+      <div style="font-size:16px;font-weight:800;color:var(--emerald-300)">${customers.length}</div>
+      <div style="font-size:9px;color:var(--text-muted);margin-top:2px">گاہک</div>
+    </div>
+    <div style="background:rgba(13,36,24,0.95);border:1px solid var(--border-glass);border-radius:14px;padding:10px 6px;text-align:center">
+      <div style="font-size:18px;margin-bottom:4px">${grandBaki>0?'⏳':'✅'}</div>
+      <div style="font-size:12px;font-weight:800;color:${grandBaki>0?'#fbbf24':'var(--emerald-400)'}">₨${grandBaki.toLocaleString()}</div>
+      <div style="font-size:9px;color:var(--text-muted);margin-top:2px">${grandBaki>0?'باقی':'صاف'}</div>
+    </div>
+    <div style="background:rgba(13,36,24,0.95);border:1px solid var(--border-glass);border-radius:14px;padding:10px 6px;text-align:center">
+      <div style="font-size:18px;margin-bottom:4px">🛒</div>
+      <div style="font-size:12px;font-weight:800;color:#f87171">₨${grandTotal.toLocaleString()}</div>
+      <div style="font-size:9px;color:var(--text-muted);margin-top:2px">ادھار</div>
+    </div>
+    <div style="background:rgba(13,36,24,0.95);border:1px solid var(--border-glass);border-radius:14px;padding:10px 6px;text-align:center">
+      <div style="font-size:18px;margin-bottom:4px">💰</div>
+      <div style="font-size:12px;font-weight:800;color:var(--emerald-400)">₨${grandPaid.toLocaleString()}</div>
+      <div style="font-size:9px;color:var(--text-muted);margin-top:2px">وصول</div>
+    </div>
+  </div>`:''}
+
+  <div class="section-title">👥 گاہکوں کی فہرست</div>
+  ${customers.length ? customers.map((c,ci)=>{
+    const total = udharTotalItems(c);
+    const paid  = udharTotalPaid(c);
+    const bal   = total - paid;
+    const pct   = total>0 ? Math.min(100,Math.round(paid/total*100)) : 100;
+    const lastItem = (c.items||[]).slice(-1)[0];
+    const isPinned = c.pinned||false;
+    return `
+  <div class="wa-contact-card ${bal>0?'has-balance':'clear'}" onclick="openUdharDetail(${ci})" style="cursor:pointer;position:relative">
+    ${isPinned?`<div style="position:absolute;top:3px;right:3px;font-size:9px;background:rgba(245,158,11,0.2);border:1px solid rgba(245,158,11,0.3);border-radius:5px;padding:1px 4px;color:var(--gold-300)">📌</div>`:''}
+    <div class="wa-avatar" style="background:linear-gradient(135deg,rgba(180,83,9,0.4),rgba(245,158,11,0.2));border-color:rgba(245,158,11,0.3)">${c.photo?`<img src="${c.photo}" style="width:100%;height:100%;object-fit:cover;border-radius:50%">`:'🧑‍🌾'}</div>
+    <div class="wa-info">
+      <div class="wa-name">${c.name}</div>
+      <div class="wa-sub">${c.phone||'—'}${lastItem?' | '+lastItem.desc:''}</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;flex-shrink:0">
+      <div class="wa-baki ${bal>0?'red':'green'}" style="font-size:12px;font-weight:800">${bal>0?'₨'+bal.toLocaleString():'✅'}</div>
+      <div style="display:flex;gap:3px;margin-top:1px">
+        ${bal>0?`<button onclick="event.stopPropagation();openModal(renderUdharPaymentForm(${ci}))" style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);border-radius:6px;padding:3px 5px;color:var(--emerald-400);cursor:pointer;font-size:11px" title="پیمنٹ">💰</button>`:''}
+        <button onclick="event.stopPropagation();openUdharCustMenu(${ci},this)" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:3px 6px;color:var(--text-muted);cursor:pointer;font-size:13px;font-weight:800">⋮</button>
+      </div>
+    </div>
+  </div>`;
+  }).join('') : `<div class="card"><div class="card-body" style="text-align:center;padding:36px;color:var(--text-muted)">
+    <div style="font-size:52px;margin-bottom:10px;animation:weatherFloat 3s ease-in-out infinite">🧾</div>
+    <div>کوئی گاہک نہیں</div>
+    <div style="font-size:12px;margin-top:6px">نیچے + بٹن سے گاہک شامل کریں</div>
+  </div></div>`}`;
+}
+
+function openUdharDetail(ci) {
+  APP.currentUdharIdx = ci;
+  navigate('udharDetail');
+}
+
+function renderUdharDetail() {
+  const ci = APP.currentUdharIdx;
+  const c = (APP.data.udharCustomers||[])[ci];
+  if(!c) return '<div class="card"><div class="card-body">گاہک نہیں ملا</div></div>';
+  const total = udharTotalItems(c);
+  const paid  = udharTotalPaid(c);
+  const bal   = total - paid;
+
+  const allTx = [
+    ...(c.items||[]).map(i=>({...i, _type:'item'})),
+    ...(c.payments||[]).map(p=>({...p, _type:'payment'}))
+  ].sort((a,b)=>(b.ts||0)-(a.ts||0));
+
+  return `
+  <div class="card">
+    <div style="padding:22px;text-align:center;background:linear-gradient(160deg,rgba(180,83,9,0.25),rgba(6,78,59,0.1));border-radius:28px 28px 0 0">
+      <div style="font-size:48px;margin-bottom:8px">🧑‍🌾</div>
+      <div style="font-size:22px;font-weight:800;background:linear-gradient(135deg,var(--text-primary),var(--gold-300));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">${c.name}</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-top:4px">📞 ${c.phone||'—'}</div>
+      <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+        <div style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2);border-radius:14px;padding:10px">
+          <div style="font-size:13px;font-weight:800;color:#f87171">₨${total.toLocaleString()}</div>
+          <div style="font-size:10px;color:var(--text-muted);margin-top:2px">کل ادھار</div>
+        </div>
+        <div style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);border-radius:14px;padding:10px">
+          <div style="font-size:13px;font-weight:800;color:var(--emerald-400)">₨${paid.toLocaleString()}</div>
+          <div style="font-size:10px;color:var(--text-muted);margin-top:2px">ادا</div>
+        </div>
+        <div style="background:${bal>0?'rgba(251,191,36,0.1)':'rgba(16,185,129,0.1)'};border:1px solid ${bal>0?'rgba(251,191,36,0.25)':'rgba(16,185,129,0.25)'};border-radius:14px;padding:10px">
+          <div style="font-size:13px;font-weight:800;color:${bal>0?'#fbbf24':'var(--emerald-400)'}">₨${Math.abs(bal).toLocaleString()}</div>
+          <div style="font-size:10px;color:var(--text-muted);margin-top:2px">${bal>0?'باقی':'صاف'}</div>
+        </div>
+      </div>
+      <div style="margin-top:14px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+        <button class="btn-sm btn-red" onclick="openModal(renderAddUdharItemForm(${ci}))">🛒 ادھار دو</button>
+        <button class="btn-sm btn-green" onclick="openModal(renderUdharPaymentForm(${ci}))">💰 پیمنٹ لو</button>
+        ${bal>0?`<button class="sms-reminder-btn" style="font-size:11px;padding:7px 12px" onclick="sendSMSReminder(${ci},'udhar')">📱 یاددہانی بھیجیں</button>`:''}
+        <button class="btn-sm btn-red" onclick="deleteUdharCustomer(${ci})" style="background:rgba(239,68,68,0.1);color:#f87171;border:1px solid rgba(239,68,68,0.2)">🗑️ حذف</button>
+      </div>
+    </div>
+    <div class="card-body">
+      ${allTx.length?`
+      <div style="font-size:12px;font-weight:700;margin-bottom:12px;color:var(--text-secondary);letter-spacing:0.5px;text-transform:uppercase">📋 مکمل کھاتہ</div>
+      ${allTx.map((tx,txi)=>`
+      <div class="${tx._type==='item'?'udhar-item-row':'udhar-payment-row'}">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="font-size:16px">${tx._type==='item'?'🛒':'💰'}</span>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:var(--text-primary)">${tx.desc||tx.note||'—'}</div>
+            <div style="font-size:10px;color:var(--text-muted)">${tx.date||'—'} ${tx._type==='item'&&tx.qty?'• '+tx.qty+' '+tx.unit:''}</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-size:14px;font-weight:800;color:${tx._type==='item'?'#f87171':'var(--emerald-400)'}">${tx._type==='item'?'-':'+'}₨${(tx.amount||tx.amt||0).toLocaleString()}</span>
+          <button onclick="deleteUdharTx(${ci},'${tx._type}',${tx._type==='item'?(c.items||[]).findIndex(i=>i.ts===tx.ts):(c.payments||[]).findIndex(p=>p.ts===tx.ts)})" style="background:rgba(239,68,68,0.08);border:none;border-radius:6px;padding:2px 6px;color:#f87171;cursor:pointer;font-size:10px">✕</button>
+        </div>
+      </div>`).join('')}`:'<div style="text-align:center;padding:24px;color:var(--text-muted);font-size:13px">ابھی کوئی لین دین نہیں</div>'}
+    </div>
+  </div>`;
+}
+
+function renderAddUdharCustomerForm() {
+  return `
+  <div class="modal-title">🧑‍🌾 نیا گاہک شامل کریں</div>
+  <div class="input-wrap">
+    <label class="input-label">👤 گاہک کا نام</label>
+    <input class="input-field" id="uc-name" placeholder="مثلاً: احمد، رحیم">
+  </div>
+  <div class="input-wrap">
+    <label class="input-label">📞 فون نمبر</label>
+    <input class="input-field" id="uc-phone" type="tel" placeholder="03XX-XXXXXXX">
+  </div>
+  <div class="input-wrap">
+    <label class="input-label">📝 نوٹ (اختیاری)</label>
+    <input class="input-field" id="uc-note" placeholder="مثلاً: گاؤں، پتہ">
+  </div>
+  <button class="btn-primary" onclick="saveUdharCustomer()">💾 محفوظ کریں</button>`;
+}
+
+function saveUdharCustomer() {
+  const name = document.getElementById('uc-name')?.value?.trim();
+  const phone= document.getElementById('uc-phone')?.value?.trim()||'';
+  const note = document.getElementById('uc-note')?.value?.trim()||'';
+  if(!name){ showToast('❌ نام لکھیں'); return; }
+  if(!APP.data.udharCustomers) APP.data.udharCustomers=[];
+  APP.data.udharCustomers.push({
+    id: Date.now()+'', name, phone, note,
+    items:[], payments:[],
+    createdDate: new Date().toLocaleDateString('ur-PK'), ts: Date.now()
+  });
+  saveData(); closeModalDirect(); showToast('✅ گاہک شامل ہو گیا'); render();
+}
+
+function renderAddUdharItemForm(ci) {
+  const c = (APP.data.udharCustomers||[])[ci];
+  return `
+  <div class="modal-title">🛒 ادھار دو — ${c.name}</div>
+  <div class="input-wrap">
+    <label class="input-label">🥬 چیز کا نام</label>
+    <input class="input-field" id="ui-desc" placeholder="مثلاً: ٹماٹر، آلو، پیاز">
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+    <div class="input-wrap">
+      <label class="input-label">⚖️ مقدار</label>
+      <input class="input-field" id="ui-qty" type="number" placeholder="5">
+    </div>
+    <div class="input-wrap">
+      <label class="input-label">📏 اکائی</label>
+      <select class="input-field" id="ui-unit">
+        <option>کلو</option><option>من</option><option>تھیلا</option><option>دانہ</option><option>درجن</option><option>لیٹر</option>
+      </select>
+    </div>
+  </div>
+  <div class="input-wrap">
+    <label class="input-label">💰 قیمت (₨)</label>
+    <input class="input-field" id="ui-amount" type="number" placeholder="0" oninput="calcUdharItem()">
+  </div>
+  <div id="ui-summary" style="display:none;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:14px;padding:12px;margin-bottom:14px;text-align:center">
+    <div style="font-size:11px;color:var(--text-muted)">ادھار رقم</div>
+    <div style="font-size:22px;font-weight:800;color:#f87171" id="ui-total-disp">₨0</div>
+  </div>
+  <button class="btn-primary" style="background:linear-gradient(135deg,#7f1d1d,#ef4444)" onclick="saveUdharItem(${ci})">🛒 ادھار ریکارڈ کریں</button>`;
+}
+
+function calcUdharItem() {
+  const amt = parseFloat(document.getElementById('ui-amount')?.value||0);
+  if(amt>0) {
+    document.getElementById('ui-summary').style.display='block';
+    document.getElementById('ui-total-disp').textContent = '₨'+amt.toLocaleString();
+  }
+}
+
+function saveUdharItem(ci) {
+  const desc   = document.getElementById('ui-desc')?.value?.trim();
+  const qty    = document.getElementById('ui-qty')?.value?.trim()||'';
+  const unit   = document.getElementById('ui-unit')?.value||'کلو';
+  const amount = parseFloat(document.getElementById('ui-amount')?.value);
+  if(!desc||!amount){ showToast('❌ چیز کا نام اور قیمت لکھیں'); return; }
+  const c = APP.data.udharCustomers[ci];
+  if(!c.items) c.items=[];
+  c.items.push({ desc, qty, unit, amount, date: new Date().toLocaleDateString('ur-PK'), ts: Date.now() });
+  saveData(); closeModalDirect(); showToast(`✅ ₨${amount.toLocaleString()} کا ادھار ریکارڈ ہو گیا`); render();
+}
+
+function renderUdharPaymentForm(ci) {
+  const c = (APP.data.udharCustomers||[])[ci];
+  const bal = udharBalance(c);
+  return `
+  <div class="modal-title">💰 پیمنٹ لو — ${c.name}</div>
+  <div style="background:${bal>0?'rgba(251,191,36,0.08)':'rgba(16,185,129,0.08)'};border:1px solid ${bal>0?'rgba(251,191,36,0.2)':'rgba(16,185,129,0.2)'};border-radius:14px;padding:14px;margin-bottom:16px;text-align:center">
+    <div style="font-size:11px;color:var(--text-muted)">کل باقی</div>
+    <div style="font-size:26px;font-weight:800;color:${bal>0?'#fbbf24':'var(--emerald-400)'}">₨${bal.toLocaleString()}</div>
+  </div>
+  <div class="input-wrap">
+    <label class="input-label">💰 رقم (₨)</label>
+    <input class="input-field" id="up-amt" type="number" placeholder="0" value="${bal>0?bal:''}">
+  </div>
+  <div class="input-wrap">
+    <label class="input-label">📝 نوٹ (اختیاری)</label>
+    <input class="input-field" id="up-note" placeholder="مثلاً: نقد، آن لائن">
+  </div>
+  <button class="btn-primary" onclick="saveUdharPayment(${ci})">💾 پیمنٹ محفوظ کریں</button>`;
+}
+
+function saveUdharPayment(ci) {
+  const amt  = parseFloat(document.getElementById('up-amt')?.value);
+  const note = document.getElementById('up-note')?.value?.trim()||'ادائیگی';
+  if(!amt||amt<=0){ showToast('❌ رقم لکھیں'); return; }
+  const c = APP.data.udharCustomers[ci];
+  if(!c.payments) c.payments=[];
+  c.payments.push({ amt, note, date: new Date().toLocaleDateString('ur-PK'), ts: Date.now() });
+  saveData(); closeModalDirect(); showToast(`✅ ₨${amt.toLocaleString()} وصول ہو گئے`); render();
+}
+
+function deleteUdharTx(ci, type, idx) {
+  if(idx<0 || !confirm('کیا یہ اندراج حذف کرنا ہے؟')) return;
+  const c = APP.data.udharCustomers[ci];
+  if(type==='item') c.items.splice(idx,1);
+  else c.payments.splice(idx,1);
+  saveData(); showToast('🗑️ حذف ہو گیا'); render();
+}
+
+function deleteUdharCustomer(ci) {
+  if(!confirm('کیا آپ یہ گاہک حذف کرنا چاہتے ہیں؟')) return;
+  APP.data.udharCustomers.splice(ci,1);
+  saveData(); showToast('🗑️ گاہک حذف ہو گیا');
+  navigate('udhar', false);
+}
+
+function sendSMSReminder(ci, type) {
+  const p = APP.data.profile;
+  let customerName, totalAmt, paidAmt, baakiAmt, phone;
+
+  if(type==='udhar') {
+    const c = APP.data.udharCustomers[ci];
+    customerName = c.name;
+    phone = c.phone||'';
+    totalAmt = udharTotalItems(c);
+    paidAmt  = udharTotalPaid(c);
+    baakiAmt = udharBalance(c);
+  } else {
+    const c = APP.data.twCustomers[ci];
+    customerName = c.name;
+    phone = c.phone||'';
+    totalAmt = twCustTotalBill(c);
+    paidAmt  = twCustTotalPaid(c)+twCustTotalAdv(c);
+    baakiAmt = twCustBalance(c);
+  }
+
+  if(baakiAmt<=0){ showToast('✅ اس گاہک کا کوئی بقایا نہیں'); return; }
+
+  const farmName = p.farmName||'فارم';
+  const ownerName= p.name||'مالک';
+  const ownerPhone= p.phone||'';
+
+  const prefix = type==='tw' ? '💧 ٹیوب ویل' : '🧾 ادھار';
+  const msg = `السلام علیکم ${customerName} صاحب!\n\n${prefix} حساب:\n\nکل: ${totalAmt.toLocaleString()} روپے\nادا: ${paidAmt.toLocaleString()} روپے\nباقی: ${baakiAmt.toLocaleString()} روپے\n\nبراہ کرم باقی رقم جمع کرائیں۔\n\n${ownerName}\n${farmName}\n${ownerPhone}`;
+
+  openModal(`
+    <div class="modal-title">📱 یاددہانی میسج</div>
+    <div style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-radius:16px;padding:16px;margin-bottom:16px;white-space:pre-wrap;font-size:13px;line-height:1.7;color:var(--text-primary)">${msg}</div>
+    <div class="input-wrap">
+      <label class="input-label">📞 فون نمبر</label>
+      <input class="input-field" id="sms-phone" value="${phone}" placeholder="03XX-XXXXXXX">
+    </div>
+    <button onclick="openSMSDirect('${encodeURIComponent(msg)}')" style="display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#1a6b3a,#22c55e);color:#fff;border:none;border-radius:var(--radius-md);padding:14px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;width:100%;margin-bottom:8px;box-shadow:0 8px 24px rgba(34,197,94,0.3)">
+      📱 SMS میسج بھیجیں
+    </button>
+    <button class="btn-secondary" onclick="copyReminderMsg('${encodeURIComponent(msg)}')">📋 میسج کاپی کریں</button>
+  `);
+}
+
+function openSMSDirect(encodedMsg) {
+  const phone = document.getElementById('sms-phone')?.value?.replace(/[^0-9]/g,'');
+  const text = decodeURIComponent(encodedMsg);
+  const smsUrl = phone ? `sms:${phone}?body=${encodedMsg}` : `sms:?body=${encodedMsg}`;
+  window.location.href = smsUrl;
+}
+
+function copyReminderMsg(encodedMsg) {
+  const text = decodeURIComponent(encodedMsg);
+  navigator.clipboard.writeText(text).then(()=>showToast('✅ میسج کاپی ہو گیا')).catch(()=>{
+    const ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    showToast('✅ میسج کاپی ہو گیا');
+  });
+}
+
+// Also add SMS reminder to tubewell customer detail
+function openTWReminderModal(ci) { sendSMSReminder(ci, 'tw'); }
+
+// ===================== 3-DOT CONTEXT MENU =====================
+let _activeMenu = null;
+function closeContextMenu() {
+  if(_activeMenu) { _activeMenu.remove(); _activeMenu=null; }
+}
+document.addEventListener('click', closeContextMenu);
+
+function showContextMenu(items, anchorEl) {
+  closeContextMenu();
+  const menu = document.createElement('div');
+  const maxH = Math.min(items.length * 48 + 16, window.innerHeight * 0.55);
+  menu.style.cssText = `
+    position:fixed;z-index:9999;
+    background:linear-gradient(160deg,rgba(13,36,24,0.99),rgba(5,15,10,0.99));
+    border:1px solid var(--border-glass);border-radius:16px;padding:6px;
+    min-width:190px;max-width:240px;
+    max-height:${maxH}px;overflow-y:auto;overflow-x:hidden;
+    box-shadow:0 12px 40px rgba(0,0,0,0.7);
+    animation:cardIn 0.18s ease;
+    -webkit-overflow-scrolling:touch;
+  `;
+  const rect = anchorEl.getBoundingClientRect();
+  // پوزیشن — ہمیشہ screen کے اندر رکھیں
+  let left = rect.right - 195;
+  if(left < 8) left = 8;
+  if(left + 195 > window.innerWidth - 8) left = window.innerWidth - 203;
+  let top = rect.bottom + 6;
+  if(top + maxH > window.innerHeight - 10) top = rect.top - maxH - 6;
+  if(top < 60) top = 60;
+  menu.style.top  = top  + 'px';
+  menu.style.left = left + 'px';
+
+  items.forEach(item => {
+    const btn = document.createElement('button');
+    btn.style.cssText = `
+      display:flex;align-items:center;gap:10px;width:100%;
+      background:none;border:none;padding:9px 13px;border-radius:11px;
+      color:${item.danger?'#f87171':'var(--text-primary)'};
+      font-family:inherit;font-size:13px;font-weight:600;
+      cursor:pointer;text-align:right;transition:background 0.15s;
+      white-space:nowrap;flex-shrink:0;
+    `;
+    btn.innerHTML = `<span style="font-size:16px;flex-shrink:0">${item.icon}</span><span style="flex:1">${item.label}</span>`;
+    btn.ontouchstart = () => btn.style.background = item.danger?'rgba(239,68,68,0.15)':'rgba(255,255,255,0.08)';
+    btn.onmouseover  = () => btn.style.background = item.danger?'rgba(239,68,68,0.1)':'rgba(255,255,255,0.05)';
+    btn.onmouseout   = () => btn.style.background = 'none';
+    btn.onclick = (e) => { e.stopPropagation(); closeContextMenu(); item.action(); };
+    menu.appendChild(btn);
+  });
+  document.body.appendChild(menu);
+  _activeMenu = menu;
+}
+
+function openTWCustMenu(ci, btn) {
+  const c = APP.data.twCustomers[ci];
+  const isPinned = c.pinned||false;
+  const bal = twCustBalance(c);
+  showContextMenu([
+    { icon:'👁️', label:'پروفائل دیکھیں', action:()=>openTWCustDetail(ci) },
+    { icon:'💧', label:'پانی لگاؤ', action:()=>openAddWaterLog(ci) },
+    ...(bal>0?[{ icon:'✅', label:'پیمنٹ لو', action:()=>openCustPayModal(ci,'payment') }]:[]),
+    ...(bal>0?[{ icon:'⬆️', label:'ایڈوانس', action:()=>openCustPayModal(ci,'advance') }]:[]),
+    ...(bal>0?[{ icon:'📱', label:'SMS یاددہانی', action:()=>sendSMSReminder(ci,'tw') }]:[]),
+    { icon: isPinned?'📌':'📌', label: isPinned?'پن ہٹائیں':'پرمننٹ محفوظ', action:()=>{ APP.data.twCustomers[ci].pinned=!isPinned; saveData(); showToast(isPinned?'📌 پن ہٹ گیا':'✅ پرمننٹ محفوظ ہو گیا'); render(); } },
+    { icon:'🗑️', label:'حذف کریں', danger:true, action:()=>deleteTWCustomer(ci) },
+  ], btn);
+}
+
+function openUdharCustMenu(ci, btn) {
+  const c = APP.data.udharCustomers[ci];
+  const isPinned = c.pinned||false;
+  const bal = udharBalance(c);
+  showContextMenu([
+    { icon:'👁️', label:'پروفائل دیکھیں', action:()=>openUdharDetail(ci) },
+    { icon:'🛒', label:'ادھار دو', action:()=>openModal(renderAddUdharItemForm(ci)) },
+    ...(bal>0?[{ icon:'💰', label:'پیمنٹ لو', action:()=>openModal(renderUdharPaymentForm(ci)) }]:[]),
+    ...(bal>0?[{ icon:'📱', label:'SMS یاددہانی', action:()=>sendSMSReminder(ci,'udhar') }]:[]),
+    { icon: isPinned?'📌':'📌', label: isPinned?'پن ہٹائیں':'پرمننٹ محفوظ', action:()=>{ APP.data.udharCustomers[ci].pinned=!isPinned; saveData(); showToast(isPinned?'📌 پن ہٹ گیا':'✅ پرمننٹ محفوظ ہو گیا'); render(); } },
+    { icon:'🗑️', label:'حذف کریں', danger:true, action:()=>deleteUdharCustomer(ci) },
+  ], btn);
+}
+
+// ===================== TW CUSTOMER DETAIL VIEW =====================
+function openTWCustDetail(ci) {
+  APP.currentTWIdx = ci;
+  navigate('twCustDetail');
+}
+
+function renderTWCustDetail() {
+  const ci = APP.currentTWIdx||0;
+  const c = (APP.data.twCustomers||[])[ci];
+  if(!c) return '<div class="card"><div class="card-body">کسٹمر نہیں ملا</div></div>';
+  const bill    = twCustTotalBill(c);
+  const paid    = twCustTotalPaid(c);
+  const adv     = twCustTotalAdv(c);
+  const balance = bill - paid - adv;
+  const hrs     = twCustTotalHours(c);
+
+  const allTx = [
+    ...(c.waterLogs||[]).map(l=>({...l,_type:'water'})),
+    ...(c.payments||[]).map(p=>({...p,_type:p.type||'payment'}))
+  ].sort((a,b)=>(b.ts||0)-(a.ts||0));
+
+  return `
+  <div class="card">
+    <div style="padding:22px;text-align:center;background:linear-gradient(160deg,rgba(6,78,59,0.35),rgba(14,165,233,0.1));border-radius:28px 28px 0 0;position:relative">
+      <div style="font-size:52px;margin-bottom:8px">${c.photo?`<img src="${c.photo}" style="width:84px;height:84px;border-radius:50%;object-fit:cover;border:2px solid rgba(14,165,233,0.4)">`:'💧👤'}</div>
+      <div style="font-size:22px;font-weight:800;background:linear-gradient(135deg,var(--text-primary),#7dd3fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">${c.name}</div>
+      <div style="font-size:12px;color:var(--text-muted);margin-top:4px">📞 ${c.phone||'—'} ${c.field?'| 🌾 '+c.field:''}</div>
+      <div style="font-size:11px;color:#7dd3fc;margin-top:3px">💰 ₨${(c.rate||0).toLocaleString()}/گھنٹہ &nbsp;|&nbsp; ⏱️ ${hrs.toFixed(1)} کل گھنٹے</div>
+      <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+        <div style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2);border-radius:14px;padding:10px">
+          <div style="font-size:13px;font-weight:800;color:#f87171">₨${bill.toLocaleString()}</div>
+          <div style="font-size:10px;color:var(--text-muted);margin-top:2px">کل بل</div>
+        </div>
+        <div style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);border-radius:14px;padding:10px">
+          <div style="font-size:13px;font-weight:800;color:var(--emerald-400)">₨${(paid+adv).toLocaleString()}</div>
+          <div style="font-size:10px;color:var(--text-muted);margin-top:2px">ادا</div>
+        </div>
+        <div style="background:${balance>0?'rgba(251,191,36,0.1)':'rgba(16,185,129,0.1)'};border:1px solid ${balance>0?'rgba(251,191,36,0.25)':'rgba(16,185,129,0.25)'};border-radius:14px;padding:10px">
+          <div style="font-size:13px;font-weight:800;color:${balance>0?'#fbbf24':'var(--emerald-400)'}">₨${Math.abs(balance).toLocaleString()}</div>
+          <div style="font-size:10px;color:var(--text-muted);margin-top:2px">${balance>0?'باقی':'صاف'}</div>
+        </div>
+      </div>
+      <div style="margin-top:14px;display:flex;gap:6px;justify-content:center;flex-wrap:wrap">
+        <button class="btn-sm" style="background:rgba(14,165,233,0.15);color:#7dd3fc;border:1px solid rgba(14,165,233,0.3)" onclick="openAddWaterLog(${ci})">💧 پانی لگاؤ</button>
+        ${balance>0?`<button class="btn-sm btn-green" onclick="openCustPayModal(${ci},'payment')">✅ پیمنٹ</button>`:''}
+        <button class="btn-sm" style="background:rgba(245,158,11,0.15);color:var(--gold-300);border:1px solid rgba(245,158,11,0.3)" onclick="openCustPayModal(${ci},'advance')">⬆️ ایڈوانس</button>
+        ${balance>0?`<button class="btn-sm" style="background:rgba(34,197,94,0.12);color:#4ade80;border:1px solid rgba(34,197,94,0.25)" onclick="sendSMSReminder(${ci},'tw')">📱 یاددہانی</button>`:''}
+      </div>
+    </div>
+    <div class="card-body">
+      ${allTx.length?`
+      <div style="font-size:12px;font-weight:700;margin-bottom:12px;color:var(--text-secondary);letter-spacing:0.5px;text-transform:uppercase">📋 مکمل کھاتہ</div>
+      ${allTx.map((tx,txi)=>`
+      <div class="${tx._type==='water'?'udhar-item-row':'udhar-payment-row'}">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="font-size:16px">${tx._type==='water'?'💧':tx._type==='advance'?'⬆️':'✅'}</span>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:var(--text-primary)">${tx._type==='water'?`${tx.date} — ${tx.hours?.toFixed(2)||0} گھنٹے`:(tx.note||'ادائیگی')}</div>
+            <div style="font-size:10px;color:var(--text-muted)">${tx._type==='water'?`${tx.startTime||''}—${tx.endTime||''} ${tx.note?'| '+tx.note:''}`:tx.date||'—'}</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-size:14px;font-weight:800;color:${tx._type==='water'?'#f87171':'var(--emerald-400)'}">
+            ${tx._type==='water'?'-':'+'}₨${(tx.amount||tx.amt||0).toLocaleString(undefined,{maximumFractionDigits:0})}
+          </span>
+        </div>
+      </div>`).join('')}`:'<div style="text-align:center;padding:24px;color:var(--text-muted);font-size:13px">ابھی کوئی لین دین نہیں</div>'}
+    </div>
+  </div>`;
+}
+
+// ===================== AI ASSISTANT =====================
+let aiIsOpen = false;
+let aiRecognition = null;
+let aiIsRecording = false;
+
+function toggleAIPanel() {
+  aiIsOpen = !aiIsOpen;
+  const panel = document.getElementById('ai-chat-panel');
+  panel.classList.toggle('open', aiIsOpen);
+  if(aiIsOpen) {
+    setTimeout(()=>document.getElementById('ai-text-input')?.focus(), 300);
+    scrollAIMessages();
+  }
+}
+
+function scrollAIMessages() {
+  const msgs = document.getElementById('ai-messages');
+  if(msgs) msgs.scrollTop = msgs.scrollHeight;
+}
+
+function addAIMessage(text, type='bot') {
+  const msgs = document.getElementById('ai-messages');
+  if(!msgs) return;
+  const div = document.createElement('div');
+  div.className = type==='user' ? 'ai-msg-user' : 'ai-msg-bot';
+  div.innerHTML = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  return div;
+}
+
+function addAILoadingDot() {
+  const msgs = document.getElementById('ai-messages');
+  if(!msgs) return null;
+  const div = document.createElement('div');
+  div.className = 'ai-msg-bot loading';
+  div.innerHTML = '<div class="ai-dot"></div><div class="ai-dot"></div><div class="ai-dot"></div>';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  return div;
+}
+
+// ===================== OFFLINE AI ENGINE (کوئی API نہیں — کوئی لمٹ نہیں) =====================
+
+function sendAIMessage() {
+  const input = document.getElementById('ai-text-input');
+  if(!input) return;
+  const text = input.value.trim();
+  if(!text) return;
+  input.value = '';
+  addAIMessage(text, 'user');
+  const loader = addAILoadingDot();
+  // چھوٹی سی delay تاکہ natural لگے
+  setTimeout(() => {
+    if(loader) loader.remove();
+    const reply = offlineAI(text);
+    addAIMessage(reply.text, 'bot');
+    if(reply.action) executeOfflineAction(reply.action);
+  }, 600);
+}
+
+// ── نمبر نکالنے کا فنکشن ──
+function extractNumber(str) {
+  const m = str.replace(/,/g,'').match(/\d+(\.\d+)?/);
+  return m ? parseFloat(m[0]) : 0;
+}
+
+// ── ملتا جلتا نام ڈھونڈیں ──
+function findCustomer(list, query) {
+  if(!list||!list.length) return -1;
+  const q = query.trim().toLowerCase();
+  // exact match
+  let idx = list.findIndex(c => c.name.toLowerCase() === q);
+  if(idx >= 0) return idx;
+  // partial match
+  idx = list.findIndex(c => c.name.toLowerCase().includes(q) || q.includes(c.name.toLowerCase()));
+  return idx;
+}
+function findCrop(query) {
+  const crops = APP.data.crops||[];
+  const q = query.trim().toLowerCase();
+  let idx = crops.findIndex(c => c.name.toLowerCase() === q);
+  if(idx<0) idx = crops.findIndex(c => c.name.toLowerCase().includes(q)||q.includes(c.name.toLowerCase()));
+  return idx;
+}
+
+// ── مرکزی AI دماغ ──
+function offlineAI(msg) {
+  const m = msg.trim();
+  const lower = m.toLowerCase();
+
+  // ━━ سلام / شروع ━━
+  if(/سلام|ہیلو|hello|hi\b|اسسٹنٹ|کیا حال|کیسے ہو/.test(lower)) {
+    const name = APP.data.profile.name || 'جناب';
+    return { text: `وعلیکم السلام ${name} صاحب! 🌾<br>میں حاضر ہوں۔ بتائیں کیا کام ہے؟<br><br>مثالیں:<br>• <b>ادھار:</b> "احمد نے 500 روپے کا ادھار لیا"<br>• <b>پیمنٹ:</b> "رحیم نے 1000 جمع کرائے"<br>• <b>خرچ:</b> "گندم میں 2000 کی کھاد"<br>• <b>حساب:</b> "احمد کا کتنا باقی ہے"` };
+  }
+
+  // ━━ نیا گاہک شامل کریں ━━
+  if(/نیا گاہک|گاہک شامل|کسٹمر ایڈ|new customer|ادھار گاہک/.test(lower)) {
+    const nameMatch = m.match(/(?:نام|name)[:\s]+([^\d،,\n]+)/i) || m.match(/([ا-ی]+(?:\s[ا-ی]+)*)\s+(?:کو|کا|نام)/);
+    const phoneMatch = m.match(/0\d{9,10}|03\d{9}/);
+    if(nameMatch || phoneMatch) {
+      const name = nameMatch?nameMatch[1].trim():'نیا گاہک';
+      const phone = phoneMatch?phoneMatch[0]:'';
+      return { text:`✅ <b>${name}</b> کو ادھار گاہک کے طور پر شامل کر رہا ہوں...`, action:{type:'add_udhar_customer',name,phone} };
+    }
+    navigate('udhar');
+    setTimeout(()=>handleFab(),400);
+    return { text:`🧑‍🌾 ادھار میں نیا گاہک شامل کرنے کا فارم کھول دیا۔` };
+  }
+
+  // ━━ ٹیوب ویل نیا کسٹمر ━━
+  if(/نیا ٹیوب ویل|ٹیوب ویل گاہک|tubewell customer|solar customer/.test(lower)) {
+    navigate('tubewell');
+    setTimeout(()=>handleFab(),400);
+    return { text:`💧 ٹیوب ویل میں نیا کسٹمر شامل کرنے کا فارم کھول دیا۔` };
+  }
+
+  // ━━ پروفائل اپ ڈیٹ ━━
+  if(/پروفائل|نام سیٹ|فارم نام|نمبر سیٹ|profile|farm name/.test(lower)) {
+    const nameMatch = m.match(/(?:میرا نام|نام)[:\s]+([^\d،,\n]+)/i);
+    const farmMatch = m.match(/(?:فارم|farm)[:\s]+([^\d،,\n]+)/i);
+    const phoneMatch = m.match(/0\d{9,10}|03\d{9}/);
+    if(nameMatch||farmMatch||phoneMatch) {
+      if(nameMatch) APP.data.profile.name = nameMatch[1].trim();
+      if(farmMatch) APP.data.profile.farmName = farmMatch[1].trim();
+      if(phoneMatch) APP.data.profile.phone = phoneMatch[0];
+      saveData(); updateHeader();
+      return { text:`✅ پروفائل اپ ڈیٹ ہو گئی!<br>${nameMatch?'👤 نام: '+nameMatch[1].trim()+'<br>':''}${farmMatch?'🌾 فارم: '+farmMatch[1].trim()+'<br>':''}${phoneMatch?'📞 نمبر: '+phoneMatch[0]:''}` };
+    }
+    navigate('profile');
+    return { text:`👤 پروفائل صفحہ کھول دیا۔` };
+  }
+
+  // ━━ نیا صفحہ کھولنا ━━
+  if(/ادھار دکھاؤ|ادھار کھاتہ دکھاؤ|ادھار پیج/.test(lower)) { navigate('udhar'); return { text:`🧾 ادھار کھاتہ کھول دیا۔` }; }
+  if(/ٹیوب ویل دکھاؤ|ٹیوب ویل پیج|water page/.test(lower)) { navigate('tubewell'); return { text:`💧 ٹیوب ویل صفحہ کھول دیا۔` }; }
+  if(/فصل دکھاؤ|فصل پیج|crops page/.test(lower)) { navigate('crops'); return { text:`🌾 فصلیں صفحہ کھول دیا۔` }; }
+  if(/ہوم|home page|گھر/.test(lower)) { navigate('home'); return { text:`🏡 ہوم صفحہ کھول دیا۔` }; }
+
+  // ━━ گاہک حذف ━━
+  if(/حذف|delete|ہٹاؤ|نکالو/.test(lower)) {
+    const udharList = APP.data.udharCustomers||[];
+    const twList = APP.data.twCustomers||[];
+    for(const c of udharList) {
+      if(lower.includes(c.name.toLowerCase())) {
+        const ci = udharList.indexOf(c);
+        return { text:`⚠️ کیا <b>${c.name}</b> کو ادھار سے حذف کرنا ہے؟<br><br>تصدیق کے لیے لکھیں: "<b>ہاں ${c.name} حذف کرو</b>"` };
+      }
+    }
+    if(/ہاں/.test(lower)) {
+      for(const c of udharList) {
+        if(lower.includes(c.name.toLowerCase())) {
+          const ci = udharList.indexOf(c);
+          APP.data.udharCustomers.splice(ci,1);
+          saveData(); render();
+          return { text:`🗑️ <b>${c.name}</b> حذف ہو گیا۔` };
+        }
+      }
+    }
+  }
+
+  // ━━ فصل نئی شامل ━━
+  if(/نئی فصل|فصل لگاؤ|فصل ایڈ/.test(lower)) {
+    navigate('crops');
+    setTimeout(()=>handleFab(),400);
+    return { text:`🌾 نئی فصل شامل کرنے کا فارم کھول دیا۔` };
+  }
+
+  // ━━ سپرے ریکارڈ ━━
+  if(/سپرے|spray|بیماری|دوائی/.test(lower)) {
+    const crops = APP.data.crops||[];
+    if(!crops.length) return { text:`🌾 پہلے فصل شامل کریں۔` };
+    let ci = 0;
+    for(const c of crops) { if(lower.includes(c.name.toLowerCase())) { ci=crops.indexOf(c); break; } }
+    const sprayMatch = m.match(/(?:سپرے|spray)[:\s]+([^\n،,]+)/i);
+    const diseaseMatch = m.match(/(?:بیماری|disease)[:\s]+([^\n،,]+)/i);
+    if(sprayMatch) {
+      return {
+        text:`✅ <b>${crops[ci].name}</b> میں سپرے ریکارڈ ہو گیا 🧪`,
+        action:{ type:'add_spray', ci, spray:sprayMatch[1].trim(), disease:diseaseMatch?diseaseMatch[1].trim():'بیماری' }
+      };
+    }
+    navigate('cropDetail');
+    return { text:`🧪 سپرے ریکارڈ کرنے کے لیے فصل کھولیں اور + سپرے دبائیں۔` };
+  }
+
+  // ━━ حساب / بیلنس پوچھنا ━━
+  if(/حساب|باقی|بقایا|کتنا|balance|kitna|total/.test(lower)) {
+    // کسی مخصوص گاہک کا حساب
+    const udharList = APP.data.udharCustomers||[];
+    const twList = APP.data.twCustomers||[];
+    // نام ڈھونڈیں
+    for(const c of udharList) {
+      if(lower.includes(c.name.toLowerCase())) {
+        const bal = udharBalance(c);
+        const total = udharTotalItems(c);
+        const paid = udharTotalPaid(c);
+        return { text: `📊 <b>${c.name}</b> کا حساب:<br>🛒 کل ادھار: ₨${total.toLocaleString()}<br>✅ ادا: ₨${paid.toLocaleString()}<br>${bal>0?`⏳ باقی: <b style="color:#fbbf24">₨${bal.toLocaleString()}</b>`:'✅ <b style="color:#34d399">سب ادا ہو گیا!</b>'}` };
+      }
+    }
+    for(const c of twList) {
+      if(lower.includes(c.name.toLowerCase())) {
+        const bal = twCustBalance(c);
+        return { text: `📊 <b>${c.name}</b> ٹیوب ویل حساب:<br>💧 کل بل: ₨${twCustTotalBill(c).toLocaleString()}<br>✅ ادا: ₨${(twCustTotalPaid(c)+twCustTotalAdv(c)).toLocaleString()}<br>${bal>0?`⏳ باقی: <b style="color:#fbbf24">₨${bal.toLocaleString()}</b>`:'✅ صاف'}` };
+      }
+    }
+    // کل ادھار حساب
+    const grandBal = udharList.reduce((s,c)=>s+udharBalance(c),0);
+    const twBal = twList.reduce((s,c)=>s+twCustBalance(c),0);
+    return { text: `📊 <b>کل حساب:</b><br>🧾 ادھار باقی: ₨${grandBal.toLocaleString()}<br>💧 ٹیوب ویل باقی: ₨${twBal.toLocaleString()}<br>🌾 فصلیں: ${(APP.data.crops||[]).length} فعال` };
+  }
+
+  // ━━ ادھار دینا ━━
+  if(/ادھار|اُدھار|udhar|لے گی?ا|لیا|خریدا|لے لیا|دے دو|دیا/.test(lower) && !/پیمنٹ|جمع|ادا|واپس/.test(lower)) {
+    const amount = extractNumber(m);
+    const udharList = APP.data.udharCustomers||[];
+    if(!udharList.length) return { text: '⚠️ کوئی گاہک نہیں۔ پہلے ادھار ٹیب سے گاہک شامل کریں۔' };
+
+    // گاہک نام ڈھونڈیں
+    let ci = -1, custName = '';
+    for(const c of udharList) {
+      if(lower.includes(c.name.toLowerCase())) { ci = udharList.indexOf(c); custName = c.name; break; }
+    }
+    if(ci < 0) {
+      // پہلا نام ہو سکتا ہے شروع میں
+      const words = m.split(/\s+/);
+      return { text: `⚠️ گاہک کا نام نہیں ملا۔<br>موجود گاہک: <b>${udharList.map(c=>c.name).join('، ')}</b><br><br>مثال: "<b>${udharList[0]?.name} نے 500 روپے کا ادھار لیا</b>"` };
+    }
+    if(!amount) return { text: `⚠️ رقم نہیں ملی۔ مثال: "<b>${custName} نے 500 روپے کا ادھار لیا</b>"` };
+
+    // چیز کا نام نکالیں
+    const descMatch = m.match(/(?:کا|کی|کے)?\s*([ٹماٹر|آلو|پیاز|سبزی|گندم|مکئی|چاول|چینی|آٹا|تیل|کھاد|دوائی|بیج|سپرے|چارہ|دانہ|اشیاء|\w]+)\s*(?:لے گیا|لیا|خریدا|کا ادھار)/);
+    const desc = descMatch ? descMatch[1] : 'ادھار';
+
+    return {
+      text: `✅ <b>${custName}</b> کے کھاتے میں ₨${amount.toLocaleString()} کا ادھار ریکارڈ ہو گیا 🛒`,
+      action: { type:'add_udhar_item', ci, desc, amount, qty:'', unit:'عدد' }
+    };
+  }
+
+  // ━━ پیمنٹ / واپسی ━━
+  if(/پیمنٹ|payment|جمع|ادا|واپس|دے دیا|بھیج|بھیجا|روپے دیے|روپے دے/.test(lower)) {
+    const amount = extractNumber(m);
+    const udharList = APP.data.udharCustomers||[];
+    const twList = APP.data.twCustomers||[];
+
+    // ٹیوب ویل گاہک
+    for(const c of twList) {
+      if(lower.includes(c.name.toLowerCase())) {
+        if(!amount) return { text: `⚠️ رقم لکھیں۔ مثال: "<b>${c.name} نے 1000 روپے جمع کرائے</b>"` };
+        const ci = twList.indexOf(c);
+        return {
+          text: `✅ ٹیوب ویل — <b>${c.name}</b> سے ₨${amount.toLocaleString()} وصول ہو گئے 💰`,
+          action: { type:'add_tw_payment', ci, amount }
+        };
+      }
+    }
+    // ادھار گاہک
+    for(const c of udharList) {
+      if(lower.includes(c.name.toLowerCase())) {
+        if(!amount) return { text: `⚠️ رقم لکھیں۔ مثال: "<b>${c.name} نے 500 روپے دیے</b>"` };
+        const ci = udharList.indexOf(c);
+        const bal = udharBalance(c);
+        return {
+          text: `✅ <b>${c.name}</b> سے ₨${amount.toLocaleString()} وصول ہو گئے 💚<br>${bal-amount>0?`⏳ ابھی باقی: ₨${(bal-amount).toLocaleString()}`:'🎉 کھاتہ صاف!'}`,
+          action: { type:'add_udhar_payment', ci, amount }
+        };
+      }
+    }
+    if(!udharList.length && !twList.length) return { text: '⚠️ کوئی گاہک نہیں ملا۔' };
+    return { text: `⚠️ گاہک کا نام نہیں ملا۔<br>موجود گاہک: <b>${[...udharList,...twList].map(c=>c.name).join('، ')}</b>` };
+  }
+
+  // ━━ فصل خرچ ━━
+  if(/خرچ|کھاد|سپرے|دوائی|بیج|ہل|لیبر|مزدور|پانی|ڈیزل|fuel|diesel/.test(lower) && (APP.data.crops||[]).length) {
+    const amount = extractNumber(m);
+    const crops = APP.data.crops||[];
+    let ci = -1;
+    for(const c of crops) { if(lower.includes(c.name.toLowerCase())) { ci = crops.indexOf(c); break; } }
+    if(ci < 0) ci = 0; // پہلی فصل ڈیفالٹ
+    if(!amount) return { text: `⚠️ رقم لکھیں۔ مثال: "<b>${crops[0]?.name||'گندم'} میں 2000 روپے کی کھاد"` };
+    const descMatch = m.match(/(\d+)\s*(?:روپے|رپے|rs)?\s*(?:کی|کا|کے)?\s*([^\s]+)/);
+    const desc = lower.includes('کھاد')?'کھاد':lower.includes('سپرے')?'سپرے':lower.includes('بیج')?'بیج':lower.includes('ہل')?'ہل':lower.includes('مزدور')||lower.includes('لیبر')?'مزدوری':'فصل خرچ';
+    return {
+      text: `✅ <b>${crops[ci].name}</b> میں ₨${amount.toLocaleString()} کا ${desc} خرچ ریکارڈ ہو گیا 🌾`,
+      action: { type:'add_crop_expense', ci, desc, amount }
+    };
+  }
+
+  // ━━ فصل آمدن / فروخت ━━
+  if(/فروخت|بیچا|بیچی|آمدن|income|فائدہ|منافع|مل گیا|وصول|sell|sold/.test(lower) && (APP.data.crops||[]).length) {
+    const amount = extractNumber(m);
+    const crops = APP.data.crops||[];
+    let ci = -1;
+    for(const c of crops) { if(lower.includes(c.name.toLowerCase())) { ci = crops.indexOf(c); break; } }
+    if(ci<0) ci=0;
+    if(!amount) return { text: `⚠️ رقم لکھیں۔ مثال: "<b>${crops[0]?.name||'گندم'} 5000 روپے میں فروخت"` };
+    return {
+      text: `✅ <b>${crops[ci].name}</b> سے ₨${amount.toLocaleString()} آمدن ریکارڈ ہو گئی 💰`,
+      action: { type:'add_crop_income', ci, desc:'فروخت', amount }
+    };
+  }
+
+  // ━━ گاہکوں کی فہرست ━━
+  if(/فہرست|list|گاہک|سب گاہک|کون کون/.test(lower)) {
+    const udharList = APP.data.udharCustomers||[];
+    const twList = APP.data.twCustomers||[];
+    if(!udharList.length && !twList.length) return { text: '📋 ابھی کوئی گاہک نہیں ہے۔' };
+    let txt = '📋 <b>گاہکوں کی فہرست:</b><br>';
+    if(udharList.length) { txt += '<br>🧾 <b>ادھار گاہک:</b><br>'; udharList.forEach(c=>{ const b=udharBalance(c); txt+=`• ${c.name} — ${b>0?'₨'+b.toLocaleString()+' باقی':'✅ صاف'}<br>`; }); }
+    if(twList.length) { txt += '<br>💧 <b>ٹیوب ویل گاہک:</b><br>'; twList.forEach(c=>{ const b=twCustBalance(c); txt+=`• ${c.name} — ${b>0?'₨'+b.toLocaleString()+' باقی':'✅ صاف'}<br>`; }); }
+    return { text: txt };
+  }
+
+  // ━━ فصلوں کی معلومات ━━
+  if(/فصل|crop|گندم|مکئی|چاول|کپاس|سبزی/.test(lower)) {
+    const crops = APP.data.crops||[];
+    if(!crops.length) return { text: '🌾 ابھی کوئی فصل نہیں۔ فصلیں ٹیب سے فصل شامل کریں۔' };
+    let txt = '🌾 <b>آپ کی فصلیں:</b><br><br>';
+    crops.forEach(c => {
+      const exp=(c.expenses||[]).reduce((s,e)=>s+e.amt,0);
+      const inc=(c.income||[]).reduce((s,e)=>s+e.amt,0);
+      const net=inc-exp;
+      txt+=`<b>${c.name}</b><br>💸 خرچ: ₨${exp.toLocaleString()} | 💰 آمدن: ₨${inc.toLocaleString()}<br>${net>=0?'📈 منافع':'📉 نقصان'}: ₨${Math.abs(net).toLocaleString()}<br><br>`;
+    });
+    return { text: txt };
+  }
+
+  // ━━ مدد ━━
+  if(/مدد|help|کیا کر|کیسے/.test(lower)) {
+    return { text: `🤖 <b>میں یہ کام کر سکتا ہوں:</b><br><br>📌 <b>ادھار ریکارڈ:</b><br>"احمد نے 500 روپے کا ادھار لیا"<br><br>💰 <b>پیمنٹ:</b><br>"رحیم نے 1000 روپے جمع کرائے"<br><br>🌾 <b>فصل خرچ:</b><br>"گندم میں 2000 کی کھاد ڈالی"<br><br>📊 <b>حساب:</b><br>"احمد کا کتنا باقی ہے"<br><br>📋 <b>فہرست:</b><br>"سب گاہکوں کی فہرست دکھاؤ"` };
+  }
+
+  // ━━ ڈیفالٹ ━━
+  const udharList = APP.data.udharCustomers||[];
+  const hint = udharList.length ? `<br><br>مثال: "<b>${udharList[0].name} نے 500 روپے کا ادھار لیا</b>"` : '';
+  return { text: `🤔 میں سمجھا نہیں۔ ذرا اس طرح لکھیں:<br>• "احمد نے 500 روپے کا ادھار لیا"<br>• "رحیم نے 1000 روپے جمع کرائے"<br>• "گندم میں 2000 کی کھاد"<br>• "احمد کا حساب بتاؤ"${hint}` };
+}
+
+// ── آفلائن action چلائیں ──
+function executeOfflineAction(action) {
+  const { type, ci, desc, amount, unit, qty, cropName } = action;
+  const today = new Date().toLocaleDateString('ur-PK');
+  const ts = Date.now();
+
+  if(type==='add_udhar_item') {
+    const c = APP.data.udharCustomers[ci];
+    if(!c) return;
+    if(!c.items) c.items=[];
+    c.items.push({ desc: desc||'ادھار', qty: qty||'', unit: unit||'عدد', amount, date: today, ts });
+    saveData(); render();
+  }
+  else if(type==='add_udhar_payment') {
+    const c = APP.data.udharCustomers[ci];
+    if(!c) return;
+    if(!c.payments) c.payments=[];
+    c.payments.push({ amt: amount, note:'ادائیگی', date: today, ts });
+    saveData(); render();
+  }
+  else if(type==='add_tw_payment') {
+    const c = APP.data.twCustomers[ci];
+    if(!c) return;
+    if(!c.payments) c.payments=[];
+    c.payments.push({ type:'payment', amt: amount, note:'ادائیگی', date: today, ts });
+    saveData(); render();
+  }
+  else if(type==='add_crop_expense') {
+    const crops = APP.data.crops||[];
+    const crop = crops[ci];
+    if(!crop) return;
+    if(!crop.expenses) crop.expenses=[];
+    crop.expenses.push({ desc: desc||'خرچ', amt: amount, date: today, ts });
+    saveData(); render();
+  }
+  else if(type==='add_crop_income') {
+    const crops2 = APP.data.crops||[];
+    const crop2 = crops2[ci];
+    if(!crop2) return;
+    if(!crop2.income) crop2.income=[];
+    crop2.income.push({ desc: desc||'آمدن', amt: amount, date: today, ts });
+    saveData(); render();
+  }
+  else if(type==='add_udhar_customer') {
+    if(!APP.data.udharCustomers) APP.data.udharCustomers=[];
+    APP.data.udharCustomers.push({ id:Date.now()+'', name:action.name||'نیا گاہک', phone:action.phone||'', note:'', items:[], payments:[], createdDate:new Date().toLocaleDateString('ur-PK'), ts:Date.now() });
+    saveData(); render();
+  }
+  else if(type==='add_spray') {
+    const crops3 = APP.data.crops||[];
+    const crop3 = crops3[ci];
+    if(!crop3) return;
+    if(!crop3.sprays) crop3.sprays=[];
+    crop3.sprays.push({ spray:action.spray||'سپرے', disease:action.disease||'بیماری', date:today, ts });
+    saveData(); render();
+  }
+}
+
+function startVoiceInput() {
+  if(!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
+    showToast('⚠️ آپ کا براؤزر آواز نہیں سمجھتا — Chrome استعمال کریں');
+    return;
+  }
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const voiceBtn = document.getElementById('ai-voice-btn');
+  if(aiIsRecording && aiRecognition) {
+    aiRecognition.stop();
+    return;
+  }
+  aiRecognition = new SpeechRecognition();
+  aiRecognition.lang = 'ur-PK';
+  aiRecognition.continuous = false;
+  aiRecognition.interimResults = true;
+  aiIsRecording = true;
+  if(voiceBtn) voiceBtn.classList.add('recording');
+  showToast('🎤 بول رہا ہوں...');
+
+  aiRecognition.onresult = (e) => {
+    const transcript = Array.from(e.results).map(r=>r[0].transcript).join('');
+    const inp = document.getElementById('ai-text-input');
+    if(inp) inp.value = transcript;
+  };
+  aiRecognition.onend = () => {
+    aiIsRecording = false;
+    if(voiceBtn) voiceBtn.classList.remove('recording');
+    const inp = document.getElementById('ai-text-input');
+    if(inp && inp.value.trim()) sendAIMessage();
+  };
+  aiRecognition.onerror = (e) => {
+    aiIsRecording = false;
+    if(voiceBtn) voiceBtn.classList.remove('recording');
+    if(e.error!=='no-speech') showToast('⚠️ آواز نہیں آئی — دوبارہ کوشش کریں');
+  };
+  aiRecognition.start();
+}
+
+// ===================== TW PAYMENT (legacy - replaced by openTWTxModal) =====================
+
+function deleteTWSession(idx) {
+  if(!confirm('کیا آپ یہ سیشن حذف کرنا چاہتے ہیں؟')) return;
+  APP.data.twSessions.splice(idx,1);
+  saveData(); showToast('🗑️ سیشن حذف ہو گیا'); render();
+}
+
+// ===================== THEME =====================
+function openThemePanel() {
+  document.getElementById('theme-panel').classList.add('open');
+  document.getElementById('theme-panel-overlay').classList.add('open');
+}
+function closeThemePanel() {
+  document.getElementById('theme-panel').classList.remove('open');
+  document.getElementById('theme-panel-overlay').classList.remove('open');
+}
+
+const PRESETS = {
+  emerald: { main:'#10b981', accent:'#f59e0b', bg:'#050f0a' },
+  royal:   { main:'#6366f1', accent:'#a78bfa', bg:'#05050f' },
+  sunset:  { main:'#ef4444', accent:'#f97316', bg:'#100505' },
+  ocean:   { main:'#06b6d4', accent:'#0ea5e9', bg:'#020f14' },
+  gold:    { main:'#f59e0b', accent:'#fbbf24', bg:'#0f0a02' },
+  rose:    { main:'#ec4899', accent:'#f9a8d4', bg:'#100508' },
+};
+
+function applyPreset(name) {
+  const p = PRESETS[name]; if(!p) return;
+  document.getElementById('cp-main').value  = p.main;
+  document.getElementById('cp-accent').value= p.accent;
+  document.getElementById('cp-bg').value    = p.bg;
+  document.getElementById('cp-main-hex').value  = p.main;
+  document.getElementById('cp-accent-hex').value= p.accent;
+  document.getElementById('cp-bg-hex').value    = p.bg;
+  document.querySelectorAll('.theme-preset-btn').forEach(b=>b.classList.remove('active'));
+  const btn = document.getElementById('preset-'+name);
+  if(btn) btn.classList.add('active');
+  applyCustomColor();
+  localStorage.setItem('farmapp_theme_preset', name);
+}
+
+function hexToRgb(hex) {
+  const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+  return {r,g,b};
+}
+function lighten(hex, pct) {
+  const {r,g,b} = hexToRgb(hex);
+  const f = pct/100;
+  return '#'+[r,g,b].map(v=>Math.min(255,Math.round(v+(255-v)*f)).toString(16).padStart(2,'0')).join('');
+}
+function darken(hex, pct) {
+  const {r,g,b} = hexToRgb(hex);
+  const f = 1-pct/100;
+  return '#'+[r,g,b].map(v=>Math.round(v*f).toString(16).padStart(2,'0')).join('');
+}
+
+function applyCustomColor() {
+  const main   = document.getElementById('cp-main').value;
+  const accent = document.getElementById('cp-accent').value;
+  const bg     = document.getElementById('cp-bg').value;
+  document.getElementById('cp-main-hex').value  = main;
+  document.getElementById('cp-accent-hex').value= accent;
+  document.getElementById('cp-bg-hex').value    = bg;
+
+  const r = document.documentElement;
+  r.style.setProperty('--emerald-500', main);
+  r.style.setProperty('--emerald-400', lighten(main,15));
+  r.style.setProperty('--emerald-300', lighten(main,30));
+  r.style.setProperty('--emerald-600', darken(main,10));
+  r.style.setProperty('--emerald-700', darken(main,25));
+  r.style.setProperty('--emerald-800', darken(main,45));
+  r.style.setProperty('--emerald-900', darken(main,60));
+  r.style.setProperty('--emerald-950', darken(main,75));
+  r.style.setProperty('--emerald-100', lighten(main,70));
+  r.style.setProperty('--gold-400',    accent);
+  r.style.setProperty('--gold-300',    lighten(accent,15));
+  r.style.setProperty('--gold-200',    lighten(accent,35));
+  r.style.setProperty('--gold-100',    lighten(accent,55));
+  r.style.setProperty('--gold-500',    darken(accent,10));
+  r.style.setProperty('--gold-600',    darken(accent,25));
+  r.style.setProperty('--surface-0',   bg);
+  const {r:br,g:bg2,b:bb} = hexToRgb(bg);
+  r.style.setProperty('--surface-1',   `rgb(${Math.min(255,br+9)},${Math.min(255,bg2+16)},${Math.min(255,bb+11)})`);
+  r.style.setProperty('--surface-2',   `rgb(${Math.min(255,br+13)},${Math.min(255,bg2+24)},${Math.min(255,bb+18)})`);
+  r.style.setProperty('--surface-3',   `rgb(${Math.min(255,br+17)},${Math.min(255,bg2+33)},${Math.min(255,bb+24)})`);
+  const {r:mr,g:mg,b:mb} = hexToRgb(main);
+  r.style.setProperty('--surface-glass',       `rgba(${mr},${mg},${mb},0.06)`);
+  r.style.setProperty('--surface-glass-hover', `rgba(${mr},${mg},${mb},0.12)`);
+  r.style.setProperty('--border-glass',        `rgba(${mr},${mg},${mb},0.18)`);
+  const {r:ar,g:ag,b:ab} = hexToRgb(accent);
+  r.style.setProperty('--border-gold',         `rgba(${ar},${ag},${ab},0.30)`);
+  r.style.setProperty('--glow-emerald',        `0 0 40px rgba(${mr},${mg},${mb},0.25)`);
+  r.style.setProperty('--glow-gold',           `0 0 40px rgba(${ar},${ag},${ab},0.25)`);
+
+  localStorage.setItem('farmapp_theme_colors', JSON.stringify({main,accent,bg}));
+}
+
+function syncColorFromHex(pickerId, hexId) {
+  const val = document.getElementById(hexId).value;
+  if(/^#[0-9a-fA-F]{6}$/.test(val)) {
+    document.getElementById(pickerId).value = val;
+    applyCustomColor();
+  }
+}
+
+function loadSavedTheme() {
+  const saved = localStorage.getItem('farmapp_theme_colors');
+  if(saved) {
+    try {
+      const {main,accent,bg} = JSON.parse(saved);
+      document.getElementById('cp-main').value   = main;
+      document.getElementById('cp-accent').value = accent;
+      document.getElementById('cp-bg').value     = bg;
+      document.getElementById('cp-main-hex').value   = main;
+      document.getElementById('cp-accent-hex').value = accent;
+      document.getElementById('cp-bg-hex').value     = bg;
+      applyCustomColor();
+      const preset = localStorage.getItem('farmapp_theme_preset');
+      if(preset) {
+        document.querySelectorAll('.theme-preset-btn').forEach(b=>b.classList.remove('active'));
+        const btn = document.getElementById('preset-'+preset);
+        if(btn) btn.classList.add('active');
+      }
+    } catch(e){}
+  }
+}
+
+// ===================== FIREBASE SYNC SYSTEM =====================
+const FIREBASE = {
+  DB_URL:  'https://sultanpur6767-92f01-default-rtdb.firebaseio.com',
+  API_KEY: 'AIzaSyBsvKT0t-5YuNLyx5cyYTaOratbv4E_KO0',
+  timer: null,
+  isSyncing: false,
+  _debounce: null,
+
+  // UID — پروفائل سے یا default
+  getUID() {
+    return (APP.data.profile && APP.data.profile.apiUid) || 'farm_default';
+  },
+
+  // Firebase Auth token حاصل کریں (anonymous)
+  async getToken() {
+    try {
+      const res = await fetch(
+        `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${this.API_KEY}`,
+        { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({returnSecureToken:true}) }
+      );
+      if(res.ok) { const d = await res.json(); return d.idToken; }
+    } catch(e){}
+    return null;
+  },
+
+  setStatus(msg, color) {
+    const el = document.getElementById('api-status');
+    if(el) { el.textContent = msg; el.style.color = color||'var(--text-muted)'; }
+    let ind = document.getElementById('sync-indicator');
+    if(!ind) {
+      ind = document.createElement('div');
+      ind.id = 'sync-indicator';
+      ind.style.cssText = 'position:fixed;top:8px;left:8px;z-index:9999;font-size:10px;background:rgba(0,0,0,0.75);color:#fff;padding:3px 8px;border-radius:8px;pointer-events:none;transition:opacity 0.6s';
+      document.body.appendChild(ind);
+    }
+    ind.textContent = msg; ind.style.opacity = '1';
+    clearTimeout(this._indT);
+    this._indT = setTimeout(()=>{ ind.style.opacity='0'; }, 4000);
+  },
+
+  // ڈیٹا Firebase پر save کریں — PUT سے (کوئی auth نہیں چاہیے اگر rules open ہوں)
+  async upload() {
+    if(this.isSyncing) return;
+    this.isSyncing = true;
+    const uid = this.getUID();
+    const url = `${this.DB_URL}/farmdata/${uid}.json`;
+    try {
+      // profile میں سے credentials نہ بھیجیں (security)
+      const dataToSave = JSON.parse(JSON.stringify(APP.data));
+      dataToSave._ts = Date.now();
+      const res = await fetch(url, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(dataToSave),
+        signal: AbortSignal.timeout(12000)
+      });
+      if(res.ok) {
+        this.setStatus('✅ سنک: ' + new Date().toLocaleTimeString('ur-PK'), 'var(--emerald-400)');
+      } else {
+        const txt = await res.text();
+        throw new Error(res.status + ' ' + txt.slice(0,60));
+      }
+    } catch(e) {
+      this.setStatus('⚠️ ' + e.message, '#f87171');
+    } finally {
+      this.isSyncing = false;
+    }
+  },
+
+  // Firebase سے ڈیٹا لوڈ کریں
+  async download() {
+    const uid = this.getUID();
+    const url = `${this.DB_URL}/farmdata/${uid}.json`;
+    this.setStatus('⏳ ڈاؤن لوڈ...', 'var(--gold-300)');
+    try {
+      const res = await fetch(url, { signal: AbortSignal.timeout(12000) });
+      if(!res.ok) throw new Error('HTTP ' + res.status);
+      const json = await res.json();
+      if(json && typeof json === 'object' && !Array.isArray(json)) {
+        const saved = Object.assign({}, APP.data.profile);
+        APP.data = json;
+        delete APP.data._ts;
+        // ضروری فیلڈز
+        if(!APP.data.crops)          APP.data.crops = [];
+        if(!APP.data.twSessions)     APP.data.twSessions = [];
+        if(!APP.data.twCustomers)    APP.data.twCustomers = [];
+        if(!APP.data.udharCustomers) APP.data.udharCustomers = [];
+        if(!APP.data.alerts)         APP.data.alerts = [];
+        if(!APP.data.calEvents)      APP.data.calEvents = {};
+        if(!APP.data.profile)        APP.data.profile = {};
+        // credentials واپس
+        APP.data.profile.apiKey  = saved.apiKey  || '';
+        APP.data.profile.apiUrl  = saved.apiUrl  || '';
+        APP.data.profile.apiUid  = saved.apiUid  || '';
+        if(!APP.data.profile.name)     APP.data.profile.name     = saved.name     || '';
+        if(!APP.data.profile.farmName) APP.data.profile.farmName = saved.farmName || '';
+        if(!APP.data.profile.phone)    APP.data.profile.phone    = saved.phone    || '';
+        if(!APP.data.profile.photo)    APP.data.profile.photo    = saved.photo    || '';
+        // localStorage میں محفوظ (بغیر upload trigger)
+        try { localStorage.setItem('farmapp_premium_data', JSON.stringify(APP.data)); } catch(e){}
+        render(); updateHeader();
+        showToast('✅ ڈیٹا ڈاؤن لوڈ ہو گیا');
+        this.setStatus('✅ ڈاؤن لوڈ: ' + new Date().toLocaleTimeString('ur-PK'), 'var(--emerald-400)');
+      } else {
+        showToast('⚠️ Firebase پر ابھی کوئی ڈیٹا نہیں');
+        this.setStatus('⚠️ کوئی ڈیٹا نہیں', '#f59e0b');
+      }
+    } catch(e) {
+      showToast('❌ ڈاؤن لوڈ ناکام: ' + e.message);
+      this.setStatus('❌ ' + e.message, '#f87171');
+    }
+  },
+
+  // debounced upload — save ہوتے ہی 2 سیکنڈ بعد
+  scheduleUpload() {
+    clearTimeout(this._debounce);
+    this._debounce = setTimeout(() => this.upload(), 2000);
+  },
+
+  start() {
+    this.stop();
+    setTimeout(() => this.upload(), 1500);
+    this.timer = setInterval(() => this.upload(), 30000);
+    this.setStatus('🔄 Firebase آٹو سنک فعال', 'var(--emerald-400)');
+  },
+
+  stop() {
+    if(this.timer) { clearInterval(this.timer); this.timer = null; }
+    clearTimeout(this._debounce);
+  }
+};
+
+// پرانے فنکشنز — UI بٹنوں کے لیے
+const SYNC = FIREBASE; // alias
+function syncDataOnline()  { return FIREBASE.upload(); }
+function fetchDataOnline() { return FIREBASE.download(); }
+
+function saveApiSettings() {
+  const keyEl = document.getElementById('api-key');
+  const urlEl = document.getElementById('api-url');
+  const uidEl = document.getElementById('api-uid');
+  // Firebase میں API URL ضروری نہیں — UID کافی ہے
+  const uid = (uidEl && uidEl.value.trim()) || 'farm_default';
+  APP.data.profile.apiKey = keyEl ? keyEl.value.trim() : FIREBASE.API_KEY;
+  APP.data.profile.apiUrl = urlEl ? urlEl.value.trim() : FIREBASE.DB_URL;
+  APP.data.profile.apiUid = uid;
+  try { localStorage.setItem('farmapp_premium_data', JSON.stringify(APP.data)); } catch(e){}
+  showToast('✅ سیٹنگ محفوظ — Firebase سنک شروع');
+  FIREBASE.start();
+}
+
+// ===================== INIT =====================
+function init() {
+  loadData();
+  const savedLang = localStorage.getItem('farmapp_lang')||'ur';
+  APP.lang = savedLang;
+  if(savedLang==='en') setLang('en');
+  if(APP.data.profile.photo) {
+    document.getElementById('avatar-emoji').style.display='none';
+    const ai=document.getElementById('avatar-img');
+    ai.src=APP.data.profile.photo; ai.style.display='block';
+  }
+  loadSavedTheme();
+  updateHeader();
+  navigate('home', false);
+  loadWeather();
+  // Show today's Bikrami date in header
+  const bkEl = document.getElementById('bk-header-date');
+  if(bkEl) {
+    const bk = getBikramiDate(new Date());
+    bkEl.textContent = `🌾 ${bk.day} ${bk.month} ${bk.year}`;
+  }
+  // Firebase آٹو سنک شروع کریں
+  setTimeout(() => FIREBASE.start(), 3000);
+}
+
+init();
+
+// ═══════════════════════════════════════════
+//  PWA — SERVICE WORKER + INSTALL BANNER
+// ═══════════════════════════════════════════
+
+// ── Service Worker (inline) ──
+const SW_CODE = `
+const CACHE = 'farm-manager-v8';
+const ASSETS = [location.href];
+self.addEventListener('install', e => {
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)));
+  self.skipWaiting();
+});
+self.addEventListener('activate', e => {
+  e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));
+  self.clients.claim();
+});
+self.addEventListener('fetch', e => {
+  e.respondWith(caches.match(e.request).then(r => r || fetch(e.request).catch(() => caches.match(e.request))));
+});
+`;
+
+if('serviceWorker' in navigator) {
+  const blob = new Blob([SW_CODE], {type:'text/javascript'});
+  const swUrl = URL.createObjectURL(blob);
+  navigator.serviceWorker.register(swUrl).catch(()=>{});
+}
+
+// ── Install Banner ──
+let deferredPrompt = null;
+
+// Install Banner HTML
+const installBanner = document.createElement('div');
+installBanner.id = 'pwa-banner';
+installBanner.innerHTML = `
+<div style="
+  position:fixed; bottom:calc(var(--nav-h) + 12px); left:12px; right:12px;
+  background:linear-gradient(135deg,rgba(6,78,59,0.98),rgba(4,120,87,0.98));
+  border:1px solid rgba(16,185,129,0.4);
+  border-radius:20px; padding:14px 16px;
+  display:flex; align-items:center; gap:12px;
+  z-index:9999;
+  box-shadow:0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(16,185,129,0.15);
+  animation:slideUp 0.5s cubic-bezier(0.34,1.56,0.64,1);
+" id="pwa-inner">
+  <div style="font-size:36px;flex-shrink:0">🌾</div>
+  <div style="flex:1">
+    <div style="font-size:13px;font-weight:800;color:#fff">ایپ انسٹال کریں</div>
+    <div style="font-size:11px;color:rgba(255,255,255,0.65);margin-top:2px">ہوم اسکرین پر شامل کریں — بالکل مفت</div>
+  </div>
+  <div style="display:flex;gap:7px;flex-shrink:0">
+    <button id="pwa-dismiss" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:10px;padding:7px 11px;color:rgba(255,255,255,0.7);font-size:12px;cursor:pointer;font-family:inherit">بعد میں</button>
+    <button id="pwa-install" style="background:linear-gradient(135deg,#10b981,#34d399);border:none;border-radius:10px;padding:7px 14px;color:#fff;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;box-shadow:0 4px 12px rgba(16,185,129,0.4)">✓ انسٹال</button>
+  </div>
+</div>`;
+installBanner.style.display = 'none';
+document.body.appendChild(installBanner);
+
+// iOS والے کے لیے الگ banner
+function isIOS() { return /iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase()) && !window.MSStream; }
+function isInStandaloneMode() { return ('standalone' in window.navigator) && window.navigator.standalone; }
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBanner.style.display = 'block';
+});
+
+document.getElementById('pwa-install')?.addEventListener('click', async () => {
+  if(deferredPrompt) {
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    installBanner.style.display = 'none';
+    if(outcome === 'accepted') showToast('🎉 ایپ انسٹال ہو گئی!');
+  }
+});
+
+document.getElementById('pwa-dismiss')?.addEventListener('click', () => {
+  installBanner.style.display = 'none';
+  localStorage.setItem('pwa-dismissed', Date.now());
+});
+
+// iOS کے لیے manual instructions
+if(isIOS() && !isInStandaloneMode()) {
+  const dismissed = localStorage.getItem('pwa-dismissed');
+  const dayAgo = Date.now() - 86400000;
+  if(!dismissed || parseInt(dismissed) < dayAgo) {
+    setTimeout(() => {
+      const iosBanner = document.createElement('div');
+      iosBanner.innerHTML = `
+      <div style="
+        position:fixed; bottom:calc(var(--nav-h)+12px); left:12px; right:12px;
+        background:linear-gradient(135deg,rgba(6,78,59,0.98),rgba(4,120,87,0.98));
+        border:1px solid rgba(16,185,129,0.4); border-radius:20px; padding:14px 16px;
+        z-index:9999; box-shadow:0 8px 32px rgba(0,0,0,0.5);
+        animation:slideUp 0.5s cubic-bezier(0.34,1.56,0.64,1);
+      ">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+          <div style="font-size:14px;font-weight:800;color:#fff">🌾 ایپ انسٹال کریں (iPhone)</div>
+          <button onclick="this.closest('div').parentElement.remove();localStorage.setItem('pwa-dismissed',Date.now())" style="background:none;border:none;color:rgba(255,255,255,0.6);font-size:18px;cursor:pointer">✕</button>
+        </div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.8);line-height:1.8">
+          1️⃣ نیچے <b>Share</b> بٹن (⬆️) دبائیں<br>
+          2️⃣ <b>"Add to Home Screen"</b> چنیں<br>
+          3️⃣ <b>Add</b> دبائیں — بس!
+        </div>
+      </div>`;
+      document.body.appendChild(iosBanner);
+      setTimeout(() => iosBanner.remove(), 12000);
+    }, 2000);
+  }
+}
+
+// اگر پہلے سے installed ہے
+window.addEventListener('appinstalled', () => {
+  showToast('🎉 فارم مینیجر ایپ انسٹال ہو گئی!');
+  installBanner.style.display = 'none';
+  deferredPrompt = null;
+});
+</script>
+</body>
+</html>
